@@ -23,3 +23,14 @@ const flip=(d, a)=>{
   
     return (d=='R') ? a.sort((a,b) => a-b):a.sort((a,b) => b-a);
 }
+
+class Person {
+    constructor(name, age) {
+      this.name = name
+      this.age = age
+      this.info = `${this.name}s age is ${this.age}`
+    }
+    info() {
+      return this.info
+    }
+}

@@ -46,3 +46,7 @@ function datingRange(age){
       return `${Math.floor(min)}-${Math.floor(max)}`
     }
 }
+
+function addLength(str) {
+    return str.split(' ').map(w => `${w} ${w.length}`)
+}

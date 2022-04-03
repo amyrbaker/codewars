@@ -34,3 +34,15 @@ class Person {
       return this.info
     }
 }
+
+function datingRange(age){
+    if (age <= 14) {
+      let min = age - .1 * age
+      let max = age + .1 * age
+      return `${Math.floor(min)}-${Math.floor(max)}`
+    } else {
+      let min = age / 2 + 7
+      let max = 2 * age - 14
+      return `${Math.floor(min)}-${Math.floor(max)}`
+    }
+}

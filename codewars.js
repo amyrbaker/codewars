@@ -99,3 +99,7 @@ function duckDuckGoose(players, goose) {
     return players[(goose - 1) % players.length].name
 }
 
+function squareOrSquareRoot(array) {
+    return array.map(e => Math.floor(Math.sqrt(e)) ** 2 == e ? Math.sqrt(e) : e ** 2) 
+}
+

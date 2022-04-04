@@ -87,3 +87,7 @@ var repeatIt = function(str, n) {
     return typeof str != 'string' ? 'Not a string' : repeat
 }
 
+function multiply(number){
+    return number * 5 ** Math.abs(number).toString().length
+}
+

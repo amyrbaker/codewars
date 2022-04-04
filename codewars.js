@@ -79,3 +79,11 @@ function sayHello( name, city, state ) {
     return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
 }
 
+var repeatIt = function(str, n) {
+    let repeat = ''
+    for (let i = 1; i <= n; i++) {
+      repeat += str
+    }
+    return typeof str != 'string' ? 'Not a string' : repeat
+}
+

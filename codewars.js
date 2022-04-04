@@ -58,3 +58,11 @@ function charFreq(message) {
     }
     return obj
 }
+
+function Ship(draft,crew) {
+    this.draft = draft;
+    this.crew = crew;
+    this.isWorthIt = function(){
+      return draft-1.5*crew > 20;
+    }
+}

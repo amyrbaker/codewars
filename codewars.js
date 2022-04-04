@@ -103,3 +103,7 @@ function squareOrSquareRoot(array) {
     return array.map(e => Math.floor(Math.sqrt(e)) ** 2 == e ? Math.sqrt(e) : e ** 2) 
 }
 
+function sumArray(array) {
+    return !array || array.length <= 1 ? 0 : array.sort((a, b) => a - b).slice(1, -1).reduce((a, c) => a + c, 0)
+}
+

@@ -124,3 +124,7 @@ function myFirstKata(a, b) {
     }
 }
 
+function getNumberFromString(s) {
+    return +s.split("").filter(e=>"0123456789".includes(e)).join("");
+}
+

@@ -132,3 +132,12 @@ function validateCode (code) {
     return '123'.includes(code.toString()[0])
 }
 
+function fuelPrice(litres, pricePerLitre) {
+    return litres >= 10 ? +(litres * (pricePerLitre - .25)).toFixed(2)
+      : litres >= 8 ? +(litres * (pricePerLitre - .2)).toFixed(2)
+      : litres >= 6 ? +(litres * (pricePerLitre - .15)).toFixed(2)
+      : litres >= 4 ? +(litres * (pricePerLitre - .1)).toFixed(2)
+      : litres >= 2 ? +(litres * (pricePerLitre - .05)).toFixed(2)
+      : +(litres * pricePerLitre).toFixed(2)
+}
+

@@ -169,3 +169,8 @@ function aliasGen(first, last){
       : 'Your name must start with a letter from A - Z.'
 }
 
+function slope(points)
+{
+  return points[0] === points[2] ? 'undefined' : ((points[3] - points[1]) / (points[2] - points[0])).toString()
+}
+

@@ -146,3 +146,16 @@ function yearDays(year)
   return year % 4 === 0 && (year % 100 !== 0 || (year % 100 === 0 && year % 400 === 0)) ? `${year} has 366 days` : `${year} has 365 days`
 }
 
+function leo(oscar){
+    switch (oscar) {
+        case 88:
+          return 'Leo finally won the oscar! Leo is happy'
+          break
+        case 86:
+          return 'Not even for Wolf of wallstreet?!'
+          break
+        default:
+          return oscar < 88 ? 'When will you give Leo an Oscar?' : 'Leo got one already!'
+    }
+}
+

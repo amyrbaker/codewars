@@ -128,3 +128,7 @@ function getNumberFromString(s) {
     return +s.split("").filter(e=>"0123456789".includes(e)).join("");
 }
 
+function validateCode (code) {
+    return '123'.includes(code.toString()[0])
+}
+

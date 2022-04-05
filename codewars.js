@@ -116,3 +116,11 @@ function joinStrings(string1, string2){
     return `${string1} ${string2}`
 }
 
+function myFirstKata(a, b) {
+    if (typeof(a) !== "number" || typeof(b) !== "number") {
+      return false;
+    } else {
+      return a % b + b % a;
+    }
+}
+

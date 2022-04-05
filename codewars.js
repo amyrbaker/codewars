@@ -159,3 +159,7 @@ function leo(oscar){
     }
 }
 
+function shortenToDate(longDate) {
+    return longDate.split(",")[0];
+}
+

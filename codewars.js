@@ -163,3 +163,9 @@ function shortenToDate(longDate) {
     return longDate.split(",")[0];
 }
 
+function aliasGen(first, last){
+    return first[0].toLowerCase().match(/[a-z]/i) && last[0].toLowerCase().match(/[a-z]/i) ? 
+      `${firstName[first[0].toUpperCase()]} ${surname[last[0].toUpperCase()]}`
+      : 'Your name must start with a letter from A - Z.'
+}
+

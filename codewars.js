@@ -107,3 +107,8 @@ function sumArray(array) {
     return !array || array.length <= 1 ? 0 : array.sort((a, b) => a - b).slice(1, -1).reduce((a, c) => a + c, 0)
 }
 
+function excludingVatPrice(price){
+    console.log(price)
+      return price == null ? -1 : +(price / 1.15).toFixed(2);
+}
+

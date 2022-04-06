@@ -232,3 +232,8 @@ function fiveLine(a){
     return `${s}\n${s}${s}\n${s}${s}${s}\n${s}${s}${s}${s}\n${s}${s}${s}${s}${s}`
 }
 
+function firstToLast(str,c){
+    return str.indexOf(c) === -1 ? -1 : str.lastIndexOf(c) - str.search(c);
+    
+}
+

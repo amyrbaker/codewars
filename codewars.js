@@ -227,3 +227,8 @@ function bigToSmall(arr) {
     return [].concat(...arr).sort((a, b) => b - a).join('>');
 }
 
+function fiveLine(a){
+    let s = a.trim()
+    return `${s}\n${s}${s}\n${s}${s}${s}\n${s}${s}${s}${s}\n${s}${s}${s}${s}${s}`
+}
+

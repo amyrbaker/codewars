@@ -212,3 +212,8 @@ function changeMe(moneyIn){
     return str
 }
 
+function cutCube(volume,n){
+    return (Math.floor(Math.cbrt(volume)) ** 3 === volume) && (Math.floor(Math.cbrt(volume / n)) ** 3 === volume / n)
+    
+}
+

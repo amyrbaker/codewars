@@ -222,3 +222,8 @@ function blackAndWhite(arr){
       arr.indexOf(5) !== -1 && arr.indexOf(13) !== -1 ? 'It\'s a black array' :
       'It\'s a white array'
 }
+
+function bigToSmall(arr) {
+    return [].concat(...arr).sort((a, b) => b - a).join('>');
+}
+

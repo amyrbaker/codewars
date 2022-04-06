@@ -190,3 +190,7 @@ function Cube(n = 0) {
     
 };
 
+function arr2bin(arr){
+    return arr.map(e => typeof e !== 'number' ? e = 0 : e).reduce((a, c) => a + c, 0).toString(2)
+}
+

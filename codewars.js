@@ -179,3 +179,14 @@ function barTriang(p1, p2, p3){
             +((p1[1]+p2[1]+p3[1])/3).toFixed(4)];
 }
 
+function Cube(n = 0) {
+    let side = n
+    this.getSide = function() {return side}
+    this.setSide = function(n) {
+      if (isNaN(n) === true) side = 0
+      else side = Math.abs(n);
+      return side
+    };
+    
+};
+

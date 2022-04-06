@@ -194,3 +194,21 @@ function arr2bin(arr){
     return arr.map(e => typeof e !== 'number' ? e = 0 : e).reduce((a, c) => a + c, 0).toString(2)
 }
 
+function changeMe(moneyIn){
+    let str
+    if (moneyIn === '20p') {
+      str = '10p 10p'
+    } else if (moneyIn === '50p') {
+      str = '20p 20p 10p'
+    } else if (moneyIn === '£1') {
+      str = '20p 20p 20p 20p 20p'
+    } else if (moneyIn === '£2') {
+      str = '20p 20p 20p 20p 20p 20p 20p 20p 20p 20p'
+    } else if (moneyIn === '£5') {
+      str = '20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p 20p'
+    } else {
+      str = moneyIn
+    }
+    return str
+}
+

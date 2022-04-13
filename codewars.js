@@ -281,3 +281,7 @@ function countWords(str) {
     return str.trim().split(/\s+/).filter(e => e).length
 }
 
+function sumSquares(array) {
+    return array.map(e => e ** 2).reduce((a, c) => a + c)
+}
+

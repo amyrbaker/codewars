@@ -245,3 +245,14 @@ function rainAmount (mm) {
     }
 }
 
+function cutIt(arr){
+    let length = arr[0].length
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].length < length) {
+        length = arr[i].length
+      }
+    }
+    return arr.map(e => e.substr(0, length))
+    
+}
+

@@ -315,5 +315,9 @@ function giveMeFive(obj){
   return five;
 }
 
+function greaterThanLessThan (a,b,c) {
+  return (a < b ? 1 : 0) < c
+}
+
 
 

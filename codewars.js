@@ -256,3 +256,9 @@ function cutIt(arr){
     
 }
 
+function sameCase(a, b){
+    return !'abcdefghijklmnopqrstuvwxyz'.includes(a.toLowerCase()) || !'abcdefghijklmnopqrstuvwxyz'.includes(b.toLowerCase()) ? -1 :
+      ('abcdefghijklmnopqrstuvwxyz'.includes(a) && 'abcdefghijklmnopqrstuvwxyz'.includes(b)) || ('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.includes(a) && 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.includes(b)) ? 1 :
+    0
+}
+

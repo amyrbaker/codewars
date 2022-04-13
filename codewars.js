@@ -272,3 +272,8 @@ function magNumber(info){
     return Math.ceil(info[1] * 3 / nums[info[0]])
 }
 
+function bloodAlcoholContent(drinks, weight, sex, time){
+    let ratio = {'male':.73, 'female':.66}
+    return +(((drinks['ounces'] * drinks['abv']) * 5.14 / weight * ratio[sex]) - .015 * time).toFixed(4)
+}
+

@@ -285,3 +285,7 @@ function sumSquares(array) {
     return array.map(e => e ** 2).reduce((a, c) => a + c)
 }
 
+Math.roundTo = function (number, precision) {
+    return +number.toFixed(precision)
+}
+

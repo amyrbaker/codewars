@@ -277,3 +277,7 @@ function bloodAlcoholContent(drinks, weight, sex, time){
     return +(((drinks['ounces'] * drinks['abv']) * 5.14 / weight * ratio[sex]) - .015 * time).toFixed(4)
 }
 
+function countWords(str) {
+    return str.trim().split(/\s+/).filter(e => e).length
+}
+

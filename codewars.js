@@ -346,5 +346,19 @@ function pickIt(arr){
   return [odd,even];
 }
 
+function padIt(str,n){
+  let string = str
+  while (n > 0) {
+    if (n % 2 !== 0) {
+      string = '*' + string
+      n--
+    } else {
+      string += '*'
+      n--
+    }
+  }
+  return string
+}
+
 
 

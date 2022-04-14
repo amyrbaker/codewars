@@ -379,5 +379,17 @@ function popElement(arr){
   return arr.slice(0, -1)
 }
 
+function numberToPower(number, power){
+  if (power === 0) return 1
+  else if (power === 1) return number
+  else {
+    let total = number * number
+    for (let i = 2; i < power; i++) {
+      total *= number
+    }
+    return total
+  }
+}
+
 
 

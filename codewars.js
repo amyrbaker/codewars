@@ -421,5 +421,7 @@ var Person = function(){
   return person;
 }
 
-
+function anyArrows(arrows){
+  return arrows.some(a => !a.hasOwnProperty('damaged') || a.damaged == false);
+}
 

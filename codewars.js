@@ -410,5 +410,16 @@ var findAverage = function (nums) {
   return (nums.reduce((a, c) => a + c)) / nums.length
 }
 
+var Person = function(){
+  var person = {
+    _name: "Leroy",
+    _friends: [],
+    fillFriends(f) { 
+      f.forEach(p => this._friends.push(p))
+    }
+  }
+  return person;
+}
+
 
 

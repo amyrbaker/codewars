@@ -425,3 +425,7 @@ function anyArrows(arrows){
   return arrows.some(a => !a.hasOwnProperty('damaged') || a.damaged == false);
 }
 
+var ArrowFunc = function(arr) {
+  return arr.map(e => String.fromCharCode(e)).join(''); //Complete this function
+}
+

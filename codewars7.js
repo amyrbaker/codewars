@@ -6,4 +6,15 @@ function unusedDigits(...arg) {
       }
     }
     return arr.join('')
-  }
+}
+
+function vowelIndices(word){
+    let arr = []
+    for (let i = 0; i < word.length; i++) {
+      if ('aeiouy'.includes(word[i].toLowerCase())) {
+        arr.push(i + 1)
+      }
+    }
+    return arr
+}
+

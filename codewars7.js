@@ -38,3 +38,16 @@ function mxdiflg(a1, a2) {
     return (a1.length === 0 || a2.length === 0) ? -1 : Math.max(Math.abs(a1MM[0] - a2MM[0]), Math.abs(a1MM[0] - a2MM[1]), Math.abs(a1MM[1] - a2MM[0]), Math.abs(a1MM[1] - a2MM[1]))
 }
 
+const xMarksTheSpot = (input) => {
+    let arr = []
+    for (let i = 0; i < input.length; i++) {
+      for (let j = 0; j < input[0].length; j++) {
+        if (input[i][j] === 'x') {
+          arr.push(i)
+          arr.push(j)
+        }
+      }
+    }
+    return arr.length != 2 ? [] : arr
+}
+

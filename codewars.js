@@ -401,5 +401,10 @@ Array.prototype.filter = function (func) {
   return arr
 }
 
+function lowercaseCount(str){
+  return str.split('').filter(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e)).length
+
+}
+
 
 

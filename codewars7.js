@@ -51,3 +51,17 @@ const xMarksTheSpot = (input) => {
     return arr.length != 2 ? [] : arr
 }
 
+function solve(n) {
+    let count = 0
+    let bills = [500, 200, 100, 50, 20, 10]
+    let amount = n
+    for (let i = 0; i < bills.length; i++) {
+      if (amount >= bills[i]) {
+        amount -= bills[i]
+        count ++
+        i--
+      }
+    }
+    return (count === 0 || amount !== 0) ? -1 : count
+}
+

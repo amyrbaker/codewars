@@ -105,6 +105,13 @@ function barista(coffees){
     + (((coffees.length - 1) * coffees.length) / 2) * 2
 }
 
+function momentOfTimeInSpace(moment) {
+  let arr = moment.split('').filter(e => '123456789'.includes(e))
+  let time = arr.reduce((a, c) => a + +c, 0)
+  let space = moment.length - arr.length
+  return [time < space, time == space, time > space]
+}
+
 
 
 

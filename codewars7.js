@@ -97,6 +97,14 @@ function solve(s){
   return [upper, lower, nums, chars]
 }
 
+function barista(coffees){
+  return (coffees
+    .sort((a, b) => a - b)
+    .map((e, i) => e * (coffees.length - i))
+    .reduce((a, c) => a + c, 0)) 
+    + (((coffees.length - 1) * coffees.length) / 2) * 2
+}
+
 
 
 

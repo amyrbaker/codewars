@@ -87,3 +87,17 @@ function sumsum(n) {
 return sumin(n) + sumax(n)
 }
 
+function solve(s){
+  let upper = 0, lower = 0, nums = 0, chars = 0
+  s.split('').forEach(char => {
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.includes(char) ? upper++ :
+    'abcdefghijklmnopqrstuvwxyz'.includes(char) ? lower++ :
+    '0123456789'.includes(char) ? nums++ : chars++
+    })
+  return [upper, lower, nums, chars]
+}
+
+
+
+
+

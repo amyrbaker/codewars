@@ -65,3 +65,25 @@ function solve(n) {
     return (count === 0 || amount !== 0) ? -1 : count
 }
 
+function sumin(n) {
+  let sum = n
+  let current = n
+  for (let i = n - 1; i > 0; i--) {
+    current += i
+    sum += current
+  }
+  return sum
+}
+function sumax(n) {
+let sum = n**2
+let current = sum
+for (let i = n - 1; i > 0; i--) {
+  current -= i
+  sum += current
+}
+return sum 
+}
+function sumsum(n) {
+return sumin(n) + sumax(n)
+}
+

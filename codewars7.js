@@ -116,6 +116,12 @@ function openOrSenior(data){
   return data.map(e => (e[0] >= 55 && e[1] > 7) ? 'Senior' : 'Open')
 }
 
+var findDigit = function(num, nth){
+  return nth <= 0 ? -1 :
+    nth > Math.abs(num).toString().length ? 0 :
+    +Math.abs(num).toString()[Math.abs(num).toString().length - nth]
+}
+
 
 
 

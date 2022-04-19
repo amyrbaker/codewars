@@ -148,6 +148,10 @@ function isIsogram(str){
   return str.toLowerCase().split('').filter((e, i) => str.toLowerCase().indexOf(e) == i).length === str.length
 }
 
+function longest(s1, s2) {
+  return (s1 + s2).split('').filter((e, i) => (s1 + s2).indexOf(e) === i).sort().join('')
+}
+
 
 
 

@@ -122,6 +122,16 @@ var findDigit = function(num, nth){
     +Math.abs(num).toString()[Math.abs(num).toString().length - nth]
 }
 
+function accum(s) {
+	return s.split('').map((e, ind) => {
+    let str = e.toUpperCase()
+    for (let i = 1; i < ind + 1; i++) {
+      str += e.toLowerCase()
+    }
+    return str
+  }).join('-')
+}
+
 
 
 

@@ -140,6 +140,10 @@ function findShort(s){
   return s.split(' ').sort((a, b) => a.length - b.length)[0].length
 }
 
+function XO(str) {
+  return str.toLowerCase().split('o').length === str.toLowerCase().split('x').length
+}
+
 
 
 

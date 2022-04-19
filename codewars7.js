@@ -136,6 +136,10 @@ String.prototype.toJadenCase = function () {
   return this.split(' ').map(e => e[0].toUpperCase() + e.slice(1)).join(' ')
 };
 
+function findShort(s){
+  return s.split(' ').sort((a, b) => a.length - b.length)[0].length
+}
+
 
 
 

@@ -144,6 +144,10 @@ function XO(str) {
   return str.toLowerCase().split('o').length === str.toLowerCase().split('x').length
 }
 
+function isIsogram(str){
+  return str.toLowerCase().split('').filter((e, i) => str.toLowerCase().indexOf(e) == i).length === str.length
+}
+
 
 
 

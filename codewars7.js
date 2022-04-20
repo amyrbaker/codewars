@@ -267,6 +267,15 @@ function roundToNext5(n){
     Math.ceil(n / 5) * 5
 }
 
+function rowSumOddNumbers(n) {
+	let arr = []
+  for (let i = n * (n - 1) + 1; i <= n * (n - 1) + 1 + (n - 1) * 2; i += 2) {
+    arr.push(i)
+  }
+  return arr.reduce((a, c) => a + c)
+}
+
+
 
 
 

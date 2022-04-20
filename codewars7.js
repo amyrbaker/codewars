@@ -178,6 +178,96 @@ function findNextSquare(sq) {
 }
 
 
+function longest(words) {
+  return words.sort((a,b) => b.length - a.length)[0].length
+}
+
+function giveChange(amount) {
+  return [Math.floor(amount%100%50%20%10%5), Math.floor(amount%100%50%20%10/5), Math.floor(amount%100%50%20/10), Math.floor(amount%100%50/20), Math.floor(amount%100/50), Math.floor(amount/100)]
+}
+
+function solve(arr){  
+  let alp = 'abcdefghijklmnopqrstuvwxyz'
+  let words = arr.map(w => w.toLowerCase())
+  let arr1 = []
+  words.forEach(word => {
+    let count = 0
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] === alp[i]) {
+        count++
+      }
+    }
+    arr1.push(count)
+  })
+  return arr1
+};
+
+function chain(input, fs) {
+  let func = fs[0](input)
+  for (let i = 1; i < fs.length; i++) {
+    func = fs[i](func)
+  }
+  return func
+}
+
+function root(x, n) {
+  return x ** (1/n)
+}
+
+function sumFromString(str){
+  let arr = str.split('')
+    .map((e, i) => e = [e, i])
+    .filter(e => '0123456789'.includes(e[0]))
+  if (arr.length === 0) return 0
+  if (arr.length === 1) return +arr[0][0]
+  let str1 = arr[0][0]
+  for (let i = 1; i < arr.length; i++) {
+    arr[i][1] === arr[i - 1][1] + 1 ? str1 += arr[i][0] : str1 += ` ${arr[i][0]}`
+  }
+  return str1.split(' ').reduce((a, c) => +a + +c)
+}
+
+function dropCap(n) {
+  return n.split(' ').map(w => w.length <= 2 ? w : w = w[0].toUpperCase() + w.slice(1, w.length).toLowerCase()).join(' ')
+}
+
+function stringMerge(string1, string2, letter){
+  return string1.slice(0, string1.indexOf(letter) + 1) + string2.slice(string2.indexOf(letter) + 1)
+}
+
+function addBinary(a,b) {
+  return (a + b).toString(2)
+}
+
+function sum(...args) {
+  return args.reduce((a, c) => a + c)
+}
+
+function findSum(...args){
+  return args.length === 0 ? 0 :
+    args.length !== args.filter(e => e >= 0).length ? -1 :
+    args.reduce((a, c) => a + c)
+}
+
+function toBinary(n){
+  return (n >>> 0).toString(2)
+}
+
+function checkParity(parity, bin){
+  let ones = bin.split('').filter(e => e == '1').length
+  return (parity === 'even' && ones % 2 === 0) || (parity === 'odd' && ones % 2 !== 0) ? 0 : 1
+}
+
+function isAllPossibilities(x){
+  return x.length === 0 ? false : x.sort((a, b) => a - b).join('') === [...Array(x.length).keys()].join('')
+}
+
+function roundToNext5(n){
+  return n % 5 === 0 ? n :
+    Math.ceil(n / 5) * 5
+}
+
+
 
 
 

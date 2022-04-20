@@ -156,6 +156,17 @@ function DNAStrand(dna){
   return dna.split('').map(e => e === 'A' ? 'T' : e === 'T' ? 'A' : e === 'C' ? 'G' : 'C').join('')
 }
 
+function nbYear(p0, percent, aug, p) {
+  console.log(p0, percent, aug, p)
+    let pop = p0
+    let years = 0
+    while (pop < p) {
+      pop = Math.floor(pop + pop * (percent / 100) + aug)
+      years++
+    }
+    return years
+}
+
 
 
 

@@ -275,6 +275,10 @@ function rowSumOddNumbers(n) {
   return arr.reduce((a, c) => a + c)
 }
 
+function validatePIN (pin) {
+  return (pin.length === 4 || pin.length === 6) && pin.match(/^[0-9]+$/) != null
+}
+
 
 
 

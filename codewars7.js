@@ -152,6 +152,10 @@ function longest(s1, s2) {
   return (s1 + s2).split('').filter((e, i) => (s1 + s2).indexOf(e) === i).sort().join('')
 }
 
+function DNAStrand(dna){
+  return dna.split('').map(e => e === 'A' ? 'T' : e === 'T' ? 'A' : e === 'C' ? 'G' : 'C').join('')
+}
+
 
 
 

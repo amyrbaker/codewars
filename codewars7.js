@@ -172,6 +172,11 @@ function isTriangle(a,b,c)
    return a + b > c && a + c > b && b + c > a
 }
 
+function findNextSquare(sq) {
+  return Math.floor(Math.sqrt(sq)) ** 2 !== sq ? -1 :
+    (Math.sqrt(sq) + 1) ** 2
+}
+
 
 
 

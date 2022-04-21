@@ -306,6 +306,12 @@ function SeriesSum(n)
   return sum.toFixed(2)
 }
 
+function removeSmallest(numbers) {
+  let index = numbers.indexOf(Math.min(...numbers))
+  console.log(numbers.slice(index + 1))
+  return numbers.slice(0, index).concat(numbers.slice(index + 1))
+}
+
 
 
 

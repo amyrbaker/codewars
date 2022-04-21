@@ -295,6 +295,17 @@ function oddOrEven(array) {
   return array.reduce((a, c) => a + c, 0) % 2 === 0 ? 'even' : 'odd'
 }
 
+function SeriesSum(n)
+{
+  if (n === 0) return '0.00'
+  if (n === 1) return '1.00'
+  let sum = 1
+  for (let i = 4; i < 3 * n; i += 3) {
+    sum += (1/i)
+  }
+  return sum.toFixed(2)
+}
+
 
 
 

@@ -312,6 +312,10 @@ function removeSmallest(numbers) {
   return numbers.slice(0, index).concat(numbers.slice(index + 1))
 }
 
+function stray(numbers) {
+  return numbers.filter(e => numbers.indexOf(e) === numbers.lastIndexOf(e))[0]
+}
+
 
 
 

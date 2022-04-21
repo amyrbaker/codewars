@@ -283,6 +283,10 @@ function printerError(s) {
   return s.split('').filter(e => !'abcdefghijklm'.includes(e)).length +'/'+ s.length
 }
 
+const binaryArrayToNumber = arr => {
+  return parseInt(arr.join(''), 2)
+};
+
 
 
 

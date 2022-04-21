@@ -291,6 +291,10 @@ var number = function(busStops){
   return busStops.map(e => e.reduce((a, c) => a - c)).reduce((a, c) => a + c)
 }
 
+function oddOrEven(array) {
+  return array.reduce((a, c) => a + c, 0) % 2 === 0 ? 'even' : 'odd'
+}
+
 
 
 

@@ -279,6 +279,10 @@ function validatePIN (pin) {
   return (pin.length === 4 || pin.length === 6) && pin.match(/^[0-9]+$/) != null
 }
 
+function printerError(s) {
+  return s.split('').filter(e => !'abcdefghijklm'.includes(e)).length +'/'+ s.length
+}
+
 
 
 

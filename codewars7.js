@@ -287,6 +287,10 @@ const binaryArrayToNumber = arr => {
   return parseInt(arr.join(''), 2)
 };
 
+var number = function(busStops){
+  return busStops.map(e => e.reduce((a, c) => a - c)).reduce((a, c) => a + c)
+}
+
 
 
 

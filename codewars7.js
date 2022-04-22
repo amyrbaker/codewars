@@ -326,6 +326,16 @@ function getDivisorsCnt(n){
   return count
 }
 
+function calculateYears(principal, interest, tax, desired) {
+  let years = 0, amount = principal
+  while (amount < desired) {
+    amount += amount * interest - amount * interest * tax 
+    years++
+  }
+  return years
+  
+}
+
 
 
 

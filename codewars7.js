@@ -354,6 +354,10 @@ function factorial(n)
     [...Array(n).keys()].map(e => e + 1).reduce((a, c) => a * c, 1)
 }
 
+var isAnagram = function(test, original) {
+  return test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('')
+};
+
 
 
 

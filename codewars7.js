@@ -394,6 +394,10 @@ function noOdds( values ){
   return values.filter(e => e%2 === 0 )
 }
 
+function findSum(n) {
+  return [...Array(n + 1).keys()].filter(e => !(e%3) || !(e%5)).reduce((a, c) => a + c, 0)
+}
+
 
 
 

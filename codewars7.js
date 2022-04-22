@@ -367,6 +367,14 @@ function dontGiveMeFive(start, end)
   return arr.map(e => e.toString()).filter(e => !e.includes('5')).length
 }
 
+const sequenceSum = (begin, end, step) => {
+  let arr = []
+  for (let i = begin; i <= end; i += step) {
+    arr.push(i)
+  }
+  return arr.reduce((a, c) => a + c, 0)
+};
+
 
 
 

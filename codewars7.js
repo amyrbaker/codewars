@@ -383,6 +383,13 @@ function removeUrlAnchor(url){
   return url.includes('#') ? url.slice(0, url.indexOf('#')) : url
 }
 
+var capitals = function (word) {
+	return word.split('')
+    .map((e, i) => [e, i])
+    .filter(e => e[0] === e[0].toUpperCase())
+    .map(e => e[1])
+};
+
 
 
 

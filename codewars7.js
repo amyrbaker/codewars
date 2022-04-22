@@ -398,6 +398,10 @@ function findSum(n) {
   return [...Array(n + 1).keys()].filter(e => !(e%3) || !(e%5)).reduce((a, c) => a + c, 0)
 }
 
+function sortByLength (array) {
+  return array.sort((a, b) => a.length - b.length)
+};
+
 
 
 

@@ -402,6 +402,15 @@ function sortByLength (array) {
   return array.sort((a, b) => a.length - b.length)
 };
 
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  let months = {'January' : 0, 'February' : 31, 'March' : 59, 'April' : 90, 'May' : 120, 'June' : 151, 'July' : 181, 'August': 212, 'September' : 243, 'October' : 273, 'November' : 304, 'December' : 334}
+  let [todayMonth, todayDay, todayYear] = currentDate.split('').filter(e => e !== ',').join('').split(' ')
+  let [expiredMonth, expiredDay, expiredYear] = expirationDate.split('').filter(e => e !== ',').join('').split(' ')
+  let today = +months[todayMonth] + +todayDay
+  let expired = +months[expiredMonth] + +expiredDay
+  return (enteredCode === correctCode) && ((todayYear < expiredYear) || ((todayYear == expiredYear) && (today <= expired)))
+}
+
 
 
 

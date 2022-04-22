@@ -347,6 +347,13 @@ var number=function(array){
   return array.map((e, i) => `${i + 1}: ${e}`)
 }
 
+function factorial(n)
+{
+  if (n < 0 || n > 12) throw RangeError
+  return n === 0 ? 1 :
+    [...Array(n).keys()].map(e => e + 1).reduce((a, c) => a * c, 1)
+}
+
 
 
 

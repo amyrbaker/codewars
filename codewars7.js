@@ -390,6 +390,10 @@ var capitals = function (word) {
     .map(e => e[1])
 };
 
+function noOdds( values ){
+  return values.filter(e => e%2 === 0 )
+}
+
 
 
 

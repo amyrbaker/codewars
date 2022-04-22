@@ -411,6 +411,13 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
   return (enteredCode === correctCode) && ((todayYear < expiredYear) || ((todayYear == expiredYear) && (today <= expired)))
 }
 
+function maxMultiple(divisor, bound){
+  //   return Math.max(...[...Array(bound + 1).keys()].filter(e => !(e % divisor)))
+    for (let i = bound; i > 0; i--) {
+      if (!(i % divisor)) return i
+    }
+}
+
 
 
 

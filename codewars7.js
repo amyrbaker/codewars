@@ -358,6 +358,15 @@ var isAnagram = function(test, original) {
   return test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('')
 };
 
+function dontGiveMeFive(start, end)
+{
+  let arr = []
+  for (let i = start; i <= end; i++) {
+    arr.push(i)
+  }
+  return arr.map(e => e.toString()).filter(e => !e.includes('5')).length
+}
+
 
 
 

@@ -19,3 +19,7 @@ function findOdd(A) {
     }
 }
 
+function arrayDiff(a, b) {
+    return a.filter(e => !b.includes(e))
+}
+

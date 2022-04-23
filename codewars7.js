@@ -436,6 +436,34 @@ function angle(n) {
   return (n - 2) * 180
 }
 
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  let first = firstAttacker == fighter1.name ? 'fighter1' : 'fighter2'
+  let f1H = fighter1.health
+  let f2H = fighter2.health
+  let f1D = fighter1.damagePerAttack
+  let f2D = fighter2.damagePerAttack
+  for (let i = 0; i <= Math.max(fighter1.health, fighter2.health); i++) {
+    if (first == 'fighter1') {
+      if (i % 2 === 0) {
+        f2H -= f1D
+        if (f2H <= 0) return fighter1.name
+      } else {
+        f1H -= f2D
+        if (f1H <= 0) return fighter2.name
+      }
+    } else {
+      if (i % 2 === 0) {
+        f1H -= f2D
+        if (f1H <= 0) return fighter2.name
+      } else {
+        f2H -= f1D
+        if (f2H <= 0) return fighter1.name
+      }
+    }
+    console.log(i, f1H, f2H)
+  }
+}
+
 
 
 

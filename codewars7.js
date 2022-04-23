@@ -464,6 +464,10 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
   }
 }
 
+function reverseLetter(str) {
+  return str.split('').filter(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e)).reverse().join('')
+}
+
 
 
 

@@ -418,6 +418,16 @@ function maxMultiple(divisor, bound){
     }
 }
 
+function evaporator(content, evap_per_day, threshold){ 
+  let days = 0
+  let amount = content
+  while(amount >= threshold / 100 * content) {
+    days++
+    amount -= amount * evap_per_day / 100
+  }
+  return days
+}
+
 
 
 

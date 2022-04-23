@@ -10,3 +10,12 @@ function likes(names) {
       : `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
 }
 
+function findOdd(A) {
+    let obj = A.reduce((a, c) => {
+      return a[c] ? a[c]++ : a[c] = 1, a
+    }, {})
+    for(let key in obj) {
+      if (obj[key] % 2) return +key
+    }
+}
+

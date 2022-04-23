@@ -428,6 +428,10 @@ function evaporator(content, evap_per_day, threshold){
   return days
 }
 
+function smallEnough(a, limit){
+  return a.every(e => e <= limit)
+}
+
 
 
 

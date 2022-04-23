@@ -500,6 +500,12 @@ function checkExam(array1, array2) {
   return numbersArray.filter(e => !(e % 2))
 }
 
+function solve(s){
+  let lower = s.split('').filter(e => e === e.toLowerCase()).length
+  let upper = s.length - lower
+  return upper > lower ? s.toUpperCase() : s.toLowerCase()
+}
+
 
 
 

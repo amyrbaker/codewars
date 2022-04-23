@@ -496,6 +496,10 @@ function checkExam(array1, array2) {
    return score < 0 ? 0 : score;
  }
 
+ function getEvenNumbers(numbersArray){
+  return numbersArray.filter(e => !(e % 2))
+}
+
 
 
 

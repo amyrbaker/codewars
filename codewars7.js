@@ -432,6 +432,10 @@ function smallEnough(a, limit){
   return a.every(e => e <= limit)
 }
 
+function angle(n) {
+  return (n - 2) * 180
+}
+
 
 
 

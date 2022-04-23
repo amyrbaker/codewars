@@ -23,3 +23,10 @@ function arrayDiff(a, b) {
     return a.filter(e => !b.includes(e))
 }
 
+function duplicateCount(text){
+    return text.toLowerCase('').split('')
+      .filter((e, i, a) => i !== a.indexOf(e))
+      .filter((e, i, a) => i === a.indexOf(e))
+      .length
+}
+

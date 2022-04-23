@@ -468,6 +468,16 @@ function reverseLetter(str) {
   return str.split('').filter(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e)).reverse().join('')
 }
 
+function fizzbuzz(n)
+{
+  return [...Array(n).keys()]
+    .map(e => e + 1)
+    .map(e => !(e % 3) && !(e % 5) ? 'FizzBuzz' 
+         : !(e % 3) ? 'Fizz' 
+         : !(e % 5) ? 'Buzz' 
+         : e)
+}
+
 
 
 

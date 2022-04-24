@@ -48,3 +48,13 @@ function isValidWalk(walk) {
     return walk.length === 10 && pos.join('') === '00'
 }
 
+function persistence(num) {
+    let arr = num.toString().split('')
+    let count = 0
+    while (arr.length != 1) {
+      arr = arr.reduce((a, c) => a * c, 1).toString().split('')
+      count++
+    }
+   return count
+}
+

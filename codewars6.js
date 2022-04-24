@@ -30,3 +30,10 @@ function duplicateCount(text){
       .length
 }
 
+function duplicateEncode(word){
+    return word.toLowerCase()
+      .split('')
+      .map((e, i) => (word.toLowerCase().indexOf(e) === i) && (word.toLowerCase().lastIndexOf(e) === i) ? '(' : ')')
+      .join('')
+}
+

@@ -37,3 +37,14 @@ function duplicateEncode(word){
       .join('')
 }
 
+function isValidWalk(walk) {
+    let pos = [0, 0]
+    walk.forEach(e => {
+      if (e === 'e') pos[0]++
+      if (e === 'w') pos[0]--
+      if (e === 'n') pos[1]++
+      if (e === 's') pos[1]--
+    })
+    return walk.length === 10 && pos.join('') === '00'
+}
+

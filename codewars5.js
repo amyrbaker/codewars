@@ -10,3 +10,11 @@ function dirReduc(arr){
     return array
 }
 
+function rot13(message){
+    let alph = 'abcdefghijklmnopqrstuvwxyz'
+    return message
+      .split(' ')
+      .map(w => w.split('').map(e => alph.includes(e.toLowerCase()) ? (e === e.toLowerCase() ? alph[((alph.indexOf(e) + 13) % 26)] : alph.toUpperCase()[((alph.toUpperCase().indexOf(e) + 13) % 26)]) : e).join(''))
+      .join(' ')
+}
+

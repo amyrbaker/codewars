@@ -75,3 +75,14 @@ function toCamelCase(str){
     }).join('')
 }
 
+function order(words){
+    let arr = []
+    let wordArr = words.split(' ')
+    for (let i = 1; i <= words.length; i++) {
+      wordArr.forEach(e => {
+        if (e.includes(i + '')) arr.push(e)
+      })
+    }
+    return arr.join(' ')
+}
+

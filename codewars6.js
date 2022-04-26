@@ -95,3 +95,9 @@ function tribonacci(signature,n){
     return arr
 }
 
+function isPangram(string){
+    let alph = 'abcdefghijklmnopqrstuvwxyz'
+    let check = alph.split('').map(l => string.toLowerCase().includes(l) ? true : false)
+    return !check.includes(false)
+}
+

@@ -63,3 +63,9 @@ function alphabetPosition(text) {
     return text.toLowerCase().split('').filter(e => alph.includes(e)).map(e => e = alph.split('').indexOf(e) + 1).join(' ')
 }
 
+var uniqueInOrder=function(iterable){
+    return typeof iterable === 'string' ? 
+      iterable.split('').filter((e, i) => e !== iterable[i - 1]) : 
+      iterable.filter((e, i) => e !== iterable[i - 1])
+}
+

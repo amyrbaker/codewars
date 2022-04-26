@@ -69,3 +69,9 @@ var uniqueInOrder=function(iterable){
       iterable.filter((e, i) => e !== iterable[i - 1])
 }
 
+function toCamelCase(str){
+    return str.split(/[-_]+/).map((e, i) => {
+      return i === 0 ? e : e[0].toUpperCase() + e.slice(1)
+    }).join('')
+}
+

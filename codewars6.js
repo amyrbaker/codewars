@@ -58,3 +58,8 @@ function persistence(num) {
    return count
 }
 
+function alphabetPosition(text) {
+    let alph = 'abcdefghijklmnopqrstuvwxyz'
+    return text.toLowerCase().split('').filter(e => alph.includes(e)).map(e => e = alph.split('').indexOf(e) + 1).join(' ')
+}
+

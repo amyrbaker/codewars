@@ -86,3 +86,12 @@ function order(words){
     return arr.join(' ')
 }
 
+function tribonacci(signature,n){
+    if (n <= 3) return signature.slice(0, n)
+    let arr = [...signature].concat([...Array(n - 3).fill(1)])
+    for (let i = 3; i < arr.length; i++) {
+      arr[i] = arr[i - 1] + arr[i - 2] + arr[i - 3]
+    }
+    return arr
+}
+

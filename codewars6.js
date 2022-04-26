@@ -101,3 +101,8 @@ function isPangram(string){
     return !check.includes(false)
 }
 
+function digPow(n, p){
+    let red = n.toString().split('').map((e, i) => e ** (p + i)).reduce((a, c) => a + c, 0)
+    return red % n === 0 ? red / n : -1
+}
+

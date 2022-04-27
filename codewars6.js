@@ -106,3 +106,15 @@ function digPow(n, p){
     return red % n === 0 ? red / n : -1
 }
 
+function findEvenIndex(arr)
+{
+  for (let i = 0; i < arr.length; i++) {
+    let left = arr.slice(0, i).reduce((a, c) => a + c, 0)
+    let right = arr.slice(i + 1).reduce((a, c) => a + c, 0)
+    if (left === right) return i
+  }
+  return -1
+}
+
+
+

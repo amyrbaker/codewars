@@ -18,3 +18,7 @@ function rot13(message){
       .join(' ')
 }
 
+function pigIt(str){
+    return str.split(' ').map(e => e.length === 1 && !'abcdefghijklmnopqrstuvwxyz'.includes(e.toLowerCase()) ? e : e.slice(1) + e[0] + 'ay').join(' ')
+}
+

@@ -134,6 +134,18 @@ function comp(array1, array2){
     array1.sort((a, b) => a - b).map(e => e ** 2).join('') === array2.sort((a, b) => a - b).join('')
 }
 
+function sortArray(array) {
+  let odds = [...array].filter(e => e % 2).sort((a, b) => a - b)
+  let arr = [...array]
+  for (let i = 0; i < array.length; i++) {
+    if (arr[i] % 2) {
+      arr[i] = odds[0]
+      odds.shift()
+    }
+  }
+  return arr
+}
+
 
 
 

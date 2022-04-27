@@ -510,6 +510,21 @@ function capitalize(s){
   return [s.split('').map((e, i) => !(i % 2) ? e.toUpperCase() : e).join(''), s.split('').map((e, i) => (i % 2) ? e.toUpperCase() : e).join('')]
 };
 
+var SequenceSum = (function() {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function(count) {
+    if (count < 0) return `${count}<0`
+    let arr = [...Array(count + 1).keys()]
+    return arr.length === 1 ? '0=0' : arr.join('+') + ' = ' + arr.reduce((a, c) => a + c, 0)
+  };
+
+  return SequenceSum;
+
+})();
+
+
+
 
 
 

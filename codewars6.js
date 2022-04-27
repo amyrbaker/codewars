@@ -125,6 +125,10 @@ function solution(str){
   return arr
 }
 
+function findUniq(arr) {
+  return arr.find(e => arr.indexOf(e) === arr.lastIndexOf(e))
+}
+
 
 
 

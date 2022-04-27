@@ -535,6 +535,10 @@ function removeDuplicateWords (s) {
   return [...new Set(s.split(' '))].join(' ')
 }
 
+function minValue(values){
+  return +[...new Set(values)].sort((a, b) => a - b).join('')
+}
+
 
 
 

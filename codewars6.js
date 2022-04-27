@@ -129,6 +129,11 @@ function findUniq(arr) {
   return arr.find(e => arr.indexOf(e) === arr.lastIndexOf(e))
 }
 
+function comp(array1, array2){
+  return array1 === null || array2 === null ? false : 
+    array1.sort((a, b) => a - b).map(e => e ** 2).join('') === array2.sort((a, b) => a - b).join('')
+}
+
 
 
 

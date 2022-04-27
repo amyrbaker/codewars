@@ -506,6 +506,10 @@ function solve(s){
   return upper > lower ? s.toUpperCase() : s.toLowerCase()
 }
 
+function capitalize(s){
+  return [s.split('').map((e, i) => !(i % 2) ? e.toUpperCase() : e).join(''), s.split('').map((e, i) => (i % 2) ? e.toUpperCase() : e).join('')]
+};
+
 
 
 

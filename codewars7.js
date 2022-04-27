@@ -539,6 +539,14 @@ function minValue(values){
   return +[...new Set(values)].sort((a, b) => a - b).join('')
 }
 
+function flattenAndSort(array) {
+  let arr = []
+  for (let i = 0; i < array.length; i++) {
+    arr = arr.concat(array[i])
+  }
+  return arr.sort((a, b) => a - b)
+}
+
 
 
 

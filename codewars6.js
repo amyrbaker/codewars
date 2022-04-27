@@ -116,5 +116,16 @@ function findEvenIndex(arr)
   return -1
 }
 
+function solution(str){
+  let string = str.length % 2 === 0 ? str : str + '_'
+   let arr = []
+   for (let i = 0; i < string.length; i += 2) {
+     arr.push(string.slice(i, i + 2))
+   }
+  return arr
+}
+
+
+
 
 

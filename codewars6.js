@@ -157,6 +157,27 @@ function findNb(m) {
   return -1
 }
 
+function deleteNth(arr,n){
+  let newArr = []
+  let obj = {}
+  for (let i = 0; i < arr.length; i++) {
+    if (!obj.hasOwnProperty(arr[i])) {
+      obj[arr[i]] = 1
+      newArr.push(arr[i])
+    } else {
+      if (obj[arr[i]] < n) {
+        obj[arr[i]]++
+        newArr.push(arr[i])
+      } else {
+        obj[arr[i]] ++
+      }
+    }
+  }
+  return newArr
+}
+
+
+
 
 
 

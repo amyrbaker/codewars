@@ -146,6 +146,17 @@ function sortArray(array) {
   return arr
 }
 
+function findNb(m) {
+  let total = 0
+  let n = 1
+  while(total < m) {
+    total += n**3
+    if (total === m) return n
+    n++
+  }
+  return -1
+}
+
 
 
 

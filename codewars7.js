@@ -564,6 +564,10 @@ function sumOfMinimums(arr) {
   return arr.map(array => array.sort((a, b) => a - b)[0]).reduce((a, c) => a + c, 0)
 }
 
+function sortGiftCode(code){
+  return code.split('').sort().join('')
+}
+
 
 
 

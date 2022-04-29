@@ -547,6 +547,15 @@ function flattenAndSort(array) {
   return arr.sort((a, b) => a - b)
 }
 
+function isPowerOfTwo(n){
+  let i = 0
+  while (2 ** i <= n) {
+    if (2 ** i === n) return true
+    i++
+  }
+  return false
+}
+
 
 
 

@@ -568,6 +568,11 @@ function sortGiftCode(code){
   return code.split('').sort().join('')
 }
 
+var greet = function(name) {
+  return `Hello ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`
+};
+
+
 
 
 

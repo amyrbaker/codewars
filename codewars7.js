@@ -572,6 +572,13 @@ var greet = function(name) {
   return `Hello ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`
 };
 
+function mygcd(x,y){
+  
+  for (let i = (!(x % y) || !(y % x)) ? Math.min(x, y) : Math.ceil(Math.min(x, y) / 2); i > 0; i--) {
+    if (!(x % i) && !(y % i)) return i
+  }
+}
+
 
 
 

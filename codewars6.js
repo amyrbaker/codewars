@@ -176,6 +176,22 @@ function deleteNth(arr,n){
   return newArr
 }
 
+function high(x){
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  let xArr = x.split(' ')
+  let scoreArr = []
+  xArr.forEach(w => {
+    let score = 0
+    for (let i = 0; i < w.length; i++) {
+      score += (alph.indexOf(w[i]) + 1)
+    }
+    scoreArr.push(score)
+  })
+  let highScore = Math.max(...scoreArr)
+  let index = scoreArr.indexOf(highScore)
+  return xArr[index]
+}
+
 
 
 

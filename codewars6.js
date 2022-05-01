@@ -207,6 +207,16 @@ function countSmileys(arr) {
   return arr.filter(e => [':)', ':D', ';)', ';D', ':-)', ':~)', ':-D', ':~D', ';-)', ';~)', ';-D', ';~D'].includes(e)).length
 }
 
+function longestConsec(strarr, k) {
+  if (strarr.length === 0 || k > strarr.length || k <= 0) return ''
+  let arr = []
+  for (let i = 0; i < strarr.length - k + 1; i++) {
+    arr.push(strarr.slice(i, i + k).join(''))
+  }
+  let lengths = [...arr].map(e => e.length)
+  return arr[lengths.indexOf(Math.max(...lengths))]
+}
+
 
 
 

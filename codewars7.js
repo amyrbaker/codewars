@@ -583,6 +583,13 @@ function factorial(n){
   return [...Array(n).keys()].reduce((a, c) => a * (c + 1), 1)
 }
 
+function isSortedAndHow(array) {
+  let asc = [...array].sort((a, b) => a - b)
+  return array.toString() === asc.toString() ? 'yes, ascending' 
+    : array.toString() === asc.reverse().toString() ? 'yes, descending' 
+    : 'no'
+}
+
 
 
 

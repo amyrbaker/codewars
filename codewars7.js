@@ -579,6 +579,10 @@ function mygcd(x,y){
   }
 }
 
+function factorial(n){
+  return [...Array(n).keys()].reduce((a, c) => a * (c + 1), 1)
+}
+
 
 
 

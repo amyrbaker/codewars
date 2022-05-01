@@ -590,6 +590,15 @@ function isSortedAndHow(array) {
     : 'no'
 }
 
+function sumTriangularNumbers(n) {
+  if (n < 0) return 0
+  let arr = [1]
+  for (let i = 1; i < n; i++) {
+    arr.push(arr[i - 1] + i + 1)
+  }
+  return arr.reduce((a, c) => a + c, 0)
+}
+
 
 
 

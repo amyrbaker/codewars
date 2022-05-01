@@ -203,6 +203,12 @@ function bouncingBall(h,  bounce,  window) {
   return count
 }
 
+function countSmileys(arr) {
+  return arr.filter(e => [':)', ':D', ';)', ';D', ':-)', ':~)', ':-D', ':~D', ';-)', ';~)', ';-D', ';~D'].includes(e)).length
+}
+
+
+
 
 
 

@@ -22,3 +22,24 @@ function pigIt(str){
     return str.split(' ').map(e => e.length === 1 && !'abcdefghijklmnopqrstuvwxyz'.includes(e.toLowerCase()) ? e : e.slice(1) + e[0] + 'ay').join(' ')
 }
 
+function productFib(prod){
+  let fibs = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233]
+  if (fibs[fibs.length - 2] * fibs[fibs.length - 1] >= prod) {
+    for (let i = 0; i < fibs.length; i++) {
+      if (fibs[i] * fibs[i + 1] === prod) return [fibs[i], fibs[i + 1], true]
+      if (fibs[i] * fibs[i + 1] > prod && fibs[i] * fibs[i - 1] < prod) return [fibs[i], fibs[i + 1], false]
+    }
+  }
+  if (fibs[fibs.length - 2] * fibs[fibs.length - 1] < prod) {
+    while (fibs[fibs.length - 2] * fibs[fibs.length - 1] < prod) {
+      fibs.push(fibs[fibs.length - 2] + fibs[fibs.length - 1])
+      for (let i = 0; i < fibs.length; i++) {
+      if (fibs[i] * fibs[i + 1] === prod) return [fibs[i], fibs[i + 1], true]
+      if (fibs[i] * fibs[i + 1] > prod && fibs[i] * fibs[i - 1] < prod) return [fibs[i], fibs[i + 1], false]
+      }
+    }
+  }
+}
+
+
+

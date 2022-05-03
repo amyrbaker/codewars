@@ -230,6 +230,12 @@ function solution(string) {
   return str.join(' ')
 }
 
+function count (string) {  
+  return string.split('').reduce((a, c) => {
+    return a[c] ? a[c]++ : a[c] = 1, a
+  }, {})
+}
+
 
 
 

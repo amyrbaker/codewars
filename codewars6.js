@@ -217,6 +217,20 @@ function longestConsec(strarr, k) {
   return arr[lengths.indexOf(Math.max(...lengths))]
 }
 
+function solution(string) {
+  let uppers = [0]
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) uppers.push(i)
+  }
+  console.log(uppers)
+  let str = []
+  for (let i = 0; i < uppers.length; i++) {
+    str.push(string.slice(uppers[i], uppers[i + 1]))
+  }
+  return str.join(' ')
+}
+
+
 
 
 

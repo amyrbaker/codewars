@@ -599,6 +599,12 @@ function sumTriangularNumbers(n) {
   return arr.reduce((a, c) => a + c, 0)
 }
 
+function f(n){
+  return typeof n === 'number' && n > 0 && !(n % 1) ? (n * (n + 1)) / 2 : false
+};
+
+
+
 
 
 

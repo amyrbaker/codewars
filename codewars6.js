@@ -263,6 +263,17 @@ String.prototype.camelCase=function(){
   return !this.length ? this.split(' ').join('') : this.trim().split(' ').map(w => w[0].toUpperCase() + w.slice(1)).join('')
 }
 
+function queueTime(customers, n) {
+  let arr = [...Array(n).fill(0)]
+  for (let i = 0; i < customers.length; i++) {
+    let shortIndex = arr.indexOf(Math.min(...arr))
+    arr[shortIndex] += customers[i]
+  }
+  return Math.max(...arr)
+}
+
+
+
 
 
 

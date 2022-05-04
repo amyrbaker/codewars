@@ -252,6 +252,13 @@ function twoSum(numbers, target) {
   }
 }
 
+function sumDigPow(a, b) {
+  let arr = [...Array(b - a + 1).keys()].map(e => ((e + a) + '').split(''))
+  return arr.filter(e => {
+    return e.join('') == e.reduce((a, c, i) => a + c ** (i + 1), 0)
+  }).map(e => +e.join(''))
+}
+
 
 
 

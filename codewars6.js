@@ -259,6 +259,10 @@ function sumDigPow(a, b) {
   }).map(e => +e.join(''))
 }
 
+String.prototype.camelCase=function(){
+  return !this.length ? this.split(' ').join('') : this.trim().split(' ').map(w => w[0].toUpperCase() + w.slice(1)).join('')
+}
+
 
 
 

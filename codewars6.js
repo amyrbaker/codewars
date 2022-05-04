@@ -272,6 +272,12 @@ function queueTime(customers, n) {
   return Math.max(...arr)
 }
 
+function isValidIP(str) {
+  let arr = str.split('.').filter(e => e >= 0 && e <= 255)
+  let arr1 = arr.map(e => +e).join('.')
+  return arr.length === 4 && str === arr1
+}
+
 
 
 

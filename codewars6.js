@@ -278,6 +278,18 @@ function isValidIP(str) {
   return arr.length === 4 && str === arr1
 }
 
+function titleCase(title, minorWords) {
+  let minors = minorWords === undefined ? [] : minorWords.toLowerCase().split(' ')
+  console.log(minors)
+  return !title ? title : 
+    title.split(' ')
+      .map((e, i) => {
+        return i !== 0 && minors.includes(e.toLowerCase()) ? e.toLowerCase() 
+          : e[0].toUpperCase() + e.slice(1).toLowerCase()
+        })
+      .join(' ')
+}
+
 
 
 

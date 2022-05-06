@@ -638,6 +638,20 @@ function adjacentElementsProduct(array) {
   return array.reduce((a, c, i, arr) => arr[i] * arr[i + 1] > a ? arr[i] * arr[i + 1] : a, array[0] * array[1])
 }
 
+function alphabetWar(fight)
+{
+   let letters = {'w' : 4, 'p' : 3, 'b' : 2, 's' : 1, 'm' : 4, 'q' : 3, 'd' : 2, 'z' : 1}
+   let left = []
+   let right = []
+   for (let i = 0; i < fight.length; i++) {
+     if ('wpbs'.includes(fight[i])) left.push(fight[i])
+     if ('mqdz'.includes(fight[i])) right.push(fight[i])
+   }
+  let leftScore = left.map(e => letters[e]).reduce((a, c) => a + c, 0)
+  let rightScore = right.map(e => letters[e]).reduce((a, c) => a + c, 0)
+  return leftScore > rightScore ? 'Left side wins!' : leftScore < rightScore ? 'Right side wins!' : 'Let\'s fight again!'
+}
+
 
 
 

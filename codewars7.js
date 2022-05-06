@@ -666,6 +666,10 @@ function last(arr) {
   return arr[arr.length - 1]
 }
 
+function overTheRoad(address, n){
+  return n*2+1-address
+}
+
 
 
 

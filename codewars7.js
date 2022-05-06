@@ -626,6 +626,14 @@ function findLongest(array){
   return array[index]
 }
 
+function solution(pairs){
+  let arr = []
+  for (let key in pairs) {
+    arr.push(`${key} = ${pairs[key]}`)
+  }
+  return arr.join(',')
+}
+
 
 
 

@@ -603,6 +603,16 @@ function f(n){
   return typeof n === 'number' && n > 0 && !(n % 1) ? (n * (n + 1)) / 2 : false
 };
 
+function gps(s, x) {
+  let diffs = []
+  for (let i = 0; i < x.length - 1; i++) {
+    diffs.push(x[i + 1] - x[i])
+  }
+  return diffs.length === 0 ? 0 : Math.floor(Math.max(...diffs.map(e => e * 3600 / s)))
+}
+
+
+
 
 
 

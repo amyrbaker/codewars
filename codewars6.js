@@ -290,6 +290,14 @@ function titleCase(title, minorWords) {
       .join(' ')
 }
 
+multiplicationTable = function(size) {
+  let smallArr = [...Array(size).keys()].map(e => e + 1)
+  let largeArr = [...Array(size).fill(smallArr)].map((e, i) => e.map(e => e * (i + 1)))
+  return largeArr
+}
+
+
+
 
 
 

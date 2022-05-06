@@ -611,6 +611,10 @@ function gps(s, x) {
   return diffs.length === 0 ? 0 : Math.floor(Math.max(...diffs.map(e => e * 3600 / s)))
 }
 
+function digits(n) {
+  return (n + '').length
+}
+
 
 
 

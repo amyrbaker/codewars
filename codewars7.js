@@ -670,6 +670,13 @@ function overTheRoad(address, n){
   return n*2+1-address
 }
 
+function multiplyAll(arr) {
+  let another = function(num) {
+    return arr.map(e => e * num)
+  }
+  return another
+}
+
 
 
 

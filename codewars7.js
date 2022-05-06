@@ -677,6 +677,10 @@ function multiplyAll(arr) {
   return another
 }
 
+function sumCubes(n){
+  return [...Array(n).keys()].map(e => e + 1).reduce((a, c) => a + c ** 3, 0)
+}
+
 
 
 

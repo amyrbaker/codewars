@@ -619,6 +619,13 @@ function bump(x){
   return x.split('').filter(e => e === 'n').length <= 15 ? 'Woohoo!' : 'Car Dead'
 }
 
+function findLongest(array){
+  let map = array.map(e => (e + '').length)
+  let max = Math.max(...map)
+  let index = map.indexOf(max)
+  return array[index]
+}
+
 
 
 

@@ -634,6 +634,10 @@ function solution(pairs){
   return arr.join(',')
 }
 
+function adjacentElementsProduct(array) {
+  return array.reduce((a, c, i, arr) => arr[i] * arr[i + 1] > a ? arr[i] * arr[i + 1] : a, array[0] * array[1])
+}
+
 
 
 

@@ -704,6 +704,10 @@ function countRedBeads(n) {
   return n < 2 ? 0 : 2 * (n - 1)
 }
 
+var flatten = function (array){
+  return array.reduce((a, c) => a.concat(c), [])
+}
+
 
 
 

@@ -700,6 +700,10 @@ function largestPairSum (numbers) {
   return numbers.sort((a, b) => b - a)[0] + numbers.sort((a, b) => b - a)[1]
 }
 
+function countRedBeads(n) {
+  return n < 2 ? 0 : 2 * (n - 1)
+}
+
 
 
 

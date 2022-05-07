@@ -681,6 +681,16 @@ function sumCubes(n){
   return [...Array(n).keys()].map(e => e + 1).reduce((a, c) => a + c ** 3, 0)
 }
 
+function seven(m) {
+  let count = 0
+  let num = m.toString()
+  while (num.length > 2) {
+    num = (Number(num.slice(0, -1)) - Number(num.slice(-1)) * 2).toString()
+    count++
+  }
+  return [Number(num), count]
+}
+
 
 
 

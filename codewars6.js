@@ -296,6 +296,16 @@ multiplicationTable = function(size) {
   return largeArr
 }
 
+function encode(string) {
+  let vowelStr = 'aeiou'
+  return string.split('').map(e => vowelStr.includes(e) ? vowelStr.indexOf(e) + 1 : e).join('')
+}
+
+function decode(string) {
+  let vowels = {'1' : 'a', '2' : 'e', '3' : 'i', '4' : 'o', '5' : 'u'}
+  return string.split('').map(e => vowels[e] ? vowels[e] : e).join('')
+}
+
 
 
 

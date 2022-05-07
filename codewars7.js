@@ -696,6 +696,10 @@ function wordsToMarks(string){
   return string.split('').reduce((a, c) => a + alph.indexOf(c) + 1, 0)
 }
 
+function largestPairSum (numbers) {
+  return numbers.sort((a, b) => b - a)[0] + numbers.sort((a, b) => b - a)[1]
+}
+
 
 
 

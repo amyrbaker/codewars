@@ -691,6 +691,11 @@ function seven(m) {
   return [Number(num), count]
 }
 
+function wordsToMarks(string){
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  return string.split('').reduce((a, c) => a + alph.indexOf(c) + 1, 0)
+}
+
 
 
 

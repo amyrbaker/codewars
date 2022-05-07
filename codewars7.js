@@ -708,6 +708,14 @@ var flatten = function (array){
   return array.reduce((a, c) => a.concat(c), [])
 }
 
+function explode(s) {
+  let str = ''
+  for (let i = 0; i < s.length; i++) {
+    str += s[i].repeat(Number(s[i]))
+  }
+  return str
+}
+
 
 
 

@@ -356,6 +356,16 @@ function validPhoneNumber(phoneNumber){
     && phoneNumber[9] === '-' && typeof +phoneNumber.slice(1, 4) === 'number'
 }
 
+var encryptThis = function(text) {
+  console.log(text)
+  return arr = text.split(' ').map(e => {
+    let first = e.charCodeAt(0)
+    let secLast = [e[1], e[e.length - 1]]
+    if (e.length <= 2) return first + (e[1] || '')
+    return first + secLast[1] + e.slice(2, e.length - 1) + secLast[0]
+  }).join(' ')
+}
+
 
 
 

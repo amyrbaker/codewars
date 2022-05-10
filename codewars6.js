@@ -350,6 +350,12 @@ function decrypt(encryptedText, n) {
   return str
 }
 
+function validPhoneNumber(phoneNumber){
+  return phoneNumber.length === 14 && phoneNumber[0] === '(' 
+    && phoneNumber[4] === ')' && phoneNumber[5] === ' '
+    && phoneNumber[9] === '-' && typeof +phoneNumber.slice(1, 4) === 'number'
+}
+
 
 
 

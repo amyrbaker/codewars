@@ -306,6 +306,50 @@ function decode(string) {
   return string.split('').map(e => vowels[e] ? vowels[e] : e).join('')
 }
 
+function diamond(n){
+  if (!(n % 2) || n < 0) return null
+  let arr = []
+  for (let i = 0; i <= (n - 1) / 2; i++) {
+    let str = ' '.repeat(((n - 1) / 2) - i) + '*'.repeat(i * 2 + 1)
+    arr.push(str)
+  }
+  let newArr = [...arr]
+  for (let i = arr.length - 2; i >= 0; i--) {
+    newArr.push(arr[i])
+  }
+  return newArr.join('\n') + '\n'
+}
+
+function encrypt(text, n) {
+  if (text === null) return null
+  let str = text
+  while (n > 0) {
+    let evens = []
+    let odds = []
+    for (let i = 0; i < str.length; i++) {
+      !(i % 2) ? evens.push(str[i]) : odds.push(str[i])
+    }
+    str = odds.concat(evens).join('')
+    n--
+  }
+  return str
+}
+
+function decrypt(encryptedText, n) {
+  let str = encryptedText
+  while (n > 0) {
+    let string = ''
+    let first = str.slice(0, Math.floor(str.length / 2))
+    let last = str.slice(Math.floor(str.length / 2))
+    for (let i = 0; i < last.length; i++) {
+      string = string + last[i] + (first[i] || '')
+    }
+    str = string
+    n--
+  }
+  return str
+}
+
 
 
 

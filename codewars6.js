@@ -375,6 +375,19 @@ function cleanString(s) {
   return arr.join('')
 }
 
+function highestRank(arr){
+  let obj = arr.reduce((a, c) => (a[c] ? a[c]++ : a[c] = 1, a), {})
+  let max = 1 
+  let high = []
+  for (let key in obj) {
+    if (obj[key] >= max) {
+      max = obj[key]
+      high.push(key)
+    }
+  }
+  return Math.max(...high.map(e => +e))
+}
+
 
 
 

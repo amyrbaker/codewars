@@ -388,6 +388,27 @@ function highestRank(arr){
   return Math.max(...high.map(e => +e))
 }
 
+function whiteBlackAreas(cols, rows) {
+  if (cols.length < 2 && rows.length < 2) return [cols[0] * rows[0], 0]
+  let evenCols = cols.filter((e, i) => !(i % 2)).reduce((a, c) => a + c)
+  let oddCols = cols.filter((e, i) => (i % 2)).reduce((a, c) => a + c)
+  let evenRows = rows.filter((e, i) => !(i % 2)).reduce((a, c) => a + c)
+  let oddRows = rows.filter((e, i) => (i % 2)).reduce((a, c) => a + c)
+  let white = evenCols * evenRows + oddCols * oddRows
+  let black = evenCols * oddRows + oddCols * evenRows
+  return [white, black]
+  
+// Following timed out so had to rewrite
+//   let white = 0
+//   let area = cols.reduce((a, c) => a + c) * rows.reduce((a, c) => a + c)
+//   for (let i = 0; i < cols.length; i++) {
+//     for (let j = 0; j < rows.length; j++) {
+//       if ((!(i % 2) && !(j % 2)) || (i % 2 && j % 2)) white += cols[i] * rows[j]
+//     }
+//   }
+//   return [white, area - white]
+}
+
 
 
 

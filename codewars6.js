@@ -431,6 +431,15 @@ function isbnConverter(isbn) {
   return addCheckDigit
 }
 
+function minPermutation(n) {
+  if (n === 0) return n
+  let numArr = Math.abs(n).toString().split('')
+  let zeros = numArr.filter(e => +e === 0).join('')
+  let nonZeros = numArr.filter(e => +e !== 0).sort((a, b) => a - b)
+  let numb = `${nonZeros[0]}${zeros}${nonZeros.slice(1).join('')}`
+  return n < 0 ? -1 * +numb : +numb
+}
+
 
 
 

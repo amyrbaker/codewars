@@ -469,6 +469,23 @@ function removeParentheses(s){
   return str
 }
 
+function moreZeros(s){
+  let arr = [...new Set(s.split(''))]
+  let ascii = arr.map(e => e.charCodeAt())
+  let binary = ascii.map(e => e.toString(2))
+  let filtered = binary.filter(e => {
+    let ones = 0
+    let zeros = 0
+    for (let i = 0; i < e.length; i++) {
+      e[i] === '1' ? ones++ : zeros++
+    }
+    return zeros > ones
+  })
+  return filtered.map(e => String.fromCharCode(parseInt(e, 2)))
+}
+
+
+
 
 
 

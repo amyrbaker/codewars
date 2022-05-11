@@ -484,6 +484,16 @@ function moreZeros(s){
   return filtered.map(e => String.fromCharCode(parseInt(e, 2)))
 }
 
+function partsSums(ls) {
+  let sum = ls.reduce((a, c) => a + c, 0)
+  let arr = [sum]
+  for (let i = 0; i < ls.length; i++) {
+    sum = sum - ls[i]
+    arr.push(sum)
+  }
+  return arr
+}
+
 
 
 

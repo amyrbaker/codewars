@@ -420,6 +420,17 @@ function assembleString(array){
   return arr.join('')
 }
 
+function isbnConverter(isbn) {
+  let removeLast = isbn.slice(0, -1)
+  let addPrefix = '978-' + removeLast
+  let addMults = addPrefix.split('-').join('').split('')
+    .map((e, i) => !(i % 2) ? +e : e * 3)
+    .reduce((a, c) => a + c, 0)
+  let checkDigit = addMults % 10 === 0 ? 0 : 10 - addMults % 10
+  let addCheckDigit = addPrefix + `${checkDigit}`
+  return addCheckDigit
+}
+
 
 
 

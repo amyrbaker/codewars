@@ -409,6 +409,17 @@ function whiteBlackAreas(cols, rows) {
 //   return [white, area - white]
 }
 
+function assembleString(array){
+  if (!array.length) return ''
+  let arr = [...Array(array[0].length).fill('#')]
+  array.forEach(a => {
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== '*') arr[i] = a[i]
+    }
+  })
+  return arr.join('')
+}
+
 
 
 

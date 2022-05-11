@@ -452,6 +452,23 @@ function getDay(day, isLeap){
   return `${months[currentMonth]}, ${day}`
 }
 
+function removeParentheses(s){
+  let str = ''
+  let adding = true
+  let openParen = 0
+  let closeParen = 0
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === '(') {
+      openParen++
+      if (adding) adding = !adding
+    } else if (s[i] === ')') {
+      closeParen++
+      if (openParen === closeParen) adding = !adding
+    } else if (adding) str += s[i]
+  }
+  return str
+}
+
 
 
 

@@ -494,6 +494,19 @@ function partsSums(ls) {
   return arr
 }
 
+function revrot(str, sz) {
+  if (sz <= 0 || !str.length || sz > str.length) return ''
+  let arr = []
+  for (let i = 0; i < str.length; i += sz) {
+    arr.push(str.slice(i, i + sz))
+  }
+  return arr.filter(e => e.length === sz).map(e => {
+    let splitArr = e.split('')
+    if (!(splitArr.reduce((a, c) => a + c ** 3, 0) % 2)) return splitArr.reverse().join('')
+    else return e.slice(1) + e[0]
+  }).join('')
+}
+
 
 
 

@@ -534,6 +534,13 @@ function thirt(n) {
   }
 }
 
+function meeting(s) {
+  return s.split(';')
+    .map(e => `(${e.split(':').reverse().join(', ').toUpperCase()})`)
+    .sort()
+    .join('')
+}
+
 
 
 

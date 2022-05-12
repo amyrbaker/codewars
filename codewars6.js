@@ -517,6 +517,23 @@ function stockList(l, m){
   return arr.join(' - ')
 }
 
+function thirt(n) {
+  let seq = [1, 10, 9, 12, 3, 4]
+  let num = n
+  let sum = 0
+  while (sum !== num) {
+    let numArr = num.toString().split('').map(e => +e)
+    for (let i = numArr.length - 1; i >= 0; i--) {
+      sum += numArr[i] * seq[(numArr.length - 1 - i) % 6]
+    }
+    if (sum === num) return sum
+    else {
+      num = sum
+      sum = 0
+    }
+  }
+}
+
 
 
 

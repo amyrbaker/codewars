@@ -507,6 +507,16 @@ function revrot(str, sz) {
   }).join('')
 }
 
+function stockList(l, m){
+  if (!l.length || ! m.length) return ''
+  let arr = []
+  m.forEach(letter => {
+    let count = l.filter(e => e[0] === letter).map(e => e.split(' ')[1]).reduce((a, c) => a + +c, 0)
+    arr.push(`(${letter} : ${count})`)
+  })
+  return arr.join(' - ')
+}
+
 
 
 

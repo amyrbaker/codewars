@@ -549,6 +549,27 @@ function dataReverse(data) {
   return bytes.reverse().reduce((a, c) => a.concat(c), [])
 }
 
+function solve(s) {
+  let arr = []
+  let vowels = 'aeiou'
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  let str = ''
+  for (let i = 0; i < s.length; i++) {
+    if (!vowels.includes(s[i])) str += s[i]
+    if (vowels.includes(s[i]) || i === s.length - 1) {
+      arr.push(str)
+      str = ''
+    }
+  }
+  return Math.max(...arr.map(e => {
+    let sum = 0
+    for (let i = 0; i < e.length; i++) {
+      sum += alph.indexOf(e[i]) + 1
+    }
+    return sum
+  }))
+};
+
 
 
 

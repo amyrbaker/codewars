@@ -585,6 +585,21 @@ function foldArray(array, runs)
   return arr
 }
 
+function streetFighterSelection(fighters, position, moves){
+  let arr = []
+  moves.forEach(move => {
+    if (move === 'up' && position[0] === 1) position[0]--
+    else if (move === 'up' && position[0] !== 1) position[0]
+    else if (move === 'down' && position[0] === 0) position[0]++
+    else if (move === 'down' && position[0] !== 0) position[0]
+    else if (move === 'left' && position[1] === 0) position[1] = (fighters[0].length - 1)
+    else if (move === 'left') position[1]--
+    else if (move === 'right') position[1] = (position[1] + 1) % fighters[0].length 
+    arr.push(fighters[position[0]][position[1]])
+  })
+  return arr
+}
+
 
 
 

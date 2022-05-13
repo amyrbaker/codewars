@@ -570,6 +570,21 @@ function solve(s) {
   }))
 };
 
+function foldArray(array, runs)
+{
+  let arr = [...array]
+  let result = []
+  while (runs > 0) {
+    for (let i = 0; i <= Math.ceil(arr.length / 2) - 1; i++) {
+      i !== arr.length - 1 - i ? result.push(arr[i] + arr[arr.length - 1 - i]) : result.push(arr[i])
+    }
+    arr = result
+    result = []
+    runs--
+  }
+  return arr
+}
+
 
 
 

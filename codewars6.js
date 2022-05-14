@@ -609,6 +609,32 @@ function Xbonacci(signature,n){
   return arr
 }
 
+function upArray(arr){
+  console.log(arr)
+  if (!arr.every(num => num >= 0 && num <= 9) || !arr.length) return null
+  else if (arr.length < 15) {
+    let arrNum = +arr.join('')
+    arrNum++
+    let newArr = arrNum.toString().split('').map(e => +e)
+    return newArr
+  } 
+  else if (arr[arr.length - 1] !== 9){
+    arr[arr.length - 1]++
+    return arr
+  }
+  else {
+    for (let i = arr.length - 1; i >= 0; i--) {
+      if (arr[i - 1] !== 9) {
+        arr[i] = 0
+        arr[i - 1]++
+        return arr
+      } else {
+        arr[i] = 0
+      }
+    }
+  }
+}
+
 
 
 

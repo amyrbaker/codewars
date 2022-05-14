@@ -635,6 +635,18 @@ function upArray(arr){
   }
 }
 
+function dashatize(num) {
+  let numStr = Math.abs(num).toString().split('')
+  for (let i = 0; i < numStr.length; i++) {
+    if (numStr[i] % 2 && numStr[i + 1] % 2) numStr[i] = `-${numStr[i]}`
+    else if (numStr[i] % 2) numStr[i] = `-${numStr[i]}-`
+  }
+  let arr = numStr.join('').split('')
+  if (arr[0] === '-') arr.shift()
+  if (arr[arr.length - 1] === '-') arr.pop()
+  return arr.join('')
+}
+
 
 
 

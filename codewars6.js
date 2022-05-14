@@ -600,6 +600,15 @@ function streetFighterSelection(fighters, position, moves){
   return arr
 }
 
+function Xbonacci(signature,n){
+  if (n < signature.length) return signature.slice(0, n)
+  let arr = [...signature]
+  for (let i = 1; i <= n - signature.length; i++) {
+    arr.push(arr.slice(-signature.length).reduce((a, c) => a + c, 0))
+  }
+  return arr
+}
+
 
 
 

@@ -685,6 +685,15 @@ function presses(phrase) {
   return sum
 }
 
+function kebabize(str) {
+  console.log(str)
+  let arr = str.split('').filter(e => !'0123456789'.includes(e))
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i].toUpperCase()) arr[i] = `-${arr[i].toLowerCase()}`
+  }
+  return arr.join('')[0] === '-' ? arr.join('').slice(1) : arr.join('')
+}
+
 
 
 

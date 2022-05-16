@@ -704,6 +704,26 @@ longestPalindrome=function(s){
   }
 }
 
+function stat(strg) {
+  if (!strg.length) return ''
+  let arr = strg.split(', ').map(e => e.split('|')).map(arr => arr[0] * 3600 + arr[1] * 60 + +arr[2])
+  let sorted = arr.sort((a, b) => a - b)
+  let len = arr.length
+  let range = Math.max(...arr) - Math.min(...arr),
+      average = arr.reduce((a, c) => a + c, 0) / len, 
+      median = len % 2 ? sorted[Math.floor(len / 2)] :
+                (sorted[len / 2] + sorted[len / 2 - 1]) / 2
+  let values = [range, average, median].map(val => {
+    let hours = Math.floor(val / 3600)
+    val = val % 3600
+    let mins = Math.floor(val / 60)
+    let secs = Math.floor(val % 60)
+    return `${String(hours).padStart(2, '0')}|${String(mins).padStart(2, '0')}|${String(secs).padStart(2, '0')}`
+  })
+  return `Range: ${values[0]} Average: ${values[1]} Median: ${values[2]}`
+}
+
+
 
 
 

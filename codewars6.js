@@ -724,6 +724,13 @@ function stat(strg) {
 }
 
 
+function to_nato(words) {
+  console.log(words)
+	let arr = words.toLowerCase().split('').filter(e => e !== ' ')
+  let converted = arr.map(e => NATO[e] || e)
+  return converted.join(' ')
+}
+
 
 
 

@@ -694,6 +694,16 @@ function kebabize(str) {
   return arr.join('')[0] === '-' ? arr.join('').slice(1) : arr.join('')
 }
 
+longestPalindrome=function(s){
+  let arrRev = s.split('').reverse()
+  let len = s.length
+  for (let i = len; i >= 0; i--) {
+    for (let j = 0; j <= len - i; j++) {
+      if (s.slice(j, j + i) === arrRev.slice(len - i - j, len - j).join('')) return i
+    }
+  }
+}
+
 
 
 

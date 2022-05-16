@@ -666,6 +666,25 @@ Array.prototype.odd = function() {
   return this.filter(e => e % 2)
 }
 
+function presses(phrase) {
+  let keypad = [['1'], ['A','B','C','2'], ['D','E','F','3'],
+                ['G','H','I','4'], ['J','K','L','5'], ['M','N','O','6'],
+                ['P','Q','R','S','7'], ['T','U','V','8'], ['W','X','Y','Z','9'],
+                ['*'], [' ','0'], ['#']]
+  let sum = 0
+  for (let i = 0; i < phrase.length; i++) {
+    let arrIndex
+    for (let j = 0; j < keypad.length; j++) {
+      if (keypad[j].includes(phrase[i].toUpperCase())) {
+        arrIndex = j
+        break
+      }
+    }
+    sum += keypad[arrIndex].indexOf(phrase[i].toUpperCase()) + 1
+  }
+  return sum
+}
+
 
 
 

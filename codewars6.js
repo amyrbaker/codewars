@@ -735,6 +735,24 @@ function reverse(str){
   return str.trim().split(' ').map((e, i) => i % 2 ? e.split('').reverse().join('') : e).join(' ')
 }
 
+function mazeRunner(maze, directions) {
+  console.log(maze, directions)
+  let posX, posY
+  for (let i = 0; i < maze.length; i++) {
+    if (maze[i].includes(2)) posY = i
+  }
+  posX = maze[posY].indexOf(2)
+  for (let i = 0; i < directions.length; i++) {
+    if (directions[i] === 'N') posY--
+    if (directions[i] === 'S') posY++
+    if (directions[i] === 'E') posX++
+    if (directions[i] === 'W') posX--
+    if (posY < 0 || posY > maze.length - 1 || posX < 0 || posX > maze.length - 1 || maze[posY][posX] === 1) return 'Dead'
+    else if (maze[posY][posX] == 3) return 'Finish'
+  }
+  return 'Lost'
+}
+
 
 
 

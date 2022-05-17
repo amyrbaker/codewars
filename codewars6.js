@@ -753,6 +753,16 @@ function mazeRunner(maze, directions) {
   return 'Lost'
 }
 
+function getLengthOfMissingArray(arrayOfArrays) {
+  console.log(arrayOfArrays) 
+  if (!Array.isArray(arrayOfArrays) || !arrayOfArrays.length || arrayOfArrays.includes(null)) return 0
+  let lengths = arrayOfArrays.map(e => e.length).sort((a, b) => a - b)
+  if (lengths.includes(0)) return 0
+  for (let i = 0; i < lengths.length; i++) {
+    if (lengths[i] + 1 !== lengths[i + 1]) return lengths[i] + 1
+  }
+}
+
 
 
 

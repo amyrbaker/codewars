@@ -763,6 +763,23 @@ function getLengthOfMissingArray(arrayOfArrays) {
   }
 }
 
+function decipherThis(str) {
+  let arr = str.split(' ')
+  let first = arr.map(e => {
+    let num = ''
+    let letters = ''
+    for (let i = 0; i < e.length; i++) {
+      if ('0123456789'.includes(e[i])) num += e[i]
+      else letters += e[i]
+    }
+    let firstLetter = String.fromCharCode(+num)
+    let secondLetter = letters.length ? letters[0] : ''
+    let lastLetter = letters.length > 1 ? letters[letters.length - 1] : ''
+    return firstLetter + lastLetter + letters.slice(1, letters.length - 1) + secondLetter
+  })
+  return first.join(' ')
+}; 
+
 
 
 

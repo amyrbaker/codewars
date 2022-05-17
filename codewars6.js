@@ -731,6 +731,10 @@ function to_nato(words) {
   return converted.join(' ')
 }
 
+function reverse(str){
+  return str.trim().split(' ').map((e, i) => i % 2 ? e.split('').reverse().join('') : e).join(' ')
+}
+
 
 
 

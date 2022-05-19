@@ -794,6 +794,18 @@ function getOrder(input) {
   return arr.sort((a, b) => a[1] - b[1]).map(e => e[0][0].toUpperCase() + e[0].slice(1)).join(' ')
 }
 
+function matrixAddition(a, b){
+  let arr = []
+  for (let i = 0; i < a.length; i++) {
+    let insideArr = []
+    for (let j = 0; j < a[0].length; j++) {
+      insideArr.push(a[i][j] + b[i][j])
+    }
+    arr.push(insideArr)
+  }
+  return arr
+}
+
 
 
 

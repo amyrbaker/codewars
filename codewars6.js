@@ -806,6 +806,33 @@ function matrixAddition(a, b){
   return arr
 }
 
+function longestRepetition(s) {
+  console.log(s)
+  if (!s.length) return ['', 0]
+  let char
+  let longest = 0
+  let str = s[0]
+  for (let i = 1; i < s.length; i++) {
+    if (s[i] === s[i - 1]) {
+      str += s[i]
+      if (str.length > longest) {
+        longest = str.length
+        char = s[i - 1]
+      }
+    }
+    else {
+      if (str.length > longest) {
+        longest = str.length
+        char = s[i - 1]
+        str = s[i]
+      } else {
+        str = s[i]
+      }
+    }
+  }
+  return [char,longest]
+}
+
 
 
 

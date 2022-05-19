@@ -780,6 +780,20 @@ function decipherThis(str) {
   return first.join(' ')
 }; 
 
+function getOrder(input) {
+  let menu = ['burger', 'fries', 'chicken', 'pizza', 'sandwich', 'onionrings', 'milkshake', 'coke']
+  let arr = []
+  let str = ''
+  for (let i = 0; i < input.length; i++) {
+    str += input[i]
+    if (menu.includes(str)) {
+      arr.push([str, menu.indexOf(str) + 1])
+      str = ''
+    }
+  }
+  return arr.sort((a, b) => a[1] - b[1]).map(e => e[0][0].toUpperCase() + e[0].slice(1)).join(' ')
+}
+
 
 
 

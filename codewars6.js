@@ -833,6 +833,14 @@ function longestRepetition(s) {
   return [char,longest]
 }
 
+class FileNameExtractor {
+  static extractFileName (dirtyFileName) {
+      let under = dirtyFileName.indexOf('_')
+      let dot = dirtyFileName.lastIndexOf('.')
+      return dirtyFileName.slice(under + 1, dot)
+  }
+}
+
 
 
 

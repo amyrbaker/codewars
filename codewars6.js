@@ -865,6 +865,25 @@ function count(head, data) {
   return count
 }
 
+var countDeafRats = function(town) {
+  let arr = []
+  let str = ''
+  for (let i = 0; i < town.length; i++) {
+    if (town[i] === 'P') arr.push('P')
+    else if (town[i] === '~' || town[i] === 'O') {
+      str += town[i]
+      if (str.length === 2) {
+        arr.push(str)
+        str = ''
+      }
+    }
+  }
+  let mapped = arr.map(e => e === 'O~' ? 'L' : e === '~O' ? 'R' : e)
+  let piper = mapped.indexOf('P')
+  let filtered = mapped.filter((e, i) => (e === 'R' && piper < i) || (e === 'L' && piper > i))
+  return filtered.length
+}
+
 
 
 

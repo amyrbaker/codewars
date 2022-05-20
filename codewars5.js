@@ -41,5 +41,21 @@ function productFib(prod){
   }
 }
 
+function incrementString (strng) {
+  let index = strng.length
+  for (let i = 0; i < strng.length; i++) {
+    if (`0123456789`.includes(strng[i])) {
+      index = i
+      break
+    }
+  }
+  let wordPart = strng.slice(0, index)
+  let numberPart = strng.slice(index)
+  let newNumberPart = (+numberPart + 1).toString().padStart(numberPart.length, '0')
+  return wordPart + newNumberPart
+}
+
+
+
 
 

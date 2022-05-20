@@ -55,6 +55,20 @@ function incrementString (strng) {
   return wordPart + newNumberPart
 }
 
+function domainName(url){
+  let slash = url.indexOf('//')
+  let dot = url.indexOf('www.')
+  let start
+  if (slash === -1 && dot === -1) start = 0
+  else if ((dot === slash + 2) || (slash === -1)) start = dot + 4
+  else start = slash + 2
+  let short = url.slice(start)
+  let end = short.indexOf('.')
+  return short.slice(0, end)
+}
+
+
+
 
 
 

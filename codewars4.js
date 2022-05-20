@@ -10,5 +10,9 @@ function add(a, b) {
     }
     rem !== 0 ? arr.unshift(rem) : arr
     return arr.join('')
-  }
+}
+
+function multiply(a, b){ 
+    return (BigInt(a) * BigInt(b)) + ''
+}
 

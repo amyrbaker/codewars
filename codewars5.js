@@ -67,6 +67,17 @@ function domainName(url){
   return short.slice(0, end)
 }
 
+var maxSequence = function(arr){
+  let sum = 0
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j <= arr.length; j++) {
+      let subarrSum = arr.slice(i, j).reduce((a, c) => a + c, 0)
+      if (subarrSum > sum) sum = subarrSum
+    }
+  }
+  return sum
+}
+
 
 
 

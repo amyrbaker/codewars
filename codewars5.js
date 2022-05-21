@@ -78,6 +78,24 @@ var maxSequence = function(arr){
   return sum
 }
 
+function primeFactors(n){
+  console.log(n)
+  let arr = []
+  for (let i = 2; i <= n; i++) {
+    let count = 0
+    while (!(n % i)) {
+      count++
+      n /= i
+    }
+    arr.push([i, count])
+    if (n === 1) break
+  }
+  return arr.filter(e => e[1] !== 0)
+    .map((e, i, a) => `(${a[i][0]}` + (a[i][1] === 1 ? ')' : `**${a[i][1]})`))
+    .join('')
+  
+}
+
 
 
 

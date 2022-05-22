@@ -884,6 +884,20 @@ var countDeafRats = function(town) {
   return filtered.length
 }
 
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+  let car = startPriceOld, has = car, needs = startPriceNew, month = 0, loss = percentLossByMonth
+  while (has < needs) {
+    month++
+    loss = Math.floor(month / 2) * 0.5 + percentLossByMonth
+    car = car * (1 - loss / 100)
+    has = car + savingperMonth * month
+    needs = needs * (1 - loss / 100)
+  }
+  return [month, Math.round(has - needs)]
+}
+
+
+
 
 
 

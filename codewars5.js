@@ -155,6 +155,15 @@ function listSquared(m, n) {
   return returnArr
 }
 
+function alphanumeric(string){
+  if (string.length < 1) return false
+  for (let i = 0; i < string.length; i++) {
+    if ('abcdefghijklmnopqrstuvwxyz'.includes(string[i].toLowerCase()) || '0123456789'.includes(string[i])) continue
+    else return false
+  }
+  return true
+}
+
 
 
 

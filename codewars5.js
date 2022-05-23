@@ -143,6 +143,18 @@ function validate(password) {
   return len >= 6 && lower && upper && num && alphnum
 }
 
+function listSquared(m, n) {
+  let returnArr = []
+  for (let i = m; i <= n; i++) {
+    let arr = []
+    for (let j = 1; j <= i; j++) {
+      if (!(i % j)) arr.push(j)
+    }
+    if (!(Math.sqrt(arr.map(e => e ** 2).reduce((a, c) => a + c, 0)) % 1)) returnArr.push([i, arr.map(e => e ** 2).reduce((a, c) => a + c, 0)])
+  }
+  return returnArr
+}
+
 
 
 

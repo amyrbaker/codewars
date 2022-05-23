@@ -896,6 +896,20 @@ function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMon
   return [month, Math.round(has - needs)]
 }
 
+function createFunctions(n) {
+  var callbacks = [];
+
+  for (var i=0; i<n; i++) {
+    let j = i
+    callbacks.push(function() {
+      return j;
+    });
+  }
+  return callbacks;
+}
+
+
+
 
 
 

@@ -130,6 +130,19 @@ PaginationHelper.prototype.pageIndex = function(itemIndex) {
   else return Math.floor((itemIndex + 1) / this.itemsPerPage)
 }
 
+function validate(password) {
+  console.log(password)
+  let len = password.length, lower = false, upper = false, num = false, alphnum = true
+  for (let i = 0; i < len; i++) {
+    if ('0123456789'.includes(password[i])) num = true
+    else if (!'abcdefghijklmnopqrstuvwxyz'.includes(password[i].toLowerCase())) alphnum = false
+    else if (password[i] === password[i].toLowerCase()) lower = true
+    else if (password[i] === password[i].toUpperCase()) upper = true
+    
+  }
+  return len >= 6 && lower && upper && num && alphnum
+}
+
 
 
 

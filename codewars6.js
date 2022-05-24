@@ -908,6 +908,13 @@ function createFunctions(n) {
   return callbacks;
 }
 
+function ipToInt32(ip){
+  return arr = parseInt(ip.split('.')
+                        .map(e => (+e).toString(2)
+                        .padStart(8, '0'))
+                        .join(''), 2)
+}
+
 
 
 

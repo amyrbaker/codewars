@@ -923,6 +923,11 @@ function beggars(values, n){
   return begArr
 }
 
+sortme = function( names ){
+
+  return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+}
+
 
 
 

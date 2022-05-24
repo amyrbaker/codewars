@@ -934,6 +934,19 @@ function balance(left,right){
   return leftTotal > rightTotal ? 'Left' : leftTotal < rightTotal ? 'Right' : 'Balance'
 }
 
+function bingo(ticket, win){
+  let wins = 0
+  for (let i = 0; i < ticket.length; i++) {
+    for (let j = 0; j < ticket[i][0].length; j++) {
+      if (ticket[i][0].charCodeAt(j) === ticket[i][1]) {
+        wins++
+        break
+      }
+    }
+  }
+  return wins >= win ? 'Winner!' : 'Loser!'
+}
+
 
 
 

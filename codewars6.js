@@ -928,6 +928,12 @@ sortme = function( names ){
   return names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
 }
 
+function balance(left,right){
+  let leftTotal = left.split('').reduce((a, c) => a + (c === '!' ? 2 : 3), 0)
+  let rightTotal = right.split('').reduce((a, c) => a + (c === '!' ? 2 : 3), 0)
+  return leftTotal > rightTotal ? 'Left' : leftTotal < rightTotal ? 'Right' : 'Balance'
+}
+
 
 
 

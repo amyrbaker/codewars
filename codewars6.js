@@ -915,6 +915,14 @@ function ipToInt32(ip){
                         .join(''), 2)
 }
 
+function beggars(values, n){
+  let begArr = [...Array(n).fill(0)]
+  for (let i = 0; i < values.length; i++) {
+    begArr[i % n] += values[i]
+  }
+  return begArr
+}
+
 
 
 

@@ -947,6 +947,20 @@ function bingo(ticket, win){
   return wins >= win ? 'Winner!' : 'Loser!'
 }
 
+function isPrime(x) {
+  for (let i = 2; i <= x / 2; i++) {
+    if (!(x % i)) return false
+  }
+  return true
+}
+
+function step(g, m, n) {
+  for (let i = m; i <= n; i++) {
+    if (isPrime(i) && isPrime(i + g)) return [i, i + g]
+  }
+  return null
+}
+
 
 
 

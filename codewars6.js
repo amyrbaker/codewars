@@ -961,7 +961,16 @@ function step(g, m, n) {
   return null
 }
 
+function twosDifference(input){
+  let arr = input.sort((a, b) => a - b)
+  let returnArr = []
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.includes(arr[i] + 2)) returnArr.push([arr[i], arr[i] + 2])
+  }
+   return returnArr
+ }
 
+ 
 
 
 

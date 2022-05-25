@@ -970,7 +970,12 @@ function twosDifference(input){
    return returnArr
  }
 
- 
+ function isIntArray(arr) {
+  if (Array.isArray(arr) && (arr.length === 0 || arr.every(i => Number.isInteger(i)))) return true
+  return false;
+}
+
+
 
 
 

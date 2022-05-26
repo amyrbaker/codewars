@@ -983,6 +983,19 @@ function partlist(arr) {
 return returnArr
 }
 
+function probability(length, num){
+  let start = length === 1 ? 0 : +('1' + [...Array(length - 1).fill(0)].join(''))
+  let end = +[...Array(length).fill(9)].join('')
+  let totalNums =  end - start + 1
+  let count = 0
+  for (let i = start; i <= end; i++) {
+    if (!(i % num)) {
+      count++
+      i += num - 1
+    }
+  }
+  return count / totalNums * 100
+}
 
 
 

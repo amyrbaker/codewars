@@ -975,6 +975,14 @@ function twosDifference(input){
   return false;
 }
 
+function partlist(arr) {
+  let returnArr = []
+  for (let i = 1; i < arr.length; i++) {
+    returnArr.push([arr.slice(0, i).join(' '), arr.slice(i).join(' ')])
+  }
+return returnArr
+}
+
 
 
 

@@ -997,6 +997,25 @@ function probability(length, num){
   return count / totalNums * 100
 }
 
+let hypertensive = function(patients) {
+  patients = patients.map(e => e.map(a => a.split('/')))
+  let count = 0
+  for (let i = 0; i < patients.length; i++) {
+    if (patients[i].some(e => e[0] >= 180 && e[1] >= 110)) count++
+    else if (patients[i].length < 2) continue
+    else {
+      let sys = 0
+      let dia = 0
+      for (let j = 0; j < patients[i].length; j++) {
+        sys += +patients[i][j][0]
+        dia += +patients[i][j][1]
+      }
+      if (sys / patients[i].length >= 140 || dia / patients[i].length >= 90) count++
+    }
+  }
+  return count
+}
+
 
 
 

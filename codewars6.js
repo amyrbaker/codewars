@@ -1016,6 +1016,27 @@ let hypertensive = function(patients) {
   return count
 }
 
+function getBestCombination(time) {
+  console.log(time)
+  let one = time <= 60 ? time + '' : `${Math.floor(time / 60)}${(time % 60).toString().padStart(2, '0')}`
+  let oneDigits = one.split('').filter((e, i, arr) => {return i === 0 || e !== arr[i - 1]})
+  let mins = Math.floor(((Math.floor(time / 100)) * 100) / 60)
+  let secs = time - ((Math.floor(((Math.floor(time / 100)) * 100) / 60)) * 60)
+  if (secs > 99) {
+    mins++
+    secs -= 60
+  } else if (secs < 40) {
+    mins--
+    secs += 60
+  }
+  let two = time <= 99 ? time + '' : `${mins}${(secs).toString().padStart(2, '0')}`
+  let twoDigits = two.split('').filter((e, i, arr) => {return i === 0 || e !== arr[i - 1]})
+  console.log(one, two, oneDigits, twoDigits)
+  return oneDigits.length < twoDigits.length ? one : 
+    oneDigits.length > twoDigits.length ? two :
+    two.length < one.length ? two : one
+}
+
 
 
 

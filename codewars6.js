@@ -1037,6 +1037,23 @@ function getBestCombination(time) {
     two.length < one.length ? two : one
 }
 
+function swap(s, n){
+  let bin = n.toString(2)
+  let len = bin.length
+  let str = ''
+  let count = 0
+  for (let i = 0; i < s.length; i++) {
+    if (!('abcdefghijklmnopqrstuvwxyz'.includes(s[i].toLowerCase()))) {
+      str += s[i] 
+      count++
+    }
+    else if (+bin[(i - count) % len] === 1 && s[i] === s[i].toLowerCase()) str += s[i].toUpperCase()
+    else if (+bin[(i - count) % len] === 1 && s[i] === s[i].toUpperCase()) str += s[i].toLowerCase()
+    else str += s[i]
+  }
+  return str
+}
+
 
 
 

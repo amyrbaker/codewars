@@ -1054,6 +1054,30 @@ function swap(s, n){
   return str
 }
 
+function pillCount(prob) {
+  let returnArr = []
+  for (let i = 0; i < prob.length; i++) {
+    let id = prob[i][0]
+    let firstDay = new Date(prob[i][3])
+    let lastDay = new Date(prob[i][2])
+    let days = (firstDay.getTime() - lastDay.getTime()) / (1000 * 60 * 60 * 24) + 1
+    let hours = days * 24
+    let ok = true
+    for (let j = 0; j < prob[i][1].length; j++) {
+      let pillsTaken = prob[i][1][j][1] - prob[i][1][j][2]
+      let timesPerDay = 24 / (prob[i][1][j][3][8] === '6' ? 6 : prob[i][1][j][3][8] === '1' ? 12 : 24)
+      let pillsAllowed = +prob[i][1][j][3][0] * timesPerDay * days
+      if (pillsTaken > pillsAllowed) {
+        ok = false
+        break
+      }
+    }
+    if (ok) returnArr.push(`The pill count is good for Probationer #${id}`)
+    else returnArr.push(`Probationer #${id} took too many of their pills!`)
+  }
+  return returnArr
+}
+
 
 
 

@@ -1078,6 +1078,28 @@ function pillCount(prob) {
   return returnArr
 }
 
+function numPrimorial(n){
+  let total = 2
+  let num = 3
+  while (n > 1) {
+    let prime = true
+    for (let i = 2; i < num; i++) {
+      if (!(num % i)) {
+        prime = false
+        break
+      }
+    }
+    if (prime) {
+      total *= num
+      num++
+      n--
+    } else {
+      num++
+    }
+  }
+  return total
+}
+
 
 
 

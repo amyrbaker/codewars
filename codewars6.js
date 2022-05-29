@@ -1100,6 +1100,14 @@ function numPrimorial(n){
   return total
 }
 
+function sortTheInnerContent(words){
+  console.log(words)
+  return words.split(' ').map(e => {
+    return e.length <= 3 ? e :
+      e[0] + e.slice(1, e.length - 1).split('').sort().reverse().join('') + e[e.length - 1]
+  }).join(' ')
+}
+
 
 
 

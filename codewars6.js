@@ -1108,6 +1108,25 @@ function sortTheInnerContent(words){
   }).join(' ')
 }
 
+function findChildren(dancingBrigade) {
+	let upper = []
+  let lower = []
+  for (let i = 0; i < dancingBrigade.length; i++) {
+    if (dancingBrigade[i] === dancingBrigade[i].toLowerCase()) lower.push(dancingBrigade[i])
+    else upper.push(dancingBrigade[i])
+  }
+  upper = upper.sort()
+  lower = lower.sort()
+  let str = ''
+  for (let i = 0; i < upper.length; i++) {
+    str += upper[i]
+    for (let j = 0; j < lower.length; j++) {
+      if (lower[j] === upper[i].toLowerCase()) str += lower[j]
+    }
+  }
+  return str
+}
+
 
 
 

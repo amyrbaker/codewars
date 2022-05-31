@@ -1127,6 +1127,18 @@ function findChildren(dancingBrigade) {
   return str
 }
 
+function travel(r, zipcode) {
+  r = r.split(',').filter(e => e.slice(-zipcode.length) === zipcode)
+  let streets = []
+  let nums = []
+  for (let i = 0; i < r.length; i++) {
+    let space = r[i].indexOf(' ')
+    nums.push(r[i].slice(0, space))
+    streets.push(r[i].slice(space + 1, -zipcode.length - 1))
+  }
+  return `${zipcode}:${streets.join(',')}/${nums.join(',')}`
+}
+
 
 
 

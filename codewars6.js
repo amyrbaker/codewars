@@ -1139,6 +1139,14 @@ function travel(r, zipcode) {
   return `${zipcode}:${streets.join(',')}/${nums.join(',')}`
 }
 
+function swap(l) {
+  if (l === l.toLowerCase()) return l.toUpperCase()
+  else return l.toLowerCase()
+}
+function stringTransformer(str) {
+return str.split(' ').map(e => e.split('')).map(e => e.map(l => swap(l)).join('')).reverse().join(' ')
+}
+
 
 
 

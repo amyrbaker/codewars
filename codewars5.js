@@ -164,6 +164,27 @@ function alphanumeric(string){
   return true
 }
 
+function gap(g, m, n) {
+  let first = 0, second = 0
+  for (let i = m; i <= n; i++) {
+    let prime = true
+    for (let j = 2; j < i / 2; j++) {
+      if (!(i % j)) {
+        prime = false
+        break
+      }
+    }
+    if (prime && first === 0) first = i
+    else if (prime && i - first === g) {
+      second = i
+      break
+    }
+    else if (prime) first = i
+  }
+  if (first !== 0 && second !== 0) return [first, second]
+  return null
+}
+
 
 
 

@@ -1157,6 +1157,17 @@ function rank(st, we, n) {
   return st[n - 1][0]
 }
 
+function findSenior(list) {
+  list = list.sort((a, b) => b.age - a.age)
+  let maxAge = list[0].age
+  let ret = [list[0]]
+  for (let i = 1; i < list.length; i++) {
+    if (list[i].age === maxAge) ret.push(list[i])
+    else break
+  }
+  return ret
+}
+
 
 
 

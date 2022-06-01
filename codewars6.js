@@ -1147,6 +1147,16 @@ function stringTransformer(str) {
 return str.split(' ').map(e => e.split('')).map(e => e.map(l => swap(l)).join('')).reverse().join(' ')
 }
 
+function rank(st, we, n) {
+  if (st.length === 0) return 'No participants'
+  if (n > st.split(',').length) return 'Not enough participants'
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  st = st.split(',')
+    .map((e, i) => [e, (e.length + e.split('').reduce((a, c) => a + (alph.indexOf(c.toLowerCase()) + 1), 0)) * we[i]])
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  return st[n - 1][0]
+}
+
 
 
 

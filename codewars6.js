@@ -1168,6 +1168,17 @@ function findSenior(list) {
   return ret
 }
 
+function looseChange(cents){
+  let money = cents <= 0 ? 0 : Math.floor(cents)
+  let quarters = Math.floor(money / 25)
+  money = money % 25
+  let dimes = Math.floor(money / 10)
+  money = money % 10
+  let nickels = Math.floor(money / 5)
+  let pennies = money % 5
+  return {'Nickels' : nickels, 'Pennies' : pennies, 'Dimes' : dimes, 'Quarters' : quarters}
+}
+
 
 
 

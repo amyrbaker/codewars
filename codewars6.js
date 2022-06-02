@@ -1179,6 +1179,14 @@ function looseChange(cents){
   return {'Nickels' : nickels, 'Pennies' : pennies, 'Dimes' : dimes, 'Quarters' : quarters}
 }
 
+function allContinents(list) {
+  let conts = []
+  for (let i = 0; i < list.length; i++) {
+    if (!(conts.includes(list[i].continent))) conts.push(list[i].continent)
+  }
+  return conts.length === 5
+}
+
 
 
 

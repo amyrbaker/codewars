@@ -1187,6 +1187,16 @@ function allContinents(list) {
   return conts.length === 5
 }
 
+function autocomplete(input, dictionary){
+  let start = input.split('').filter(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e.toLowerCase())).join('')
+  let arr = []
+  for (let i = 0; i < dictionary.length; i++) {
+    if (arr.length === 5) return arr
+    if (start === dictionary[i].toLowerCase().slice(0, start.length)) arr.push(dictionary[i])
+  }
+  return arr
+}
+
 
 
 

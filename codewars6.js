@@ -1197,6 +1197,10 @@ function autocomplete(input, dictionary){
   return arr
 }
 
+function letterCount(s){
+  return s.split('').reduce((a, c) => {return a[c] ? a[c]++ : a[c] = 1, a}, {})
+}
+
 
 
 

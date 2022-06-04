@@ -1201,7 +1201,17 @@ function letterCount(s){
   return s.split('').reduce((a, c) => {return a[c] ? a[c]++ : a[c] = 1, a}, {})
 }
 
-
+//Not finalized
+function add(x, y)
+{
+  if (x >= 0 && y >= 0) return [...new Array(x).fill(1)].concat([...new Array(y).fill(1)]).length
+  else if (x < 0 && y < 0) return ([...new Array(Math.abs(x)).fill(1)].concat([...new Array(Math.abs(y)).fill(1)]).length) * Math.sign(x) 
+  else {
+    let arr = [...new Array(Math.max(Math.abs(x), Math.abs(y))).fill(1)]
+    arr.splice(0, Math.min(Math.abs(x), Math.abs(y)))
+    return (Math.abs(x) > y || Math.abs(y) > x) ? arr.length * Math.sign(Math.min(x, y)) : arr.length
+  }    
+}
 
 
 

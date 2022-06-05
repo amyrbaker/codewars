@@ -1227,6 +1227,13 @@ function simpleTransposition(text) {
   return row1.concat(row2).join('')
 }
 
+function findOddNames(list) {
+  console.log(list)
+  return list.filter(e => {
+    return e.firstName.split('').reduce((a, c) => a + c.charCodeAt(0), 0) % 2
+  })
+}
+
 
 
 

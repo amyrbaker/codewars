@@ -1234,6 +1234,30 @@ function findOddNames(list) {
   })
 }
 
+function mean(town, strng) {
+  let dataArr = strng.split('\n')
+    .map(e => {
+      return [e.slice(0, e.indexOf(':')), 
+              e.slice(e.indexOf(':') + 1).split(',').map(e => e.split(' '))]
+    })
+  let cityIndex = dataArr.map(e => e[0]).indexOf(town)
+  if (cityIndex === -1) return -1
+  let avg = dataArr[cityIndex][1].map(e => +e[1]).reduce((a, c) => a + c) / 12
+  return avg
+}
+function variance(town, strng) {
+  let dataArr = strng.split('\n')
+    .map(e => {
+      return [e.slice(0, e.indexOf(':')), 
+              e.slice(e.indexOf(':') + 1).split(',').map(e => e.split(' '))]
+    })
+  let cityIndex = dataArr.map(e => e[0]).indexOf(town)
+  if (cityIndex === -1) return -1
+  let avg = mean(town, strng)
+  let variance = dataArr[cityIndex][1].map(e => +e[1]).map(e => (e - avg) ** 2).reduce((a, c) => a + c, 0) / 12
+  return variance
+}
+
 
 
 

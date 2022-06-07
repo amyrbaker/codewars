@@ -1258,6 +1258,21 @@ function variance(town, strng) {
   return variance
 }
 
+function isAgeDiverse(list) {
+  list = list.map(e => e.age)
+  let diverse = true
+  for (let i = 10; i <= 100; i += 10) {
+    let filteredList
+    if (i === 100) filteredList = list.filter(e => e >= i)
+    else filteredList = list.filter(e => e >= i && e <= i + 9)
+    if (filteredList.length === 0) {
+      diverse = false
+      break
+    }
+  }
+  return diverse 
+}
+
 
 
 

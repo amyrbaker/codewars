@@ -1306,6 +1306,21 @@ function minimumNumber(numbers){
   return nextPrime - currentSum
 }
 
+function rot(strng) {
+  let arr = strng.split('\n').reverse().map(e => e.split('').reverse().join('')).join('\n')
+  return arr
+}
+function selfieAndRot(strng) {
+  let arr = strng.split('\n')
+  let dots = '.'.repeat(arr[0].length)
+  arr = arr.join(dots + '\n')
+  let reverseArr = strng.split('\n').reverse().map(e => e.split('').reverse().join('')).join('\n' + dots)
+  return arr + dots + '\n' + dots + reverseArr
+}
+function oper(fct, s) {
+  return fct(s)
+}
+
 
 
 

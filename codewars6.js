@@ -1321,6 +1321,19 @@ function oper(fct, s) {
   return fct(s)
 }
 
+function alphabetWar(fight){
+  let points = fight.split('').filter((e, i, a) => {
+    return e !== '*' && a[i - 1] !== '*' && a[i + 1] !== '*'
+  }).reduce((a, c) => {
+    return c === 'w' ? a[0] += 4 : c === 'p' ? a[0] += 3 : c === 'b' ? a[0] += 2 : 
+    c === 's' ? a[0]++ : c === 'm' ? a[1] += 4 : c === 'q' ? a[1] += 3 : 
+    c === 'd' ? a[1] += 2 : c === 'z' ? a[1]++ : a[0], a
+  }, [0, 0])
+  return points[0] > points[1] ? 'Left side wins!' : 
+    points[0] < points[1] ? 'Right side wins!' : 
+    'Let\'s fight again!'
+}
+
 
 
 

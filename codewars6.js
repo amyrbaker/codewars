@@ -1286,6 +1286,26 @@ function maxBall(v0) {
   }
 }
 
+function isPrime(num) {
+  let prime = true
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      prime = false
+      break
+    }
+  }
+  return prime
+}
+
+function minimumNumber(numbers){
+  let currentSum = numbers.reduce((a, c) => a + c, 0)
+  let nextPrime = currentSum
+  while (!isPrime(nextPrime)) {
+      nextPrime++
+  }
+  return nextPrime - currentSum
+}
+
 
 
 

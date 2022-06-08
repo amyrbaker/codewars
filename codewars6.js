@@ -1273,6 +1273,19 @@ function isAgeDiverse(list) {
   return diverse 
 }
 
+function maxBall(v0) {
+  let vInMetersPerSec = v0 * (1 / 60) * (1 / 60) * 1000
+  let previousHeight = 0
+  for (let i = 1; i < 1000; i++) {
+    let height = vInMetersPerSec * (i / 10) - .5 * 9.81 * (i / 10) * (i / 10)
+    if (height > previousHeight) previousHeight = height
+    else {
+      return i - 1
+      break
+    }
+  }
+}
+
 
 
 

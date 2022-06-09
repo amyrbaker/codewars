@@ -222,6 +222,45 @@ SnakesLadders.prototype.play = function(die1, die2) {
   }
 }
 
+function reduce(arr) {
+  return arr.map(e => {
+    for (let i = 2; i <= e[0]; i++) {
+      while (e[0] % i === 0 && e[1] % i === 0) {
+        e[0] /= i
+        e[1] /= i
+      }
+    }
+    return e
+  })
+}
+
+function commonDenominator(arr) {
+  let denoms = arr.map(e => e[1])
+  let maxDenom = Math.max(...denoms)
+  let commonDenom
+  for (let i = 1; i <= denoms.reduce((a, c) => a * c, 1) / maxDenom; i++) {
+    let testNum = maxDenom * i
+    for (let j = 0; j < denoms.length; j++) {
+      if (testNum % denoms[j]) {
+        testNum = 0
+        break
+      }
+    }
+    if (testNum) {
+      commonDenom = testNum
+      break
+    }
+  }
+  return commonDenom
+}
+
+function convertFrac(lst){
+  let reduced = reduce(lst)
+  let commonDenom = commonDenominator(lst)
+  let converted = lst.map(e => [e[0] * commonDenom / e[1], commonDenom])
+  return converted.map(e => `(${e.join(',')})`).join('')
+}
+
 
 
 

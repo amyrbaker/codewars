@@ -185,6 +185,45 @@ function gap(g, m, n) {
   return null
 }
 
+function SnakesLadders() {
+  this.ladders = [[2, 38], [7, 14], [8, 31], [15, 26], [21, 42], [28, 84], [36, 44], [51, 67], [71, 91], [78, 98], [87, 94]]
+  this.snakes = [[99, 80], [95, 75], [92, 88], [89, 68], [74, 53], [64, 60], [62, 19], [49, 11], [46, 25], [16, 6]]
+  this.player1 = 0
+  this.player2 = 0
+  this.turn = 0
+  this.playing = true
+};
+
+SnakesLadders.prototype.play = function(die1, die2) {
+  if (this.playing = false || this.player1 === 100 || this.player2 === 100) return 'Game over!'
+  let total = die1 + die2
+  if (this.turn % 2 === 0) {
+    this.player1 += total
+    if (this.player1 === 100) {
+      this.playing = false
+      return 'Player 1 Wins!'
+    }
+    if (this.player1 > 100) this.player1 = 200 - this.player1
+    if (this.ladders.map(e => e[0]).includes(this.player1)) this.player1 = this.ladders[this.ladders.map(e => e[0]).indexOf(this.player1)][1]
+    if (this.snakes.map(e => e[0]).includes(this.player1)) this.player1 = this.snakes[this.snakes.map(e => e[0]).indexOf(this.player1)][1]
+    if (die1 !== die2) this.turn++
+    return `Player 1 is on square ${this.player1}`
+  } else {
+    this.player2 += total
+    if (this.player2 === 100) {
+      this.playing = false
+      return 'Player 2 Wins!'
+    }
+    if (this.player2 > 100) this.player2 = 200 - this.player2
+    if (this.ladders.map(e => e[0]).includes(this.player2)) this.player2 = this.ladders[this.ladders.map(e => e[0]).indexOf(this.player2)][1]
+    if (this.snakes.map(e => e[0]).includes(this.player2)) this.player2 = this.snakes[this.snakes.map(e => e[0]).indexOf(this.player2)][1]
+    if (die1 !== die2) this.turn++
+    return `Player 2 is on square ${this.player2}`
+  }
+}
+
+
+
 
 
 

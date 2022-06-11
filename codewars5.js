@@ -261,6 +261,39 @@ function convertFrac(lst){
   return converted.map(e => `(${e.join(',')})`).join('')
 }
 
+function isPrime(n) {
+  for (let i = 2; i <= Math.ceil(n / 2); i++) {
+    if (n % i === 0) return false
+  }
+  return true
+}
+
+
+function decomp(n) {
+  let primes = []
+  for (let j = n; j > 1; j--) {
+    let num = j
+    if (isPrime(num)) {
+      primes.push(num)
+    } else {
+      for (let i = 2; i <= num; i++) {
+        if (!isPrime(i)) continue
+        while (num % i === 0) {
+          primes.push(i)
+          num /= i
+        }
+      }
+    }
+  }
+  primes = primes.reduce((a, c) => {return a[c] ? a[c]++ : a[c] = 1, a}, {})
+  let returnStr = []
+  for (let key in primes) {
+    if (primes[key] === 1) returnStr.push(+key)
+    else returnStr.push(`${key}^${primes[key]}`)
+  }
+  return returnStr.join(' * ')
+}
+
 
 
 

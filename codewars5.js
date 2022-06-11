@@ -294,6 +294,32 @@ function decomp(n) {
   return returnStr.join(' * ')
 }
 
+function mixedFraction(s){
+  let fraction = s.split('/')
+  let negative = false
+  if (+fraction[0] < 0 && +fraction[1] < 0) fraction = fraction.map(e => e * -1)
+  if (+fraction[0] < 0) {
+    fraction = [fraction[0].slice(1), fraction[1]]
+    negative = true
+  }
+  if (+fraction[1] < 0) {
+    fraction = [fraction[0], fraction[1].slice(1)]
+    if (+fraction[0] !== 0) negative = true
+  }
+  if (+fraction[1] === 0) throw new Error('ZeroDivisionError')
+  let a = Math.floor(fraction[0] / fraction[1])
+  let b = fraction[0] % fraction[1]
+  let c = fraction[1]
+  for (let i = 2; i <= b; i++) {
+    while(!(b % i) && !(c % i)) {
+      b /= i
+      c /= i
+    }
+  }
+  let reduced = a === 0 && b === 0 ? '0' : (a === 0 ? '' : `${a}`) + (b === 0 ? '' : ` ${b}/${c}`)
+  return negative ? '-' + reduced.trim() : reduced.trim()
+}
+
 
 
 

@@ -1334,6 +1334,16 @@ function alphabetWar(fight){
     'Let\'s fight again!'
 }
 
+function binaryToString(binary) {
+  let bin = []
+  for (let i = 0; i < binary.length; i += 8) {
+    bin.push(binary.slice(i, i + 8))
+  }
+  bin = bin.map(e => String.fromCharCode(parseInt(e, 2)))
+  return bin.join('')
+}
+
+
 
 
 

@@ -332,6 +332,15 @@ function removeNb (n) {
   return options
 }
 
+function findUniq(arr) {
+  let changed = arr.map(e => e.split(' ').join('').split('').map(e => e.toLowerCase()).sort().join(''))
+  let shortest = Math.min(...changed.map(e => e.length))
+  if (shortest === 0) shortest = 1
+  changed = changed.map(e => e.slice(0, shortest))
+  let index = changed.indexOf(changed.filter(e => changed.indexOf(e) === changed.lastIndexOf(e))[0])
+  return arr[index]
+}
+
 
 
 

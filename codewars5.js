@@ -320,6 +320,18 @@ function mixedFraction(s){
   return negative ? '-' + reduced.trim() : reduced.trim()
 }
 
+function removeNb (n) {
+  let options = []
+  let array = [...new Array(n).keys()].map(e => e + 1)
+  let sum = array.reduce((a, c) => a + c, 0)
+  for (let i = 0; i < array.length; i++) {
+    let a = array[i]
+    let b = (sum - a) / (a + 1)
+    if (b === Math.floor(b) && b <= n) options.push([a, b])
+  }
+  return options
+}
+
 
 
 

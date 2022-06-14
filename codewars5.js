@@ -341,6 +341,25 @@ function findUniq(arr) {
   return arr[index]
 }
 
+function smallest(n) {
+  let options = []
+  let arr = n.toString().split('').map(e => +e)
+  for (let i = 0; i < arr.length; i++) {
+    let digit = arr[i]
+    let rest = arr.filter((e, ind) => ind !== i)
+    for (let j = 0; j <= rest.length; j++) {
+      let newNum = rest.slice(0, j).concat(digit).concat(rest.slice(j))
+      options.push([+newNum.join(''), i, j])
+    }
+  }
+  let smallest = options.sort((a, b) => a[0] - b[0])[0][0]
+  options = options.filter(e => e[0] === smallest)
+  let smallestI = options.sort((a, b) => a[1] - b[1])[0][1]
+  options = options.filter(e => e[1] === smallestI)
+  return options.sort((a, b) => a[2] - b[2])[0]
+}
+
+
 
 
 

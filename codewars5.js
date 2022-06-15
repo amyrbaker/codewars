@@ -359,6 +359,41 @@ function smallest(n) {
   return options.sort((a, b) => a[2] - b[2])[0]
 }
 
+var whoEatsWho = function(zoo) {
+  let eating = {
+    'antelope' : ['grass'],
+    'big-fish' : ['little-fish'],
+    'bug' : ['leaves'],
+    'bear' : ['big-fish', 'bug', 'chicken', 'cow', 'leaves', 'sheep'],
+    'chicken' : ['bug'], 
+    'cow' : ['grass'],
+    'fox' : ['chicken', 'sheep'],
+    'giraffe' : ['leaves'],
+    'lion' : ['antelope', 'cow'],
+    'panda' : ['leaves'],
+    'sheep' : ['grass']
+  }
+  let arr = [zoo]
+  zoo = zoo.split(',')
+  for (let i = 0; i < zoo.length; i++) {
+    let eater = zoo[i]
+    let left = zoo[i - 1]
+    let right = zoo[i + 1]
+    console.log(eater, left, right, i)
+    if (left !== undefined && eating[eater] && eating[eater].includes(left)) {
+      zoo.splice(i - 1, 1)
+      i = -1
+      arr.push(`${eater} eats ${left}`)
+    }
+    else if (right !== undefined && eating[eater] && eating[eater].includes(right)) {
+      zoo.splice(i + 1, 1)
+      i = -1
+      arr.push(`${eater} eats ${right}`)
+    }
+  }
+  return arr.concat(zoo.join(','))
+}
+
 
 
 

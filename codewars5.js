@@ -394,6 +394,62 @@ var whoEatsWho = function(zoo) {
   return arr.concat(zoo.join(','))
 }
 
+function movingShift(s, shift) {
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  let code = ''
+  let count = shift
+  //loops through string, finds index of character, adds the current count and finds new char
+  //adds new char to code and increases count each time
+  //if char is not a letter, keeps the same and still increases count
+  for (let i = 0; i < s.length; i++) {
+    let letterIndex = alph.indexOf(s[i].toLowerCase())
+    let newIndex = (letterIndex + count) % 26
+    let newLetter = letterIndex === -1 ? s[i] : s[i].toLowerCase() === s[i] ? alph[newIndex] : alph[newIndex].toUpperCase()
+    code += newLetter
+    count++
+  }
+  //determines lengths to split the code
+  //if even splits, fills array with number, else uses algorithm to create array of lengths
+  let lengths
+  if (code.length % 5 === 0) lengths = [...new Array(5).fill(code.length / 5)]
+  else {
+    let ceilLen = Math.ceil(code.length / 5)
+    lengths = [...new Array(3).fill(ceilLen)]
+    let remainingLength = code.length - (ceilLen) * 3
+    if (remainingLength >= ceilLen) {
+      lengths.push(ceilLen)
+      lengths.push(remainingLength - ceilLen)
+    } else {
+      lengths.push(remainingLength)
+      lengths.push(0)
+    }
+  }
+  //loops through array of lengths and adds slice to final result array while removing that part from the array
+  let result = []
+  let arr = code.split('')
+  for (let i = 0; i < lengths.length; i++) {
+    result.push(arr.slice(0, lengths[i]).join(''))
+    arr = arr.slice(lengths[i])
+  }
+  return result
+}
+
+function demovingShift(arr, shift) {
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  let count = shift
+  let code = arr.join('')
+  console.log(code)
+  let str = ''
+  for (let i = 0; i < code.length; i++) {
+    let letterIndex = alph.indexOf(code[i].toLowerCase())
+    let newIndex = (letterIndex + 26 - count % 26) % 26
+    let char = letterIndex === -1 ? code[i] : code[i] === code[i].toLowerCase() ? alph[newIndex] : alph[newIndex].toUpperCase()
+    str += char
+    count ++
+  }
+  return str
+}
+
 
 
 

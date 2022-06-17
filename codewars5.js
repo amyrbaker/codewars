@@ -450,6 +450,19 @@ function demovingShift(arr, shift) {
   return str
 }
 
+Math.round = function(number) {
+  if (number % 1 >= .5) return Math.ceil(number)
+  else return Math.floor(number)
+};
+
+Math.ceil = function(number) {
+  return number % 1 ? Math.floor(number) + 1 : number
+};
+
+Math.floor = function(number) {
+  return number - number % 1
+};
+
 
 
 

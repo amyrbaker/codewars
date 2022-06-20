@@ -463,6 +463,21 @@ Math.floor = function(number) {
   return number - number % 1
 };
 
+function workOnStrings(a,b){
+  let first = a.split(''), second = b.split('')
+  for (let i = 0; i < second.length; i++) {
+    first = first.map(e => e.toLowerCase() === second[i].toLowerCase() ? swapCase(e) : e)
+  }
+  for (let i = 0; i < first.length; i++) {
+    second = second.map(e => e.toLowerCase() === first[i].toLowerCase() ? swapCase(e) : e)
+  }
+  return first.concat(second).join('')
+}
+
+function swapCase(l) {
+  return l === l.toLowerCase() ? l.toUpperCase() : l.toLowerCase()
+}
+
 
 
 

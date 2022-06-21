@@ -478,6 +478,19 @@ function swapCase(l) {
   return l === l.toLowerCase() ? l.toUpperCase() : l.toLowerCase()
 }
 
+function solequa(n) {
+  let results = []
+  for (let i = 1; i <= Math.floor(Math.sqrt(n)); i++) {
+    let x, y
+    if (n % i === 0) {
+      y = (n / i - i) / 4
+      x = i + ((n / i - i) / 2)
+      if (y % 1 === 0 && x % 1 === 0) results.push([x, y])
+    }
+  }
+  return results
+}
+
 
 
 

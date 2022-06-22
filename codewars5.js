@@ -491,6 +491,20 @@ function solequa(n) {
   return results
 }
 
+function iterPi(epsilon) {
+	let count = 0
+  let denom = 1
+  let pos = true
+  let approx = 0
+  while (Math.abs(Math.PI - approx) >= epsilon) {
+    pos ? approx += 4 / denom : approx -= 4 / denom
+    count++
+    denom += 2
+    pos = !pos
+  }
+  return [count, +approx.toFixed(10)]
+}
+
 
 
 

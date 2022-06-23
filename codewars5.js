@@ -535,6 +535,11 @@ function phone(strng, num) {
   return `Phone => ${num}, Name => ${name}, Address => ${address}`
 }
 
+function cubeOdd(arr) {
+  return arr.every(e => typeof e === 'number') ? 
+    arr.map(e => e ** 3).filter(e => e % 2).reduce((a, c) => a + c, 0) : undefined
+}
+
 
 
 

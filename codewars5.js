@@ -505,6 +505,36 @@ function iterPi(epsilon) {
   return [count, +approx.toFixed(10)]
 }
 
+function prefill(n, v = undefined) {
+  if (n * 1 != n || n === Infinity || n === -Infinity || n % 1 !== 0 || n < 0 || typeof n == 'boolean') throw TypeError(`${n} is invalid`)
+  return [...new Array(+n).fill(v)]
+}
+
+function phone(strng, num) {
+  let arr = strng.split('\n')
+  let person = arr.filter(e => e.includes(num))
+  if (person.length > 1) return `Error => Too many people: ${num}`
+  if (person.length === 0) return `Error => Not found: ${num}`
+  person = person[0].split('')
+  let nameStart = person.indexOf('<')
+  let nameEnd = person.indexOf('>')
+  let name = person.slice(nameStart + 1, nameEnd).join('')
+  let address = person.join('')
+    .split(`<${name}>`).join('')
+    .split(`+${num}`)
+    .map(e => e.trim())
+    .filter(e => e.length !== 0)
+    .join('').split('')
+    .map(e => e === '_' ? e = ' ' : e)
+    .filter(e => e !== ';' && e !== '/' && e !== '$' && e !== '!' && e !== '*' && e !== '?' && e !== ':' && e !== ',')
+    .join('')
+    .trim()
+    .split(' ')
+    .filter(e => e.length)
+    .join(' ')
+  return `Phone => ${num}, Name => ${name}, Address => ${address}`
+}
+
 
 
 

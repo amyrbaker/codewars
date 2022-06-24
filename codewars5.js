@@ -540,6 +540,25 @@ function cubeOdd(arr) {
     arr.map(e => e ** 3).filter(e => e % 2).reduce((a, c) => a + c, 0) : undefined
 }
 
+function damagedOrSunk (board, attacks){
+  let boat1 = board.map(e => e.join('')).join('').split('').filter(e => e === '1').length
+  let boat2 = board.map(e => e.join('')).join('').split('').filter(e => e === '2').length
+  let boat3 = board.map(e => e.join('')).join('').split('').filter(e => e === '3').length
+  let boatsStart = [boat1, boat2, boat3]
+  let boats = [...boatsStart].filter(e => e > 0)
+  for (let i = 0; i < attacks.length; i++) {
+    let square = board[board.length - attacks[i][1]][attacks[i][0] - 1]
+    if (square === 1) boats[0]--
+    if (square === 2) boats[1]--
+    if (square === 3) boats[2]--
+  }
+  let sunk = boats.filter(e => e === 0).length
+  let damaged = boats.filter((e, i) => e !== 0 && e !== boatsStart[i]).length
+  let notTouched = boats.filter((e, i) => e !== 0 && e === boatsStart[i]).length
+  let points = sunk * 1 + damaged * 0.5 + notTouched * -1
+  return {'sunk' : sunk, 'damaged' : damaged, 'notTouched' : notTouched, 'points' : points}
+}
+
 
 
 

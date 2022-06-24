@@ -559,6 +559,23 @@ function damagedOrSunk (board, attacks){
   return {'sunk' : sunk, 'damaged' : damaged, 'notTouched' : notTouched, 'points' : points}
 }
 
+function  closest(strng) {
+  if (strng === '') return []
+  let arr = strng.split(' ').map((e, i) => [e.toString().split('').reduce((a, c) => a + +c, 0), i, +e])
+  let sorted = arr.sort((a, b) => a[0] - b[0] || a[1] - b[1])
+  let first = sorted[0]
+  let second = sorted[1]
+  let diff = second[0] - first[0]
+  for (let i = 2; i < sorted.length; i++) {
+    if (sorted[i][0] - sorted[i - 1][0] < diff) {
+      first = sorted[i - 1]
+      second = sorted[i]
+      diff = second[0] - first[0]
+    }
+  }
+  return first[0] === second[0] ? [first, second].sort((a, b) => a[1] - b[1]) : [first, second]
+}
+
 
 
 

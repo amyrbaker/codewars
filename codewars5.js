@@ -576,6 +576,34 @@ function  closest(strng) {
   return first[0] === second[0] ? [first, second].sort((a, b) => a[1] - b[1]) : [first, second]
 }
 
+function number2words(n){
+  if (n < 1000) return hundreds(n)
+  else {
+    let first = Math.floor(n / 1000)
+    let second = n % 1000
+    return second !== 0 ? `${hundreds(first)} thousand ${hundreds(second)}` : `${hundreds(first)} thousand`
+  }
+}
+
+function hundreds(n) {
+  let num = n.toString()
+  let digits = {0 : 'zero', 1 : 'one', 2 : 'two', 3 : 'three', 4 : 'four', 5 : 'five', 6 : 'six', 7 : 'seven', 8 : 'eight', 9 : 'nine',
+               10 : 'ten', 11 : 'eleven', 12 : 'twelve', 13 : 'thirteen', 14 : 'fourteen', 15 : 'fifteen', 16 : 'sixteen', 17 : 'seventeen', 18 : 'eighteen', 19 : 'nineteen',
+               20 : 'twenty', 30 : 'thirty', 40 : 'forty', 50 : 'fifty', 60 : 'sixty', 70 : 'seventy', 80 : 'eighty', 90 : 'ninety',}
+  if (digits[n]) return digits[n]
+  let hundreds = Math.floor(n / 100)
+  let tens = Math.floor(num.slice(-2) / 10) * 10
+  let ones = n % 10
+  if (hundreds === 0) return `${digits[tens]}-${digits[ones]}`
+  else {
+    if (tens === 0 && ones === 0) return `${digits[hundreds]} hundred`
+    if (tens === 10) return `${digits[hundreds]} hundred ${digits[tens + ones]}`
+    if (tens === 0) return `${digits[hundreds]} hundred ${digits[ones]}`
+    if (ones === 0) return `${digits[hundreds]} hundred ${digits[tens]}`
+    else return `${digits[hundreds]} hundred ${digits[tens]}-${digits[ones]}`
+  }
+}
+
 
 
 

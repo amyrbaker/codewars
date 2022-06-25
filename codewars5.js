@@ -614,6 +614,31 @@ function bestMatch(ALAHLYGoals, zamalekGoals) {
   return arr[0][2]
 }
 
+function sortByName(ary) {
+  ary = ary.map(e => [numberName(e), e])
+  console.log(ary.slice(99))
+  return ary.sort((a, b) => a[0].localeCompare(b[0])).map(e => e[1])
+}
+
+function numberName(n) {
+  let ones = 'zero one two three four five six seven eight nine'.split(' ')
+  let tens = 'twenty thirty forty fifty sixty seventy eighty ninety'.split(' ')
+  let teens = 'ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split(' ')
+  let hundred = Math.floor(n / 100)
+  let ten = Math.floor(n % 100 / 10)
+  let one = n % 100 % 10
+  if (n < 10) return ones[n]
+  else if (n < 20) return teens[n % 10]
+  else if (n < 100) return one === 0 ? tens[ten - 2] : `${tens[ten - 2]} ${ones[one]}`
+  else {
+    if (one === 0 && ten === 0) return `${ones[hundred]} hundred`
+    else if (ten === 1) return `${ones[hundred]} hundred ${teens[one]}`
+    else if (one === 0) return `${ones[hundred]} hundred ${tens[ten - 2]}`
+    else if (ten === 0) return `${ones[hundred]} hundred ${ones[one]}`
+    else return `${ones[hundred]} hundred ${tens[ten - 2]} ${ones[one]}`
+  }
+}
+
 
 
 

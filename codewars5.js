@@ -604,6 +604,16 @@ function hundreds(n) {
   }
 }
 
+function bestMatch(ALAHLYGoals, zamalekGoals) {
+  let arr = []
+  for (let i = 0; i < zamalekGoals.length; i++) {
+    let diff = ALAHLYGoals[i] - zamalekGoals[i]
+    arr.push([diff, zamalekGoals[i], i])
+  }
+  arr = arr.sort((a, b) => a[0] - b[0] || b[1] - a[1] || a[2] - b[2])
+  return arr[0][2]
+}
+
 
 
 

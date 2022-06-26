@@ -639,6 +639,32 @@ function numberName(n) {
   }
 }
 
+function rolldiceSumProb(arr, totalSides){
+  let total = 6 ** totalSides
+  let count = 0
+  for (let i = 1; i <= 6; i++) {
+    for (let j = 1; j <= 6; j++) {
+      if (totalSides >= 3) {
+        for (let k = 1; k <= 6; k++) {
+          if (totalSides >= 4) {
+            for (let x = 1; x <= 6; x++) {
+              if (totalSides >= 5) {
+                for (let y = 1; y <= 6; y++) {
+                  if (i + j + k + x + y === arr) count++
+                }
+              }
+              else if (i + j + k + x === arr) count++
+            }
+          }
+          else if (i + j + k === arr) count++
+        }
+      }
+      else if (i + j === arr) count ++
+    }
+  }
+  return count / total
+}
+
 
 
 

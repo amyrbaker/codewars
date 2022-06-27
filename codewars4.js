@@ -56,3 +56,32 @@ function differentiate(equation, point){
     return sum
 }
 
+function mix(s1, s2) {
+  let one = s1.split('').filter(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e))
+    .reduce((a, c) => {
+      a[c] ? a[c]++ : a[c] = 1
+      return a}, {})
+  let two = s2.split('').filter(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e))
+    .reduce((a, c) => {
+      a[c] ? a[c]++ : a[c] = 1
+      return a}, {})
+  let arr = []
+  for (let letter in one) {
+    if (!two[letter] && one[letter] > 1) arr.push([1, letter, one[letter]])
+    else if (two[letter]) {
+      if (one[letter] > two[letter] && one[letter] > 1) arr.push([1, letter, one[letter]])
+      else if (one[letter] < two[letter] && two[letter] > 1) arr.push([2, letter, two[letter]])
+      else if (one[letter] === two[letter] && one[letter] > 1) arr.push([3, letter, one[letter]])
+    }
+  }
+  for (let letter in two) {
+    if (!one[letter] && two[letter] > 1) arr.push([2, letter, two[letter]])
+  }
+  arr = arr.sort((a, b) => b[2] - a[2] || a[0] - b[0] || a[1].localeCompare(b[1]))
+    .map(e => e[0] === 3 ? `=:${e[1].repeat(e[2])}` : `${e[0]}:${e[1].repeat(e[2])}`)
+    .join('/')
+  return arr
+}
+
+
+

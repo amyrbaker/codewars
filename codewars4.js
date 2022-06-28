@@ -83,5 +83,60 @@ function mix(s1, s2) {
   return arr
 }
 
+function simplify(poly){
+  let arr = splitStr(poly)
+    .map(e => splitTerm(e))
+    .map(e => [e[0], e[1].split('').sort().join('')])
+    .sort((a, b) => a[1].localeCompare(b[1]))
+    .map(e => e[0] === '-' ? [-1, e[1]] : e[0] === '' ? [1, e[1]] : e[0] === '+' ? [1, e[1]] : e)
+  let reduced = simplifyArr(arr)
+    .sort((a, b) => a[1].length - b[1].length || a[1].localeCompare(b[1]))
+    .filter(e => e[0] !== 0 && e[0] !== '-0')
+    .map(e => +e[0] === 1 ? e[1] : +e[0] === -1 ? `-${e[1]}` : e.join(''))
+  let final = reduced[0]
+  for (let i = 1; i < reduced.length; i++) {
+    if(reduced[i][0] === '-') final += reduced[i]
+    else final += `+${reduced[i]}`
+  }
+  return final
+}
+
+function simplifyArr(arr) {
+  let res = []
+  for (let i = 0; i < arr.length; i++) {
+    if (i !== arr.length - 1 && arr[i][1] === arr[i + 1][1]) arr[i + 1][0] = +arr[i][0] + +arr[i + 1][0]
+    else res.push(arr[i])
+  }
+  return res
+}
+
+function splitTerm(str) {
+  let index 
+  for (let i = 0; i < str.length; i++) {
+    if ('abcdefghijklmnopqrstuvwxyz'.includes(str[i])) {
+      index = i
+      break
+    }
+  }
+  return [str.slice(0, index), str.slice(index)]
+}
+
+function splitStr(poly) {
+  let terms = []
+  let str = ''
+  if (poly[0] === '+') poly = poly.slice(1)
+  for (let i = 0; i < poly.length; i++) {
+    if ((poly[i] === '+' || poly[i] === '-') && str.length > 0) {
+      terms.push(str)
+      if (poly[i] === '-') str = poly[i]
+      else str = ''
+    } else if (i === poly.length - 1) {
+      str += poly[i]
+      terms.push(str)
+    } else str += poly[i]
+  }
+  return terms
+}
+
 
 

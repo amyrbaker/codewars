@@ -665,6 +665,23 @@ function rolldiceSumProb(arr, totalSides){
   return count / total
 }
 
+function landPerimeter(arr) {
+  let perim = 0
+  for (let y = 0; y < arr.length; y++) {
+    for (let x = 0; x < arr[0].length; x++) {
+      if (arr[y][x] === 'X') {
+        let touching = 0
+        if (x + 1 < arr[0].length && arr[y][x + 1] === 'X') touching++
+        if (x - 1 >= 0 && arr[y][x - 1] === 'X') touching++
+        if (y + 1 < arr.length && arr[y + 1][x] === 'X') touching++
+        if (y - 1 >= 0 && arr[y - 1][x] === 'X') touching++
+        perim += 4 - touching
+      }
+    }
+  }
+  return `Total land perimeter: ${perim}`
+}
+
 
 
 

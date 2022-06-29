@@ -682,6 +682,35 @@ function landPerimeter(arr) {
   return `Total land perimeter: ${perim}`
 }
 
+function superStreetFighterSelection(fighters, position, moves){
+  let arr = []
+  let pos = position
+  for (let i = 0; i < moves.length; i++) {
+    if (moves[i] === 'up' && pos[0] > 0 && fighters[pos[0] - 1][pos[1]] !== '') pos[0]--
+    if (moves[i] === 'down' && pos[0] < fighters.length - 1 && fighters[pos[0] + 1][pos[1]] !== '') pos[0]++
+    if (moves[i] === 'left') {
+      if (fighters[pos[0]][(pos[1] - 1 + fighters[0].length) % fighters[0].length] !== '') pos[1] = (pos[1] - 1 + fighters[0].length) % fighters[0].length
+      else {
+        while (fighters[pos[0]][(pos[1] - 1 + fighters[0].length) % fighters[0].length] === '') {
+          pos[1] = (pos[1] - 1 + fighters[0].length) % fighters[0].length
+        }
+        pos[1] = (pos[1] - 1 + fighters[0].length) % fighters[0].length
+      }
+    }
+    if (moves[i] === 'right') {
+      if (fighters[pos[0]][(pos[1] + 1) % fighters[0].length] !== '') pos[1] = (pos[1] + 1) % fighters[0].length
+      else {
+        while (fighters[pos[0]][(pos[1] + 1) % fighters[0].length] === '') {
+          pos[1] = (pos[1] + 1) % fighters[0].length
+        }
+        pos[1] = (pos[1] + 1) % fighters[0].length
+      }
+    }
+    arr.push(fighters[pos[0]][pos[1]])
+  }
+  return arr
+}
+
 
 
 

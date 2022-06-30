@@ -711,6 +711,34 @@ function superStreetFighterSelection(fighters, position, moves){
   return arr
 }
 
+function fight(robot1, robot2, tactics) {
+  let sorted = [robot1, robot2].sort((a, b) => b.speed - a.speed)
+  let first = sorted[0]
+  let second = sorted[1]
+  let turn = 1
+  while (first.health > 0 && second.health > 0 && (first.tactics.length > 0 || second.tactics.length > 0)) {
+    if (turn % 2) {
+      if (first.tactics.length > 0) {
+        let move = first.tactics[0] 
+        let damage = tactics[move] 
+        second.health -= damage
+        first.tactics.shift()
+      }
+      turn++
+    } else {
+      if (second.tactics.length > 0) {
+        let move = second.tactics[0]
+        let damage = tactics[move]
+        first.health -= damage
+        second.tactics.shift()
+      }
+      turn++
+    }
+  }
+  if (first.health === second.health) return 'The fight was a draw.'
+  return [first, second].sort((a, b) => b.health - a.health)[0].name + ' has won the fight.'
+}
+
 
 
 

@@ -753,6 +753,21 @@ function encodeResistorColors(ohmsString) {
   return `${colors[Math.floor(num / 10)]} ${colors[num % 10]} ${colors[exp]} gold`
 }
 
+function tour(friends, fTowns, distTable) {
+  let visit = friends.filter(e => fTowns.map(e => e[0]).includes(e))
+    .map(e => fTowns[fTowns.map(e => e[0]).indexOf(e)][1])
+  let firstDist = distTable[distTable.indexOf(visit[0]) + 1]
+  let lastDist = distTable[distTable.indexOf(visit[visit.length - 1]) + 1]
+  let totalDist = firstDist + lastDist
+  for (let i = 0; i < visit.length - 1; i++) {
+    let dist = Math.sqrt((distTable[distTable.indexOf(visit[i + 1]) + 1]) ** 2 - (distTable[distTable.indexOf(visit[i]) + 1]) ** 2)
+    totalDist += dist
+  }
+  return Math.floor(totalDist)
+}
+
+
+
 //still working
 var peakHeight = function(mountain) {
   let count = 1

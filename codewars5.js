@@ -739,6 +739,41 @@ function fight(robot1, robot2, tactics) {
   return [first, second].sort((a, b) => b.health - a.health)[0].name + ' has won the fight.'
 }
 
+function encodeResistorColors(ohmsString) {
+  let colors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white']
+  let numArr = ohmsString.split(' ')[0].split('')
+  let num = numArr.includes('k') ? numArr.slice(0, numArr.length - 1).join('') * 1000 : 
+    numArr.includes('M') ? numArr.slice(0, numArr.length - 1).join('') * 1000000 :
+    +numArr.join('')
+  let exp = 0
+  while (num / 10 >= 10) {
+    exp++
+    num /= 10
+  }
+  return `${colors[Math.floor(num / 10)]} ${colors[num % 10]} ${colors[exp]} gold`
+}
+
+//still working
+var peakHeight = function(mountain) {
+  let count = 1
+  while (mountain.map(e => e.join('')).join('').split('').includes('^')) {
+    for (let i = 0; i < mountain.length; i++) {
+      if (i === 0 || i === mountain.length - 1) mountain[i] = mountain[i].map(e => e === '^' ? e = count : e)
+      else {
+        let first = mountain[i].indexOf('^')
+        mountain[i][first] = count
+        let second = (i === 1 ? mountain[i - 1].lastIndexOf(count) : mountain[i - 1].lastIndexOf('^') + 1)
+        if (mountain[i][second + 1] === '^') mountain[i] = mountain[i].map((e, i) => e === '^' && i > second ? e = count : e)
+        else mountain[i] = mountain[i].map((e, i) => e === '^' && i >= second - 1 ? e = count : e)
+      }
+    }
+    mountain.shift()
+    mountain.pop()
+    console.log(mountain)
+    count++                                                           
+  }
+  return Math.max(...mountain[0])
+}
 
 
 

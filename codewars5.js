@@ -766,6 +766,55 @@ function tour(friends, fTowns, distTable) {
   return Math.floor(totalDist)
 }
 
+function alphabetWar(battlefield) {
+  console.log(battlefield)
+  if (!battlefield.includes('#')) return battlefield.split('').filter(e => e !== '[' && e !== ']').join('')
+  else if (battlefield.indexOf('#') === battlefield.lastIndexOf('#')) return sheltered(battlefield).split('').filter(e => e !== '[' && e !== ']' && e !== '#').join('')
+  else if (battlefield.indexOf('[') === battlefield.lastIndexOf('[')) return ''
+  else {
+    let filtered = sheltered(battlefield)
+    let start = starts(filtered)
+    let end = ends(filtered)
+    let survived = ''
+    for (let i = 0; i < start.length; i++) {
+      if (filtered.slice(start[i], end[i]).indexOf('#') === filtered.slice(start[i], end[i]).lastIndexOf('#')) survived += filtered.slice(start[i], end[i])
+    }
+    return survived.split('').filter(e => e !== '[' && e !== ']' && e !== '#').join('')
+  }
+}
+
+function sheltered(str) {
+    let filtered = ''
+    let sheltered = false
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === '#') filtered += str[i]
+      else if (str[i] === '[') {
+        filtered += str[i]
+        sheltered = true
+      } else if (str[i] === ']') {
+        filtered += str[i]
+        sheltered = false
+      } else if (sheltered) {
+        filtered += str[i]
+      }
+    }
+  return filtered
+}
+
+function starts(str) {
+  let start = str.split('').map((e, i) => [e, i]).filter(e => e[0] === ']').map(e => e[1])
+  start.pop()
+  start.unshift(0)
+  return start
+}
+
+function ends(str) {
+  let end = str.split('').map((e, i) => [e, i]).filter(e => e[0] === '[').map(e => e[1])
+  end.shift()
+  end.push(str.length)
+  return end
+}
+
 
 
 //still working

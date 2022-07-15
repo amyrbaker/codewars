@@ -742,6 +742,10 @@ function averages(numbers) {
   return avg
 }
 
+function isRubyComing(list) {
+  return list.map(e => e.language).includes('Ruby')
+}
+
 
 
 

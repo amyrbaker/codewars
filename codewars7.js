@@ -732,6 +732,16 @@ function reverseNumber(n) {
     +n.toString().split('').reverse().join('')
 }
 
+function averages(numbers) {
+  console.log(numbers)
+  let avg = []
+  if (numbers === null || numbers.length <= 1) return []
+  for (let i = 0; i < numbers.length - 1; i++) {
+    avg.push((numbers[i] + numbers[i + 1]) / 2)
+  }
+  return avg
+}
+
 
 
 

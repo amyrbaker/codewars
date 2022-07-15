@@ -726,6 +726,12 @@ function oper(fct, s) {
   return fct(s)
 }
 
+function reverseNumber(n) {
+  return n.toString()[0] === '-' ?
+    +(n * -1).toString().split('').reverse().join('') * -1 :
+    +n.toString().split('').reverse().join('')
+}
+
 
 
 

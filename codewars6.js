@@ -1343,6 +1343,14 @@ function binaryToString(binary) {
   return bin.join('')
 }
 
+function deepCount(arr) {
+  let len = arr.length
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) len += deepCount(arr[i])
+  }
+  return len
+}
+
 
 
 

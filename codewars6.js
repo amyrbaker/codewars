@@ -1351,6 +1351,10 @@ function deepCount(arr) {
   return len
 }
 
+function compose(f,g) {
+  return (...args) => f(g(...args))
+}
+
 
 
 

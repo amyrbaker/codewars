@@ -757,6 +757,10 @@ function generateShape(integer){
   return [...new Array(integer).fill('+'.repeat(integer))].join('\n')
 }
 
+function automorphic(n){
+  return +(n**2).toString().slice(-n.toString().length) === n ? 'Automorphic' : 'Not!!'
+}
+
 
 
 

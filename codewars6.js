@@ -1355,6 +1355,10 @@ function compose(f,g) {
   return (...args) => f(g(...args))
 }
 
+function game(n) {
+  return n**2/2 % 1 === 0 ? [n**2/2] : [n**2, 2]
+}
+
 
 
 

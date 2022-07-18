@@ -761,6 +761,10 @@ function automorphic(n){
   return +(n**2).toString().slice(-n.toString().length) === n ? 'Automorphic' : 'Not!!'
 }
 
+function solve(arr) {
+  return [...new Set(arr.reverse())].reverse()
+}
+
 
 
 

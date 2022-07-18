@@ -782,6 +782,10 @@ function foldTo(distance) {
   return distance < 0 ? null : count
 }
 
+function toNumberArray(stringarray){
+  return stringarray.map(e => +e)
+}
+
 
 
 

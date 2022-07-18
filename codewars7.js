@@ -765,6 +765,13 @@ function solve(arr) {
   return [...new Set(arr.reverse())].reverse()
 }
 
+function count(array){
+  return array.reduce((a, c) => {
+    a[c] ? a[c]++ : a[c] = 1
+    return a
+  }, {}) 
+}
+
 
 
 

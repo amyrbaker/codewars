@@ -772,6 +772,16 @@ function count(array){
   }, {}) 
 }
 
+function foldTo(distance) {
+  let count = 0
+  let thickness = .0001
+  while (thickness < distance) {
+    thickness *= 2
+    count++
+  }
+  return distance < 0 ? null : count
+}
+
 
 
 

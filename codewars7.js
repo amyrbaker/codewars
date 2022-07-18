@@ -786,6 +786,15 @@ function toNumberArray(stringarray){
   return stringarray.map(e => +e)
 }
 
+function balancedNum(number){
+  let str = number.toString()
+  let left = str.slice(0, Math.ceil(str.length / 2 - 1))
+  let leftSum = left.split('').reduce((a, c) => a + +c, 0)
+  let right = str.length <= 2 ? '' : str.slice(-Math.floor((str.length - 1) / 2))
+  let rightSum = right.split('').reduce((a, c) => a + +c, 0)
+  return leftSum === rightSum ? 'Balanced' : 'Not Balanced'
+}
+
 
 
 

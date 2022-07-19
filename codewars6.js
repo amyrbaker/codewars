@@ -1359,6 +1359,27 @@ function game(n) {
   return n**2/2 % 1 === 0 ? [n**2/2] : [n**2, 2]
 }
 
+function fruit(reels, spins){
+  let one = reels[0][spins[0]]
+  let two = reels[1][spins[1]]
+  let three = reels[2][spins[2]]
+  let scores = ['Jack', 'Queen', 'King', 'Bar', 'Cherry', 'Seven', 'Shell', 'Bell', 'Star', 'Wild']
+  if (one === two && two === three) return (scores.indexOf(one) + 1) * 10
+  else if (one !== two && one !== three && two !== three) return 0
+  else if (one === two) {
+    if (three === 'Wild') return (scores.indexOf(one) + 1) * 2
+    else return scores.indexOf(one) + 1
+  }
+  else if (one === three) {
+    if (two === 'Wild') return (scores.indexOf(one) + 1) * 2
+    else return scores.indexOf(one) + 1
+  }  
+  else if (three === two) {
+    if (one === 'Wild') return (scores.indexOf(two) + 1) * 2
+    else return scores.indexOf(two) + 1
+  }
+}
+
 
 
 

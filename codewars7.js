@@ -795,6 +795,14 @@ function balancedNum(number){
   return leftSum === rightSum ? 'Balanced' : 'Not Balanced'
 }
 
+function menFromBoys(arr){
+  console.log(arr)
+  arr = [...new Set(arr)]
+  let evens = arr.filter(e => !(e % 2))
+  let odds = arr.filter(e => e % 2)
+  return evens.sort((a, b) => a - b).concat(odds.sort((a, b) => b - a))
+}
+
 
 
 

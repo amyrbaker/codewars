@@ -868,6 +868,18 @@ function sevenAte9(str) {
   return removed
 }
 
+function movie(card, ticket, perc) {
+  let times = 1
+  let discount = ticket * perc
+  let B = card + discount
+  while (ticket * times <= Math.ceil(B)) {
+    times++
+    discount *= perc
+    B += discount
+  }
+  return times
+};
+
 
 
 

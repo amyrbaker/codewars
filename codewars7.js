@@ -847,6 +847,10 @@ function divCon(x){
   return nums - strs
 }
 
+function alternateCase(s) {
+  return s.split('').map(e => e.toLowerCase() === e ? e.toUpperCase() : e.toLowerCase()).join('')
+}
+
 
 
 

@@ -1380,6 +1380,14 @@ function fruit(reels, spins){
   }
 }
 
+function WhatIsTheTime(timeInMirror){
+  let time = timeInMirror.split(':')
+  let hour = 11 - time[0] % 12 === 0 ? 12 : 11 - time[0] % 12
+  let minute = (60 - time[1]) % 60
+  if (minute === 0) hour++
+  return [hour, minute].map(e => e.toString().padStart(2, '0')).join(':')
+}
+
 
 
 

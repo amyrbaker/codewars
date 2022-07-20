@@ -841,6 +841,12 @@ function factorial(n) {
   return total
 } 
 
+function divCon(x){
+  let nums = x.filter(e => typeof e === 'number').reduce((a, c) => a + c, 0)
+  let strs = x.filter(e => typeof e === 'string').reduce((a, c) => a + +c, 0)
+  return nums - strs
+}
+
 
 
 

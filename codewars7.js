@@ -851,6 +851,14 @@ function alternateCase(s) {
   return s.split('').map(e => e.toLowerCase() === e ? e.toUpperCase() : e.toLowerCase()).join('')
 }
 
+reverse = function(array) {
+  let arr = []
+  for (let i = 0; i < array.length; i++) {
+    arr.unshift(array[i])
+  }
+  return arr
+}
+
 
 
 

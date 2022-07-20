@@ -803,6 +803,10 @@ function menFromBoys(arr){
   return evens.sort((a, b) => a - b).concat(odds.sort((a, b) => b - a))
 }
 
+function maxDiff(list) {
+  return list.length > 1 ? Math.max(...list) - Math.min(...list) : 0
+};
+
 
 
 

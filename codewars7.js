@@ -807,6 +807,12 @@ function maxDiff(list) {
   return list.length > 1 ? Math.max(...list) - Math.min(...list) : 0
 };
 
+function getFirstPython(list) {
+  let index = list.map(e => e.language).indexOf('Python')
+  if (index === -1) return 'There will be no Python developers'
+  return `${list[index].firstName}, ${list[index].country}`
+}
+
 
 
 

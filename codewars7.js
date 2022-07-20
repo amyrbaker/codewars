@@ -817,6 +817,18 @@ function switcheroo(x){
   return x.split('').map(e => e === 'a' ? 'b' : e === 'b' ? 'a' : e).join('')
 }
 
+var orderedCount = function (text) {
+  let arr = []
+  for (let i = 0; i < text.length; i++) {
+    if (!arr.map(e => e[0]).includes(text[i])) arr.push([text[i], 1])
+    else {
+      let index = arr.map(e => e[0]).indexOf(text[i])
+      arr[index][1]++
+    }
+  }
+  return arr
+}
+
 
 
 

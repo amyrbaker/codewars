@@ -813,6 +813,10 @@ function getFirstPython(list) {
   return `${list[index].firstName}, ${list[index].country}`
 }
 
+function switcheroo(x){
+  return x.split('').map(e => e === 'a' ? 'b' : e === 'b' ? 'a' : e).join('')
+}
+
 
 
 

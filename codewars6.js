@@ -1388,6 +1388,19 @@ function WhatIsTheTime(timeInMirror){
   return [hour, minute].map(e => e.toString().padStart(2, '0')).join(':')
 }
 
+function computeDepth (x){
+  let depth = 0
+  let digits = []
+  while (digits.length < 10) {
+    depth++
+    let value = (x * depth).toString()
+    for (let i = 0; i < value.length; i++) {
+      if (!digits.includes(value[i])) digits.push(value[i])
+    }
+  }
+  return depth
+}
+
 
 
 

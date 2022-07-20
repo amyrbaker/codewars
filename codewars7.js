@@ -829,6 +829,18 @@ var orderedCount = function (text) {
   return arr
 }
 
+function strong(n) {
+  return n.toString().split('').reduce((a, c) => a + factorial(+c), 0) === n ? 'STRONG!!!!' : 'Not Strong !!'
+}
+                                       
+function factorial(n) {
+  let total = 1
+  for (let i = n; i > 1; i--) {
+    total *= i
+  }
+  return total
+} 
+
 
 
 

@@ -895,6 +895,13 @@ function pairs(ar){
   return count
 };
 
+function differenceOfSquares(n){
+  let arr = [...new Array(n).keys()].map(e => e + 1)
+  let one = (arr.reduce((a, c) => a + c, 0)) ** 2
+  let two = arr.map(e => e ** 2).reduce((a, c) => a + c, 0)
+  return one - two
+}
+
 
 
 

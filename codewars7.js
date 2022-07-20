@@ -880,6 +880,13 @@ function movie(card, ticket, perc) {
   return times
 };
 
+function calc(x){
+  let total1 = x.split('').map(e => +e.charCodeAt(0)).join('')
+  let one = total1.split('').reduce((a, c) => a + +c, 0)
+  let total2 = total1.split('').map(e => e === '7' ? '1' : e).reduce((a, c) => a + +c, 0)
+  return one - total2
+}
+
 
 
 

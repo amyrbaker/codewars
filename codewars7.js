@@ -915,6 +915,14 @@ function squares(x, n) {
   return arr
 }
 
+function tidyNumber(n){
+  let num = n.toString().split('')
+  for (let i = 0; i < num.length - 1; i++) {
+    if (num[i] > num[i + 1]) return false
+  }
+  return true
+}
+
 
 
 

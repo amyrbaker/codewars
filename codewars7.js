@@ -937,6 +937,12 @@ function arrayLeaders(numbers){
   return arr
 }
 
+function encode(str,  n){
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  let num = n.toString().split('').map(e => +e)
+  return str.split('').map((e, i) => alph.indexOf(e) + 1 + num[i % num.length])
+}
+
 
 
 

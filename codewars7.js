@@ -906,6 +906,15 @@ function maxTriSum(numbers){
   return [...new Set(numbers)].sort((a, b) => b - a).slice(0, 3).reduce((a, c) => a + c, 0)
 }
 
+function squares(x, n) {
+  if (n < 1) return []
+  let arr = [x]
+  while (arr.length < n) {
+    arr.push(arr[arr.length - 1] ** 2)
+  }
+  return arr
+}
+
 
 
 

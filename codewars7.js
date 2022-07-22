@@ -928,6 +928,15 @@ function disariumNumber(n){
   return n === num ? 'Disarium !!' : 'Not !!'
 }
 
+function arrayLeaders(numbers){
+  let arr = []
+  numbers.push(0)
+  for (let i = 0; i < numbers.length - 1; i++) {
+    if (numbers[i] > numbers.slice(i + 1).reduce((a, c) => a + c, 0)) arr.push(numbers[i])
+  }
+  return arr
+}
+
 
 
 

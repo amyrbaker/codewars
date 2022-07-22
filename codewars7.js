@@ -923,6 +923,11 @@ function tidyNumber(n){
   return true
 }
 
+function disariumNumber(n){
+  let num = n.toString().split('').map((e, i) => e ** (i + 1)).reduce((a, c) => a + c, 0)
+  return n === num ? 'Disarium !!' : 'Not !!'
+}
+
 
 
 

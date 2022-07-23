@@ -968,6 +968,10 @@ function incrementer(nums) {
   return nums.map((e, i) => +(e + i + 1).toString().slice(-1))
 }
 
+function capitalize(s,arr){
+  return s.split('').map((e, i) => arr.includes(i) ? e.toUpperCase() : e).join('')
+};
+
 
 
 

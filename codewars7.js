@@ -977,6 +977,10 @@ function isNarcissistic(n) {
   return num.map(e => e ** num.length).reduce((a, c) => a + c, 0) === n
 }
 
+var FilterString = function(value) {
+  return +value.split('').filter(e => '0123456789'.includes(e)).join('')
+}
+
 
 
 

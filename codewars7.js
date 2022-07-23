@@ -959,6 +959,11 @@ function removeRotten(bagOfFruits){
   return bagOfFruits.map(e => e.slice(0, 6) === 'rotten' ? e.slice(6).toLowerCase() : e)
 }
 
+function outed(meet, boss){
+  let arr = Object.entries(meet).map(e => e[0] === boss ? e[1] *= 2 : e[1])
+  return arr.reduce((a, c) => a + c, 0) / arr.length <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
+}
+
 
 
 

@@ -947,6 +947,13 @@ function nthSmallest(arr, pos){
   return arr.sort((a, b) => a - b)[pos - 1]
 }
 
+function containAllRots(strng, arr) {
+  for (let i = 0; i < strng.length; i++) {
+    if (!arr.includes(strng.slice(i) + strng.slice(0, i))) return false
+  }
+  return true
+}
+
 
 
 

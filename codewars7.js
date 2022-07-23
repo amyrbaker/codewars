@@ -954,6 +954,11 @@ function containAllRots(strng, arr) {
   return true
 }
 
+function removeRotten(bagOfFruits){
+  if (!bagOfFruits) return []
+  return bagOfFruits.map(e => e.slice(0, 6) === 'rotten' ? e.slice(6).toLowerCase() : e)
+}
+
 
 
 

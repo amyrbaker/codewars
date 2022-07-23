@@ -981,6 +981,10 @@ var FilterString = function(value) {
   return +value.split('').filter(e => '0123456789'.includes(e)).join('')
 }
 
+const closestMultiple10 = num => {
+  return Math.round(num / 10) * 10
+};
+
 
 
 

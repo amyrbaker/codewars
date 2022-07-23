@@ -943,6 +943,10 @@ function encode(str,  n){
   return str.split('').map((e, i) => alph.indexOf(e) + 1 + num[i % num.length])
 }
 
+function nthSmallest(arr, pos){
+  return arr.sort((a, b) => a - b)[pos - 1]
+}
+
 
 
 

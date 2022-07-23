@@ -985,6 +985,14 @@ const closestMultiple10 = num => {
   return Math.round(num / 10) * 10
 };
 
+function wordValue(a) {
+  console.log(a)
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  return a.map((e, i) => (e.split('')
+                          .map(e => alph.indexOf(e) + 1)
+                          .reduce((a, c) => a + c, 0)) * (i + 1))
+}
+
 
 
 

@@ -972,6 +972,11 @@ function capitalize(s,arr){
   return s.split('').map((e, i) => arr.includes(i) ? e.toUpperCase() : e).join('')
 };
 
+function isNarcissistic(n) {
+  let num = n.toString().split('').map(e => +e)
+  return num.map(e => e ** num.length).reduce((a, c) => a + c, 0) === n
+}
+
 
 
 

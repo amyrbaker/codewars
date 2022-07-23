@@ -964,6 +964,10 @@ function outed(meet, boss){
   return arr.reduce((a, c) => a + c, 0) / arr.length <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
 }
 
+function incrementer(nums) { 
+  return nums.map((e, i) => +(e + i + 1).toString().slice(-1))
+}
+
 
 
 

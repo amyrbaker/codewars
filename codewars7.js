@@ -1013,6 +1013,10 @@ function calculate(num1, operation, num2) {
   if (operation === '/') return num1 / num2
 }
 
+function sortMyString(s) {
+  return `${s.split('').filter((e, i) => !(i % 2)).join('')} ${s.split('').filter((e, i) => i % 2).join('')}`
+}
+
 
 
 

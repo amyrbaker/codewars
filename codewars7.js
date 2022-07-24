@@ -1017,6 +1017,14 @@ function sortMyString(s) {
   return `${s.split('').filter((e, i) => !(i % 2)).join('')} ${s.split('').filter((e, i) => i % 2).join('')}`
 }
 
+function jumpingNumber(n){
+  let num = n.toString()
+  for (let i = 0; i < num.length - 1; i++) {
+    if (Math.abs(+num[i] - +num[i + 1]) !== 1) return 'Not!!'
+  }
+  return 'Jumping!!'
+}
+
 
 
 

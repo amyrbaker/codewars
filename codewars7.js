@@ -1025,6 +1025,15 @@ function jumpingNumber(n){
   return 'Jumping!!'
 }
 
+function boredom(staff){
+  let depts = {'accounts' : 1, 'finance' : 2, 'canteen' : 10, 'regulation' : 3, 'trading' : 6, 'change' : 6, 'IS' : 8, 'retail' : 5, 'cleaning' : 4, 'pissing about' : 25}
+  let score = 0
+  for (let person in staff) {
+    score += depts[staff[person]]
+  }
+  return score <= 80 ? 'kill me now' : score >= 100 ? 'party time!!' : 'i can handle this'
+}
+
 
 
 

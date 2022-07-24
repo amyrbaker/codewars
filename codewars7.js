@@ -1005,9 +1005,14 @@ function maxProduct(numbers, size){
   return numbers.sort((a, b) => b - a).slice(0, size).reduce((a, c) => a*c, 1)
 }
 
-function maxProduct(numbers, size){
-  return numbers.sort((a, b) => b - a).slice(0, size).reduce((a, c) => a*c, 1)
+function calculate(num1, operation, num2) {
+  if (!'+-*/'.includes(operation) || (operation === '/' && num2 === 0)) return null
+  if (operation === '+') return num1 + num2
+  if (operation === '-') return num1 - num2
+  if (operation === '*') return num1 * num2
+  if (operation === '/') return num1 / num2
 }
+
 
 
 

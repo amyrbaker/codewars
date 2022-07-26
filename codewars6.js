@@ -1407,6 +1407,24 @@ function blackOrWhiteKey(keyPressCount) {
   return stop === 1 ? 'white' : 'black'
 }
 
+function highlight(code) {
+  let str = ''
+  let char = ''
+  for (let i = 0; i < code.length; i++) {
+    if (i !== code.length - 1 && (code[i] === code[i + 1] || '0123456789'.includes(code[i]) && '0123456789'.includes(code[i + 1]))) char += code[i]
+    else {
+      char += code[i]
+      if (code[i] === 'F') str += `<span style="color: pink">${char}</span>`
+      else if (code[i] === 'L') str += `<span style="color: red">${char}</span>`
+      else if (code[i] === 'R') str += `<span style="color: green">${char}</span>`
+      else if ('0123456789'.includes(code[i])) str += `<span style="color: orange">${char}</span>`
+      else str += char
+      char = ''
+    }
+  }
+  return str
+}
+
 
 
 

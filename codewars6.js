@@ -1401,6 +1401,12 @@ function computeDepth (x){
   return depth
 }
 
+function blackOrWhiteKey(keyPressCount) {
+  let keys = [1,2,1,1,2,1,2,1,1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,2,1,2,1,1]
+  let stop = keys[(keyPressCount - 1) % 88]
+  return stop === 1 ? 'white' : 'black'
+}
+
 
 
 

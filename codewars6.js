@@ -1447,6 +1447,16 @@ function reduce([a, b]) {
   return [num, denom]
 }
 
+function lowestProduct(input) { 
+  if (input.length < 4) return 'Number is too small'
+  let prod = input.split('').slice(0, 4).reduce((a, c) => a * c, 1)
+  for (let i = 1; i < input.length - 3; i++) {
+    let slice = input.split('').slice(i, i + 4).reduce((a, c) => a * +c, 1)
+    if (slice < prod) prod = slice
+  }
+  return prod
+}
+
 
 
 

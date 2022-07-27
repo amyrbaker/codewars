@@ -1457,6 +1457,21 @@ function lowestProduct(input) {
   return prod
 }
 
+function isLanguageDiverse(list) {
+  let langs = Object.values(list.reduce((a, c) => {
+    a[c.language] ? a[c.language]++ : a[c.language] = 1
+    return a
+  }, {})).sort((a, b) => b - a)
+  for (let i = 0; i < langs.length; i++) {
+    let num = langs[i]
+    let rest = langs.filter((e, ind) => ind !== i)
+    for (let j = 0; j < rest.length; j++) {
+      if (num > rest[j] * 2) return false
+    }
+  }
+  return true
+}
+
 
 
 

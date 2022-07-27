@@ -1425,6 +1425,28 @@ function highlight(code) {
   return str
 }
 
+function sumFracts(l) {
+  if (!l.length) return null
+  let commondenom = l.map(e => e[1]).reduce((a, c) => a * c, 1)
+  let num = l.map(e => e[0] * commondenom / e[1]).reduce((a, c) => a + c, 0)
+  if (num / commondenom % 1 === 0) return num / commondenom
+  else {
+    return reduce([num, commondenom])
+  }
+}
+
+function reduce([a, b]) {
+  let num = a
+  let denom = b
+  for (let i = 2; i < Math.min(a, b); i++) {
+    while (num % i === 0 && denom % i === 0) {
+      num /= i
+      denom /= i
+    }
+  }
+  return [num, denom]
+}
+
 
 
 

@@ -1472,6 +1472,15 @@ function isLanguageDiverse(list) {
   return true
 }
 
+function rotate(str){
+  let arr = []
+  for (let i = 1; i < str.length; i++) {
+    arr.push(str.slice(i) + str.slice(0, i))
+  }
+  if (str) arr.push(str)
+  return arr
+}
+
 
 
 

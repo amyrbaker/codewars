@@ -1481,6 +1481,14 @@ function rotate(str){
   return arr
 }
 
+function addUsername(list) {
+  list.forEach (person => {
+    let date = new Date
+    person.username = `${person['firstName'].toLowerCase()}${person['lastName'][0].toLowerCase()}${date.getFullYear() - person.age}`
+  })
+  return list
+}
+
 
 
 

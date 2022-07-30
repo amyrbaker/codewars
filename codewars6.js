@@ -1496,6 +1496,14 @@ var whatTimeIsIt = function(angle) {
   return `${hour === '00' ? '12' : hour}:${minute}`
 }
 
+String.prototype.ipv4Address=function(){
+  let arr = this.split('.')
+  if (arr.length === 4 &&
+     arr.every(e => +e >= 0 && +e <= 255) &&
+     arr.every(e => e === (+e).toString())) return true
+  return false
+}
+
 
 
 

@@ -1489,6 +1489,13 @@ function addUsername(list) {
   return list
 }
 
+var whatTimeIsIt = function(angle) {
+  let ratio = angle / 360 * 12
+  let hour = Math.floor(ratio % 12).toString().padStart(2, '0')
+  let minute = Math.floor(angle % 30 / 30 * 60).toString().padStart(2, '0')
+  return `${hour === '00' ? '12' : hour}:${minute}`
+}
+
 
 
 

@@ -1504,6 +1504,24 @@ String.prototype.ipv4Address=function(){
   return false
 }
 
+function mostFrequentDays(year){
+  let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  let feb = new Date(year, 2, 0).getDate();
+  if (feb === 28) {
+    let date = new Date(`January 1, ${year}`).getDay()
+    if (date === 0) date = 7
+    return [days[date - 1]]
+  }
+  else {
+    let first = new Date(`January 1, ${year}`).getDay()
+    if (first === 0) first = 7
+    let second = new Date(`January 2, ${year}`).getDay()
+    if (second === 0) second = 7
+    if (first > second) [first, second] = [second, first]
+    return [days[first - 1], days[second - 1]]
+  }
+}
+
 
 
 

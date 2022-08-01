@@ -1549,6 +1549,16 @@ var Harshad = ( function() {
 
 } () );
 
+var numberFormat = function (number) {
+  let arr = []
+  let rev = number.toString().split('').reverse().join('')
+  for (let i = 0; i < rev.length; i += 3) {
+    arr.unshift(rev.slice(i, i + 3))
+  }
+  arr = arr.map(e => e.split('').reverse().join(''))
+  return arr[0] === '-' ? `-${arr.slice(1).join(',')}` : arr.join(',')
+};
+
 
 
 

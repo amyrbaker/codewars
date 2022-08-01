@@ -1522,6 +1522,33 @@ function mostFrequentDays(year){
   }
 }
 
+var Harshad = ( function() {
+  'use strict';
+  return {
+    isValid: function( number ) {
+      return number % number.toString().split('').reduce((a, c) => a + +c, 0) === 0
+    },
+    
+    getNext: function( number ) {
+      number++
+      while (number % number.toString().split('').reduce((a, c) => a + +c, 0) !== 0) {
+        number++
+      }
+      return number
+    },
+    
+    getSerie: function( count, start = 0) {
+      let arr = []
+      for (let i = start + 1; ; i++) {
+        if (arr.length === count) break
+        else if (i % i.toString().split('').reduce((a, c) => a + +c, 0) === 0) arr.push(i)
+      }
+      return arr
+    }
+  };
+
+} () );
+
 
 
 

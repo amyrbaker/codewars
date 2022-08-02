@@ -1559,6 +1559,31 @@ var numberFormat = function (number) {
   return arr[0] === '-' ? `-${arr.slice(1).join(',')}` : arr.join(',')
 };
 
+function parseHTMLColor(color) {
+  if (color[0] !== '#') color = PRESET_COLORS[color.toLowerCase()]
+  color = color.slice(1)
+  if (color.length === 3) color = color.split('').map(e => e.repeat(2)).join('')
+  let rgb = []
+  for (let i = 0; i < color.length; i += 2) {
+    rgb.push(parseInt(color.slice(i, i + 2), 16))
+  }
+  return {r : rgb[0], g : rgb[1], b : rgb[2]}
+}
+
+function meeting(x, need){
+  if (need === 0) return 'Game On'
+  let chairs = x.map(e => e[1] >= e[0].length ? e[1] - e[0].length : 0)
+  if (chairs.reduce((a, c) => a + c, 0) < need) return 'Not enough!'
+  let rooms = []
+  for (let i = 0; i < chairs.length; i++) {
+    let total = rooms.reduce((a, c) => a + c, 0)
+    if (total === need) return rooms
+    else if (total + chairs[i] > need) rooms.push(need - total)
+    else rooms.push(chairs[i])
+  }
+  return rooms
+}
+
 
 
 

@@ -1592,6 +1592,21 @@ function arrange(strng) {
   return arr.map((e, i) => i % 2 ? e.toUpperCase() : e.toLowerCase()).join(' ')
 }
 
+function shortestStepsToNum(num) {
+  let count = 0
+  while (num !== 1) {
+    if (num % 2) {
+      count++
+      num -= 1
+    } else {
+      count++
+      num /= 2
+    }
+  }
+  return count
+}
+
+
 
 
 

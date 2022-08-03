@@ -1606,6 +1606,17 @@ function shortestStepsToNum(num) {
   return count
 }
 
+function nameInStr(str, name){
+  let lowerStr = str.toLowerCase()
+  let lowerName = name.toLowerCase()
+  for (let i = 0; i < lowerName.length; i++) {
+    let index = lowerStr.indexOf(lowerName[i])
+    if (index === -1) return false
+    lowerStr = lowerStr.slice(index + 1)
+  }
+  return true
+}
+
 
 
 

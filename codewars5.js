@@ -815,6 +815,33 @@ function ends(str) {
   return end
 }
 
+function code(s) {
+  let len = s.length
+  let n = Math.ceil(Math.sqrt(len))
+  s += String.fromCharCode(11).repeat(n ** 2 - len)
+  let arr = []
+  for (let i = 0; i < n; i++) {
+    let str = ''
+    for (let j = i; j < s.length; j += n) {
+      str += s[j]
+    }
+    arr.push(str)
+  }
+  return arr.map(e => e.split('').reverse().join('')).join('\n')
+}
+
+function decode(s) {
+  let arr = s.split('\n').map(e => e.split('').reverse().join(''))
+  console.log(arr)
+  let str = ''
+  for (let i = 0; i < arr[0].length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      str += arr[j][i]
+    }
+  }
+  return str.split('').filter(e => e !== String.fromCharCode(11)).join('')
+}
+
 
 
 //still working

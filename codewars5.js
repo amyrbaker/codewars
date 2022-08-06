@@ -842,6 +842,30 @@ function decode(s) {
   return str.split('').filter(e => e !== String.fromCharCode(11)).join('')
 }
 
+const deNico = (key, m) => { 
+  let sorted = key.split('').sort().join('')
+  key = key.split('').map(e => sorted.indexOf(e) + 1)
+  let arr = []
+  for (let i = 0; i < key.length; i++) {
+    let str = ''
+    for (let j = i; j < m.length; j += key.length) {
+      str += m[j]
+    }
+    arr.push(str)
+  }
+  let decode = []
+  for (let i = 0; i < key.length; i++) {
+    decode.push(arr[key[i] - 1])
+  }
+  let str = ''
+  for (let i = 0; i < decode[0].length; i++) {
+    for (let j = 0; j < decode.length; j++) {
+      if (decode[j][i]) str += decode[j][i]
+    }
+  }
+  return str.trimEnd()
+}
+
 
 
 //still working

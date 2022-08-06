@@ -866,6 +866,39 @@ const deNico = (key, m) => {
   return str.trimEnd()
 }
 
+let region = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,:;-?! \'()$%&"'
+function encrypt(text) {
+  if (text === '' || text === null) return text
+  if (!text.split('').every(e => region.indexOf(e) !== -1)) throw new Error('error')
+  let caseSwap = text.split('').map((e, i) => i % 2 ? swapCase(e) : e).join('')
+  let str = region[76 - region.indexOf(text[0])]
+  for (let i = 1; i < caseSwap.length; i++) {
+    let diff = region.indexOf(caseSwap[i - 1]) - region.indexOf(caseSwap[i])
+    str += region[(diff + 77) % 77]
+  }
+  return str
+}                                    
+                                    
+function decrypt(encryptedText) {
+  if (encryptedText === '' || encryptedText === null) return encryptedText
+  if (!encryptedText.split('').every(e => region.includes(e))) throw new Error('error')
+  let str = region[76 - region.indexOf(encryptedText[0])]
+  let indexes = encryptedText.split('').map(e => region.indexOf(e))
+  for (let i = 1; i < indexes.length; i++) {
+    let index = indexes[i]
+    let diff = index - 77
+    let prevIndex = region.indexOf(str[str.length - 1])
+    let newIndex = prevIndex - diff
+    str += region[newIndex % 77] 
+  }
+  return str.split('').map((e, i) => i % 2 ? swapCase(e) : e).join('')
+}
+
+function swapCase(l) {
+  if (l === l.toLowerCase()) return l.toUpperCase()
+  return l.toLowerCase()
+}
+
 
 
 //still working

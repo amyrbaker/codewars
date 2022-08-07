@@ -1617,6 +1617,17 @@ function nameInStr(str, name){
   return true
 }
 
+function catalog(s, article) {
+  let items = s.split('\n').filter(e => e.includes(article))
+  if (!items.length) return 'Nothing'
+  return items.map(e => {
+    let name = e.slice(e.indexOf('<name>') + 6, e.indexOf('</name>'))
+    let price = `$${e.slice(e.indexOf('<prx>') + 5, e.indexOf('</prx'))}`
+    let qty = e.slice(e.indexOf('<qty>') + 5, e.indexOf('</qty>'))
+    return `${name} > prx: ${price} qty: ${qty}`
+  }).join('\r\n')
+}
+
 
 
 

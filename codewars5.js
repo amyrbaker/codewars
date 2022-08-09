@@ -899,6 +899,31 @@ function swapCase(l) {
   return l.toLowerCase()
 }
 
+function consecKprimes(k, arr) {
+  let count = 0
+  return arr.map(e => primeFactors(e)).filter((e, i, a) => e === k && a[i + 1] === k).length
+}
+
+function primeFactors(n) {
+  let count = 0
+  let num = n
+  for (let i = 2; i <= num; i++) {
+    if (!isPrime(i)) continue
+    while (num % i === 0) {
+      count++
+      num /= i
+    }
+  }
+  return count
+}
+
+function isPrime(n) {
+  for (let i = 2; i < Math.sqrt(n); i++) {
+    if (n % i === 0) return false
+  }
+  return true
+}
+
 
 
 //still working

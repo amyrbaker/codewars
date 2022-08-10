@@ -924,6 +924,42 @@ function isPrime(n) {
   return true
 }
 
+function escape(carpark){
+  if (carpark[carpark.length - 1][carpark[0].length - 1] === 2) return []
+  let result = []
+  carpark[carpark.length - 1][carpark[0].length - 1] = 1
+  let yourFloor
+  for (let i = 0; i < carpark.length; i++) {
+    if (carpark[i].includes(2)) yourFloor = i
+  }
+  let yourIndex = carpark[yourFloor].indexOf(2)
+  
+  for (let i = yourFloor; i < carpark.length; i++) {
+    let stair = carpark[i].indexOf(1)
+    let down = 0
+    if (yourIndex > stair) result.push(`L${yourIndex - stair}`)
+    if (yourIndex < stair) result.push(`R${stair - yourIndex}`)
+    if (i !== carpark.length - 1) result.push(`D${1}`)
+    yourIndex = stair
+  }
+  let final = []
+  let nums = 0
+  for (let i = 0; i < result.length; i++) {
+    if (result[i][0] === 'D') {
+      nums += +result[i][1]
+    }
+    if (result[i][0] !== 'D') {
+      if (nums > 0) {
+        final.push(`D${nums}`)
+        nums = 0
+      }
+      final.push(result[i])
+    }
+    if (i === result.length - 1 && nums > 0) final.push(`D${nums}`)
+  }
+  return final
+}
+
 
 
 //still working

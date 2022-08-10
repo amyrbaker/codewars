@@ -1628,6 +1628,15 @@ function catalog(s, article) {
   }).join('\r\n')
 }
 
+function askForMissingDetails(list) {
+  let arr = list.filter(e => Object.values(e).includes(null))
+  arr.forEach(person => {
+    let missing = Object.entries(person).filter(e => e[1] === null)[0][0]
+    person.question = `Hi, could you please provide your ${missing}.`
+  })
+  return arr
+}
+
 
 
 

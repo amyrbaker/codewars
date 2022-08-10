@@ -960,6 +960,25 @@ function escape(carpark){
   return final
 }
 
+var numberToPrice = function(number) {
+  if (typeof number !== 'number') return 'NaN'
+  if (!number.toString().includes('.')) number = number.toString() + '.00'
+  let [dol, cents] = number.toString().split('.')
+  let neg = false
+  if (number < 0) {
+    neg = true
+    dol = dol.slice(1)
+  }
+  let arr = []
+  for (let i = 0; i < dol.length; i += 3) {
+    arr.unshift(dol.split('').reverse().slice(i, i + 3).reverse())
+  }
+  let formattedDol = arr.map(e => e.join('')).join(',')
+  let formattedCents = cents.length >= 2 ? cents.slice(0, 2) : cents.padEnd(2, '0')
+  if (neg) formattedDol = '-' + formattedDol
+  return `${formattedDol}.${formattedCents}`
+}
+
 
 
 //still working

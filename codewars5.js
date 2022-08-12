@@ -982,13 +982,33 @@ var numberToPrice = function(number) {
 ScrambleWords = function(str){
   let arr = str.split(' ')
                 .map(e => {
+                  let alph = 'abcdefghijklmnopqrstuvwxyz'
                   let len = e.length
                   if (e.length <= 2) return e
-                  else return `${e[0]}${e.slice(1, len - 1).split('').sort().join('')}${e[len - 1]}`
+                  let first = '', last = ''
+                  for (let i = 0; i < len; i++) {
+                    if (alph.includes(e[i])) {
+                      first += e[i]
+                      break
+                    } else first += e[i]
+                  }
+                  for (let i = len - 1; i >= 0; i--) {
+                    if (alph.includes(e[i])) {
+                      last += e[i]
+                      break
+                    } else last += e[i]
+                  }
+                  last = last.split('').reverse().join('')
+                  let middle = e.slice(first.length, len - last.length)
+                  let midLettersSorted = middle.split('').filter(e => alph.includes(e)).sort().join('')
+                  let midChars = middle.split('').map((e, i) => [e, i]).filter(e => !alph.includes(e[0]))
+                  if (midChars.length) midLettersSorted = midLettersSorted.slice(0, midChars[0][1]) + midChars[0][0] + midLettersSorted.slice(midChars[0][1])
+                  return `${first}${midLettersSorted}${last}`
                 })
-  console.log(str, arr)
   return arr.join(' ')
 };
+
+
 
 
 

@@ -979,6 +979,17 @@ var numberToPrice = function(number) {
   return `${formattedDol}.${formattedCents}`
 }
 
+ScrambleWords = function(str){
+  let arr = str.split(' ')
+                .map(e => {
+                  let len = e.length
+                  if (e.length <= 2) return e
+                  else return `${e[0]}${e.slice(1, len - 1).split('').sort().join('')}${e[len - 1]}`
+                })
+  console.log(str, arr)
+  return arr.join(' ')
+};
+
 
 
 //still working

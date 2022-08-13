@@ -1008,6 +1008,19 @@ ScrambleWords = function(str){
   return arr.join(' ')
 };
 
+function largestSum(arr){
+  if (!arr.length || arr.every(e => e < 0)) return 0
+  if (arr.every(e => e > 0)) return arr.reduce((a, c) => a + c, 0)
+  let largest = arr[0]
+  for (let i = 1; i <= arr.length; i++) {
+    for (let j = 0; j < arr.length - i; j++) {
+      let sum = arr.slice(j, j + i).reduce((a, c) => a + c, 0)
+      if (sum > largest) largest = sum
+    }
+  }
+  return largest
+}
+
 
 
 

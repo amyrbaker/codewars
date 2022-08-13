@@ -1026,17 +1026,25 @@ function satNav(directions) {
   let direction 
   let compass = ['n', 'e', 's', 'w']
   directions.forEach(dir => {
-//     if (dir === 'You have reached your destination!') 
     if (dir === 'Turn around!') {
       direction = compass[(compass.indexOf(direction) + 2) % 4]
     }
     if (dir.slice(0, 4) === 'Head') direction = dir[5].toLowerCase()
     if (dir.slice(0, 4) === 'Take') {
       let mult = dir.slice(9, 13) === 'NEXT' ? 1 : +dir[9]
-      if (direction === 'e') pos[0] = ((Math.ceil(pos[0] / 10)) * 10) + (10 * (mult - 1))
-      else if (direction === 'w') pos[0] = ((Math.floor(pos[0]) / 10) * 10) - (10 * (mult - 1))
-      else if (direction === 'n') pos[1] = ((Math.ceil(pos[1]) / 10) * 10) + (10 * (mult - 1))
-      else if (direction === 's') pos[1] = ((Math.floor(pos[1] / 10)) * 10) - (10 * (mult - 1))
+      if (direction === 'e') {
+        if (pos[0] >= 0) pos[0] += ((10 - (pos[0] % 10)) + (10 * (mult - 1)))
+        else pos[0] = pos[0] + (Math.abs(pos[0]) % 10 === 0 ? 10 : Math.abs(pos[0]) % 10) + (10 * (mult - 1))
+      } else if (direction === 'w') {
+        if (pos[0] >= 0) pos[0] = pos[0] - (pos[0] % 10 === 0 ? 10 : pos[0] % 10) - (10 * (mult - 1))
+        else pos[0] = pos[0] - ((10 - (Math.abs(pos[0]) % 10) + 10 * (mult - 1)))
+      } else if (direction === 'n') {
+        if (pos[1] >= 0) pos[1] += ((10 - (pos[1] % 10)) + (10 * (mult - 1)))
+        else pos[1] = pos[1] + (Math.abs(pos[1]) % 10 === 0 ? 10 : Math.abs(pos[1]) % 10) + (10 * (mult - 1))
+      } else if (direction === 's') {
+        if (pos[1] >= 0) pos[1] = pos[1] - (pos[1] % 10 === 0 ? 10 : pos[1] % 10) - (10 * (mult - 1))
+        else pos[1] = pos[1] - ((10 - (Math.abs(pos[1]) % 10) + 10 * (mult - 1)))
+      }
       direction = dir[dir.length - 4] === 'L' ? compass[(compass.indexOf(direction) + 3) % 4] : compass[(compass.indexOf(direction) + 1) % 4]
     }
     if (dir.slice(0, 2) === 'Go') {
@@ -1046,15 +1054,11 @@ function satNav(directions) {
       else if (direction === 'n') pos[1] += add
       else if (direction === 's') pos[1] -= add
     }
-    console.log(dir, direction, pos)
   })
   return pos
 }
 
-// if (direction === 'e') pos[0] += ((10 - (Math.abs(pos[0]) % 10)) + (10 * (mult - 1))) 
-//       else if (direction === 'w') pos[0] -= ((10 - (Math.abs(pos[0]) % 10)) + (10 * (mult - 1)))
-//       else if (direction === 'n') pos[1] += ((10 - (Math.abs(pos[1]) % 10)) + (10 * (mult - 1)))
-//       else if (direction === 's') pos[1] -= ((10 - (Math.abs(pos[1]) % 10)) + (10 * (mult - 1)))
+
 
 
 

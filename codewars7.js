@@ -1034,6 +1034,10 @@ function boredom(staff){
   return score <= 80 ? 'kill me now' : score >= 100 ? 'party time!!' : 'i can handle this'
 }
 
+function alternate(n, firstValue, secondValue){
+  return [...new Array(n).fill(firstValue)].map((e, i) => i % 2 ? secondValue : e)
+}
+
 
 
 

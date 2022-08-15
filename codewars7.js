@@ -1047,6 +1047,13 @@ const prevMultOfThree = n => {
   return null
 }
 
+function separateTypes(input) {
+  return input.reduce((a, c) => {
+    a[typeof c] ? a[typeof c].push(c) : a[typeof c] = [c]
+    return a
+  }, {})
+}
+
 
 
 

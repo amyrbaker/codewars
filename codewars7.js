@@ -1054,6 +1054,16 @@ function separateTypes(input) {
   }, {})
 }
 
+function getTheVowels(word) {
+  let vowels = 'aeiou'
+  let count = 0
+  let arr = word.split('').filter(e => vowels.includes(e))
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === vowels[count % 5]) count++
+  }
+  return count
+}
+
 
 
 

@@ -1058,6 +1058,24 @@ function satNav(directions) {
   return pos
 }
 
+function maxSumPath(l1,l2){
+  let common = l1.filter(e => l2.includes(e))
+  let sum = 0
+  let index1 = 0
+  let index2 = 0
+  for (let i = 0; i < common.length; i++) {
+    let numIndex1 = l1.indexOf(common[i])
+    let numIndex2 = l2.indexOf(common[i])
+    let segSum1 = l1.slice(index1, numIndex1).reduce((a, c) => a + c, 0)
+    let segSum2 = l2.slice(index2, numIndex2).reduce((a, c) => a + c, 0)
+    sum += Math.max(segSum1, segSum2) + common[i]
+    index1 = numIndex1 + 1
+    index2 = numIndex2 + 1
+  }
+  sum += Math.max(l1.slice(index1).reduce((a, c) => a + c, 0), l2.slice(index2).reduce((a, c) => a + c, 0))
+  return sum
+}
+
 
 
 

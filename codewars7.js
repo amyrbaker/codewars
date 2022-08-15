@@ -1038,6 +1038,15 @@ function alternate(n, firstValue, secondValue){
   return [...new Array(n).fill(firstValue)].map((e, i) => i % 2 ? secondValue : e)
 }
 
+const prevMultOfThree = n => {
+  let str = n.toString()
+  while (str.length > 0) {
+    if (+str % 3 === 0) return +str
+    else str = str.slice(0, str.length - 1)
+  }
+  return null
+}
+
 
 
 

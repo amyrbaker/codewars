@@ -1092,6 +1092,14 @@ function lastSurvivor(letters, coords) {
   return letters
 }
 
+function i(word) {
+  if (!word.length 
+      || word.split('').filter(e => 'aeiou'.includes(e.toLowerCase())).length >= word.length / 2
+      || word[0] === word[0].toLowerCase() 
+      || word[0].toLowerCase() === 'i') return 'Invalid word'
+  return `i${word}`
+}
+
 
 
 

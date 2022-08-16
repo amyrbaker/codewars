@@ -1074,6 +1074,17 @@ function oddOrEven(n) {
   return n % 2 ? 'Either' : n % 4 ? 'Odd' : 'Even'
 }
 
+function grid(N) {
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  while (alph.length < N + N) alph += alph
+  let grid = []
+  if (N < 0) return null
+  for (let i = 0; i < N; i++) {
+    grid.push(alph.slice(i, i + N).split('').join(' '))
+  }
+  return grid.join('\n')
+}
+
 
 
 

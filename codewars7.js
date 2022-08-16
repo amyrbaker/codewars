@@ -1070,6 +1070,10 @@ function robberEncode(sentence) {
           .join('')
 }
 
+function oddOrEven(n) {
+  return n % 2 ? 'Either' : n % 4 ? 'Odd' : 'Even'
+}
+
 
 
 

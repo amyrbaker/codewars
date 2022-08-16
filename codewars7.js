@@ -1064,6 +1064,12 @@ function getTheVowels(word) {
   return count
 }
 
+function robberEncode(sentence) {
+  return sentence.split('')
+          .map(e => !'bcdfghjklmnpqrstvwxyz'.includes(e.toLowerCase()) ? e : e + (e === e.toLowerCase() ? 'o' : 'O') + e)
+          .join('')
+}
+
 
 
 

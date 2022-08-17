@@ -1637,6 +1637,25 @@ function askForMissingDetails(list) {
   return arr
 }
 
+function ascendDescend(length, minimum, maximum) {
+  if (maximum < minimum || length === 0) return ''
+  if (maximum === minimum) return minimum.toString().repeat(length)
+  let str = [minimum]
+  let increase = true
+  while (str.join('').length < length) {
+    if (str[str.length - 1] === minimum) {
+      str.push(str[str.length - 1] + 1)
+      increase = true
+    } else if (str[str.length - 1] === maximum) {
+      str.push(str[str.length - 1] - 1)
+      increase = false
+    } else if (str[str.length - 1] !== maximum && increase) str.push(str[str.length - 1] + 1)
+    else if (str[str.length - 1] !== maximum && !increase) str.push(str[str.length - 1] - 1)
+  }
+  return str.join('').slice(0, length)
+}
+
+
 
 
 

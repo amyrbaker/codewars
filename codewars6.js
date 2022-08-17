@@ -1656,7 +1656,23 @@ function ascendDescend(length, minimum, maximum) {
 }
 
 
+const solution = mtrx => {
+  let arrow, x
+  for (let i = 0; i < mtrx.length; i++) {
+    if (mtrx[i].indexOf('x') !== -1) x = [i, mtrx[i].indexOf('x')]
+    if (mtrx[i].indexOf('^') !== -1) arrow = [i, mtrx[i].indexOf('^'), '^']
+    if (mtrx[i].indexOf('>') !== -1) arrow = [i, mtrx[i].indexOf('>'), '>']
+    if (mtrx[i].indexOf('v') !== -1) arrow = [i, mtrx[i].indexOf('v'), 'v']
+    if (mtrx[i].indexOf('<') !== -1) arrow = [i, mtrx[i].indexOf('<'), '<']
+  }
+  if ((arrow[2] === '^' && arrow[1] === x[1] && arrow[0] > x[0]) ||
+      (arrow[2] === '>' && arrow[0] === x[0] && arrow[1] < x[1]) ||
+      (arrow[2] === 'v' && arrow[1] === x[1] && arrow[0] < x[0]) ||
+      (arrow[2] === '<' && arrow[0] === x[0] && arrow[1] > x[1])) return true
+  return false
+ }
 
+ 
 
 
 

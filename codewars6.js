@@ -1707,6 +1707,10 @@ var findInArray = function(array, iterator) {
   return -1
 };
 
+function makeSentence(parts) {
+  return parts.reduce((a, c) => c === ',' ? a += c : c === '.' ? a : a += ` ${c}`, '').trim() + '.'
+}
+
 
 
 

@@ -1678,6 +1678,16 @@ const solution = mtrx => {
   })
 }
 
+function generateName(){
+  let chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+  let str = `${chars[random()]}${chars[random()]}${chars[random()]}${chars[random()]}${chars[random()]}${chars[random()]}`
+  return str
+}
+
+function random() {
+  return Math.floor(Math.random() * 62)
+}
+
 
 
 

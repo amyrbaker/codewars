@@ -1700,6 +1700,13 @@ var fizzBuzzCustom = function(stringOne = 'Fizz', stringTwo = 'Buzz', numOne = 3
            .map(e => !(e % numOne) && !(e % numTwo) ? stringOne + stringTwo : !(e % numOne) ? stringOne : !(e % numTwo) ? stringTwo : e)
 };
 
+var findInArray = function(array, iterator) {
+  for (let i = 0; i < array.length; i++) {
+    if (iterator(array[i], i)) return i
+  }
+  return -1
+};
+
 
 
 

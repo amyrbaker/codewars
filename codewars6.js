@@ -1672,7 +1672,13 @@ const solution = mtrx => {
   return false
  }
 
- 
+ function sortByBit(arr) {
+  return arr.sort((a, b) => {
+    return a.toString(2).split('').filter(e => e === '1').length - b.toString(2).split('').filter(e => e === '1').length || a - b
+  })
+}
+
+
 
 
 

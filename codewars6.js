@@ -1695,6 +1695,11 @@ function recycle(array) {
           array.filter(e => e.material === 'plastic' || e.secondMaterial === 'plastic').map(e => e.type)]
 }
 
+var fizzBuzzCustom = function(stringOne = 'Fizz', stringTwo = 'Buzz', numOne = 3, numTwo = 5) {
+  return [...new Array(100).keys()].map(e => e + 1)
+           .map(e => !(e % numOne) && !(e % numTwo) ? stringOne + stringTwo : !(e % numOne) ? stringOne : !(e % numTwo) ? stringTwo : e)
+};
+
 
 
 

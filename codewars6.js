@@ -1688,6 +1688,13 @@ function random() {
   return Math.floor(Math.random() * 62)
 }
 
+function recycle(array) {
+  return [array.filter(e => e.material === 'paper' || e.secondMaterial === 'paper').map(e => e.type), 
+          array.filter(e => e.material === 'glass' || e.secondMaterial === 'glass').map(e => e.type),
+          array.filter(e => e.material === 'organic' || e.secondMaterial === 'organic').map(e => e.type),
+          array.filter(e => e.material === 'plastic' || e.secondMaterial === 'plastic').map(e => e.type)]
+}
+
 
 
 

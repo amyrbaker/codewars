@@ -1720,6 +1720,14 @@ function validPass(password){
           'VALID' : 'INVALID'
 }
 
+function findTheBall(start, swaps) {
+  let loc = start
+  for (let i = 0; i < swaps.length; i++) {
+    if (swaps[i].includes(loc)) loc = swaps[i][1 - swaps[i].indexOf(loc)]
+  }
+  return loc
+}
+
 
 
 

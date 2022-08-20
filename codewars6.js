@@ -1738,6 +1738,19 @@ function fridayTheThirteenths(start, end = start) {
   return dates.join(' ')
 }
 
+var Converter = {
+  toAscii: function (hex) {
+    let str = ''
+    for (let i = 0; i < hex.length; i += 2) {
+      str += String.fromCharCode(parseInt(hex.slice(i, i + 2), 16))
+    }
+    return str
+  },
+  toHex: function (ascii) {
+    return ascii.split('').map((e, i) => (+ascii.charCodeAt(i)).toString(16)).join('')
+  }
+}
+
 
 
 

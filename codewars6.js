@@ -1728,6 +1728,16 @@ function findTheBall(start, swaps) {
   return loc
 }
 
+function fridayTheThirteenths(start, end = start) {
+  let dates = []
+  for (let i = start; i <= end; i++) {
+    for (let j = 0; j <= 11; j++) {
+      if ((new Date(i, j, 13)).getDay() === 5) dates.push(`${j + 1}/13/${i}`)
+    }
+  }
+  return dates.join(' ')
+}
+
 
 
 

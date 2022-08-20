@@ -1711,6 +1711,15 @@ function makeSentence(parts) {
   return parts.reduce((a, c) => c === ',' ? a += c : c === '.' ? a : a += ` ${c}`, '').trim() + '.'
 }
 
+function validPass(password){
+  return (password.length > 3 &&
+          password.length < 20 && 
+          password.split('').every(e => 'abcdefghijklmnopqrstuvwxyz1234567890'.includes(e.toLowerCase())) && 
+          password.split('').some(e => '0123456789'.includes(e)) &&
+          password.split('').some(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e))) ?
+          'VALID' : 'INVALID'
+}
+
 
 
 

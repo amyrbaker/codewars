@@ -1760,6 +1760,22 @@ function lenCurve(n) {
   return len
 }
 
+function posAverage(s) {
+  let arr = s.split(', ')
+  let totalPos = ((arr.length * (arr.length - 1)) / 2) * arr[0].length
+  let common = 0
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      let one = arr[i]
+      let two = arr[j]
+      for (let k = 0; k < one.length; k++) {
+        if (one[k] === two[k]) common++
+      }
+    }
+  }
+  return common / totalPos * 100
+}
+
 
 
 

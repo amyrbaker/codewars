@@ -1751,6 +1751,15 @@ var Converter = {
   }
 }
 
+function lenCurve(n) {
+  let len = 0
+  for (let i = 0; i < n; i++) {
+    let x = i * (1/n)
+    len += Math.sqrt((1/n) ** 2 + ((x + 1/n) ** 2 - x ** 2) ** 2)
+  }
+  return len
+}
+
 
 
 

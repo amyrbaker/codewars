@@ -1776,6 +1776,13 @@ function posAverage(s) {
   return common / totalPos * 100
 }
 
+function permuteAPalindrome (input) { 
+  let count = input.split('').reduce((a, c) => {a[c] ? a[c]++ : a[c] = 1; return a}, {})
+  if (input.length % 2 === 0 && Object.values(count).every(e => e % 2 === 0)) return true
+  else if (input.length % 2 && Object.values(count).filter(e => e % 2).length === 1) return true
+  return false
+}
+
 
 
 

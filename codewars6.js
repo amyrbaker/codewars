@@ -1806,6 +1806,15 @@ function longest(str) {
   return sub
 }
 
+function stringBreakers(n, string){
+  string = string.split(' ').join('')
+  let arr = []
+  for (let i = 0; i < string.length; i += n) {
+    arr.push(string.slice(i, i + n))
+  }
+  return arr.join('\n')
+}
+
 
 
 

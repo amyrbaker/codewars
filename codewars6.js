@@ -1815,6 +1815,16 @@ function stringBreakers(n, string){
   return arr.join('\n')
 }
 
+function stringExpansion(s) {
+  let str = ''
+  let num = 1
+  for (let i = 0; i < s.length; i++) {
+    if ('0123456789'.includes(s[i])) num = +s[i]
+    else str += s[i].repeat(num)
+  }
+  return str
+}
+
 
 
 

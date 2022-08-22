@@ -1792,6 +1792,20 @@ function changer(str) {
     .join('')
 }
 
+function longest(str) {
+  let sub = str[0]
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  for (let i = 0; i < str.length - 1; i++) {
+    let s = str[i]
+    for (let j = i + 1; j < str.length; j++) {
+      if (alph.indexOf(str[j]) >= alph.indexOf(s[s.length - 1])) s += str[j]
+      else break
+    }
+    if (s.length > sub.length) sub = s
+  }
+  return sub
+}
+
 
 
 

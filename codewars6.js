@@ -1783,6 +1783,15 @@ function permuteAPalindrome (input) {
   return false
 }
 
+function changer(str) { 
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  let vowels = 'aeiou'
+  return str.split('')
+    .map(e => alph.includes(e.toLowerCase()) ? e = alph[(alph.indexOf(e.toLowerCase()) + 1) % 26] : e)
+    .map(e => vowels.includes(e) ? e.toUpperCase() : e)
+    .join('')
+}
+
 
 
 

@@ -1825,6 +1825,13 @@ function stringExpansion(s) {
   return str
 }
 
+function nextHigher(n) {
+  let bits = n.toString(2).split('').filter(e => e === '1').length
+  for (let i = n + 1; ; i++) {
+    if (i.toString(2).split('').filter(e => e === '1').length === bits) return i
+  }
+}
+
 
 
 

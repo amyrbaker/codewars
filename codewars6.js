@@ -1888,6 +1888,17 @@ function money_value(s){
   return nums
 }
 
+function catMouse(x, j){
+  if (!(x.includes('C') && x.includes('D') && x.includes('m'))) return 'boring without all three'
+  let cat = x.indexOf('C')
+  let dog = x.indexOf('D')
+  let mouse = x.indexOf('m')
+  console.log(x, j, cat, dog, mouse)
+  if (Math.abs(cat - mouse) > j) return 'Escaped!'
+  if ((dog > mouse && dog < cat) || (dog < mouse && dog > cat)) return 'Protected!'
+  if (Math.abs(cat - mouse) <= j) return 'Caught!'
+}
+
 
 
 

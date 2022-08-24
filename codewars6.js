@@ -1840,6 +1840,15 @@ function divisibleCount(x, y, k) {
   return Math.floor(y / k) - Math.floor((x - 1) / k)
 }
 
+function mirror(text){
+  let arr = text.split(' ').map(e => ` ${e.split('').reverse().join('')} `)
+  let lineLength = Math.max(...arr.map(e => e.length))
+  arr = arr.map(e => e.length < lineLength ? `*${e.padEnd(lineLength, ' ')}*` : `*${e}*`)
+  arr.push('*'.repeat(lineLength + 2))
+  arr.unshift('*'.repeat(lineLength + 2))
+  return arr.join('\n')
+}
+
 
 
 

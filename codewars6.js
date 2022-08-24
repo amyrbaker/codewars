@@ -1878,6 +1878,16 @@ function countAdjacentPairs(searchString) {
   return count
 }
 
+function money_value(s){
+  let neg = s.includes('-') ? true : false
+  let nums = ''
+  for (let i = 0; i < s.length; i++) {
+    if ('0123456789.'.includes(s[i])) nums += s[i]
+  }
+  nums = neg ? +nums * -1 : +nums
+  return nums
+}
+
 
 
 

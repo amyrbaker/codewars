@@ -1861,6 +1861,23 @@ function isPrime(n) {
   return true
 }
 
+function countAdjacentPairs(searchString) {
+  let count = 0
+  let arr = searchString.split(' ').map(e => e.toLowerCase())
+  let word = arr[0]
+  let repeat = 0
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] === word && !repeat) {
+      repeat++
+      count++
+    } else if (arr[i] !== word) {
+      word = arr[i]
+      repeat = 0
+    }
+  }
+  return count
+}
+
 
 
 

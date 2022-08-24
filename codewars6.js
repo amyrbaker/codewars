@@ -1836,6 +1836,10 @@ function group(arr) {
   return arr.reduce((a, c) => {return a.map(e => e[0]).includes(c) ? a[a.map(e => e[0]).indexOf(c)].push(c) : a.push([c]), a}, [])
 }
 
+function divisibleCount(x, y, k) {
+  return Math.floor(y / k) - Math.floor((x - 1) / k)
+}
+
 
 
 

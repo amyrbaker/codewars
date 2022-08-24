@@ -1832,6 +1832,10 @@ function nextHigher(n) {
   }
 }
 
+function group(arr) {
+  return arr.reduce((a, c) => {return a.map(e => e[0]).includes(c) ? a[a.map(e => e[0]).indexOf(c)].push(c) : a.push([c]), a}, [])
+}
+
 
 
 

@@ -1919,6 +1919,15 @@ function solve(arr){
   else return Math.floor(arr.reduce((a, c) => a + c, 0) / 2)
 }
 
+function bowlingPins(arr){
+  let pins = '7 8 9 0\n 4 5 6 \n  2 3  \n   1   '
+  arr.forEach(num => {
+    let index = pins.indexOf(String(num % 10))
+    pins = pins.slice(0, index) + ' ' + pins.slice(index + 1)
+  })
+  return pins.split('').map(e => '0123456789'.includes(e) ? 'I' : e).join('')
+}
+
 
 
 

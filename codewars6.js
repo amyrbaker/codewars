@@ -1899,6 +1899,17 @@ function catMouse(x, j){
   if (Math.abs(cat - mouse) <= j) return 'Caught!'
 }
 
+function bears(x, s){
+  let bears = ''
+  for (let i = 0; i < s.length - 1; i++) {
+    if ((s[i] === 'B' && s[i + 1] === '8') || (s[i] === '8' && s[i + 1] === 'B')) {
+      bears += s[i] + s[i + 1]
+      i++
+    }
+  }
+  return [bears, bears.length / 2 >= x]
+}
+
 
 
 

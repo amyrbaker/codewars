@@ -1910,6 +1910,15 @@ function bears(x, s){
   return [bears, bears.length / 2 >= x]
 }
 
+function solve(arr){
+  console.log(arr)
+  arr = arr.sort((a, b) => b - a)
+  if (arr[0] === arr[1] === arr[2]) return Math.floor(arr[0] * 1.5)
+  else if (arr[0] === arr[1]) return arr[0] + Math.floor(arr[2] / 2)
+  else if (arr[0] > arr[1] + arr[2]) return arr[1] + arr[2]
+  else return Math.floor(arr.reduce((a, c) => a + c, 0) / 2)
+}
+
 
 
 

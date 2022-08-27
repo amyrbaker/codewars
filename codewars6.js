@@ -1928,6 +1928,20 @@ function bowlingPins(arr){
   return pins.split('').map(e => '0123456789'.includes(e) ? 'I' : e).join('')
 }
 
+function calculateString(st){
+  let first = '', second = '', sign
+  for (let i = 0; i < st.length; i++) {
+    if ('0123456789.'.includes(st[i]) && !sign) first += st[i]
+    else if ('0123456789.'.includes(st[i]) && sign) second += st[i]
+    else if ('+-*/'.includes(st[i])) sign = st[i]
+  }
+  let result = sign === '+' ? +first + +second : 
+                sign === '-' ? +first - +second : 
+                sign === '*' ? +first * +second : 
+                +first / +second
+  return Math.round(result) + ''
+}
+
 
 
 

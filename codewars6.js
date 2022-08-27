@@ -1942,6 +1942,25 @@ function calculateString(st){
   return Math.round(result) + ''
 }
 
+function expandedForm(num) {
+  let millions = Math.floor(num / 1000000) * 1000000
+  let hundredThousands = Math.floor((num - millions) / 100000) * 100000
+  let tenThousands = Math.floor((num - millions - hundredThousands) / 10000) * 10000
+  let thousands = Math.floor((num - millions - tenThousands - hundredThousands) / 1000) * 1000
+  let hundreds = Math.floor((num - millions - hundredThousands - tenThousands - thousands) / 100) * 100
+  let tens = Math.floor((num - millions - hundredThousands - tenThousands - thousands - hundreds) / 10) * 10
+  let ones = Math.floor((num - millions - hundredThousands - tenThousands - thousands - hundreds - tens))
+  let tenths = String(num).split('.')[1][0] ? String(num).split('.')[1][0] + '/10' : 0
+  let hundredths = String(num).split('.')[1][1] ? String(num).split('.')[1][1] + '/100' : 0
+  let thousandths = String(num).split('.')[1][2] ? String(num).split('.')[1][2] + '/1000' : 0
+  let tenThousandths = String(num).split('.')[1][3] ? String(num).split('.')[1][3] + '/10000' : 0
+  let hundredThousandths = String(num).split('.')[1][4] ? String(num).split('.')[1][4] + '/100000' : 0
+  let millionths = String(num).split('.')[1][5] ? String(num).split('.')[1][5] + '/1000000' : 0
+  let number = [millions, hundredThousands, tenThousands, thousands, hundreds, tens, ones, tenths, hundredths, thousandths, tenThousandths, hundredThousandths, millionths]
+  number = number.map(e => String(e)).filter(e => e[0] !== '0')
+  return number.join(' + ')
+}
+
 
 
 

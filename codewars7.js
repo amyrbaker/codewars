@@ -1115,6 +1115,20 @@ function vaporcode(string) {
   return string.split('').filter(e => e !== ' ').map(e => e.toUpperCase()).join('  ');
 }
 
+function solve(s){
+  let arr = []
+  let v = ''
+  for (let i = 0; i < s.length; i++) {
+    if ('aeiou'.includes(s[i])) v += s[i]
+    else if (v.length) {
+      arr.push(v.length)
+      v = ''
+    }
+  }
+  if (v.length) arr.push(v.length)
+  return Math.max(...arr)
+}
+
 
 
 

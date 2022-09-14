@@ -1100,6 +1100,17 @@ function i(word) {
   return `i${word}`
 }
 
+function last(x){
+  let arr = x.split(' ')
+  if (arr.every(e => e === '')) return arr
+  else return arr.sort((a, b) => a[a.length - 1].localeCompare(b[b.length - 1]))
+}
+
+function min(arr, toReturn) {
+  if (toReturn === 'value') return Math.min(...arr)
+  else return arr.indexOf(Math.min(...arr))
+}
+
 
 
 

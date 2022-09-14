@@ -1111,6 +1111,10 @@ function min(arr, toReturn) {
   else return arr.indexOf(Math.min(...arr))
 }
 
+function vaporcode(string) {
+  return string.split('').filter(e => e !== ' ').map(e => e.toUpperCase()).join('  ');
+}
+
 
 
 

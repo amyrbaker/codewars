@@ -1129,6 +1129,17 @@ function solve(s){
   return Math.max(...arr)
 }
 
+function sumOfN(n) {
+  let arr = [0]
+  let add = n > 0 ? 1 : -1
+  while (arr.length < Math.abs(n) + 1) {
+    arr.push(arr[arr.length - 1] + add)
+    if (n > 0) add++
+    else if (n < 0) add--
+  }
+  return arr
+};
+
 
 
 

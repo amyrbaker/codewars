@@ -1140,6 +1140,11 @@ function sumOfN(n) {
   return arr
 };
 
+function switcher(x){
+  let alph = 'abcdefghijklmnopqrstuvwxyz'.split('').reverse().join('') + '!? '
+  return x.map(e => alph[+e - 1]).join('')
+}
+
 
 
 

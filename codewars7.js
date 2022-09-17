@@ -1163,6 +1163,10 @@ function catMouse(x){
   return Math.abs(cat - mouse) - 1 <= 3 ? 'Caught!' : 'Escaped!'
 }
 
+function discoverOriginalPrice(discountedPrice, salePercentage){
+  return +(discountedPrice / ((100 - salePercentage) / 100)).toFixed(2)
+}
+
 
 
 

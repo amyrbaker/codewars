@@ -1172,6 +1172,10 @@ const factorial = n => {
   return n * factorial(n - 1);
 };
 
+function isSameLanguage(list) {
+  return [...new Set(list.map(e => e.language))].length === 1
+}
+
 
 
 

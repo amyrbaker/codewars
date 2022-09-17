@@ -1167,6 +1167,11 @@ function discoverOriginalPrice(discountedPrice, salePercentage){
   return +(discountedPrice / ((100 - salePercentage) / 100)).toFixed(2)
 }
 
+const factorial = n => {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+};
+
 
 
 

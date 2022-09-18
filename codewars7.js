@@ -1217,6 +1217,10 @@ function crap(x, bags, cap){
   return 'Cr@p'
 }
 
+var removeVowels = function(str){
+  return str.split('').filter(e => !'aeiou'.includes(e)).join('')
+}
+
 
 
 

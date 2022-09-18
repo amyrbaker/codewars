@@ -1209,6 +1209,14 @@ function toLeetSpeak(str) {
   return str.split('').map(e => leet[e]).join('')
 }
 
+function crap(x, bags, cap){
+  x = x.join(',')
+  if (x.includes('D')) return 'Dog!!'
+  let crap = x.split(',').filter(e => e === '@').length
+  if (crap <= bags * cap) return 'Clean'
+  return 'Cr@p'
+}
+
 
 
 

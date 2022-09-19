@@ -1253,6 +1253,14 @@ function getAverageAge(list) {
   return Math.round(list.reduce((a, c) => a + c.age, 0) / list.length)
 }
 
+function productArray(numbers){
+  let arr = []
+  for (let i = 0; i < numbers.length; i++) {
+    arr.push(numbers.filter((e, ind) => ind !==i).reduce((a, c) => a * c, 1))
+  }
+  return arr
+}
+
 
 
 

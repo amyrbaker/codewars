@@ -1240,6 +1240,11 @@ function vowel2index(str) {
   return str.split('').map((e, i) => 'aeiou'.includes(e.toLowerCase()) ? i + 1 : e).join('')
 }
 
+function evensAndOdds(num){
+  if (num % 2) return num.toString(16)
+  return num.toString(2)
+}
+
 
 
 

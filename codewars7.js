@@ -1245,6 +1245,10 @@ function evensAndOdds(num){
   return num.toString(2)
 }
 
+function validSpacing(s) {
+  return (s && s.split(' ').includes('')) ? false : true
+}
+
 
 
 

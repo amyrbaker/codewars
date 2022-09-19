@@ -1249,6 +1249,10 @@ function validSpacing(s) {
   return (s && s.split(' ').includes('')) ? false : true
 }
 
+function getAverageAge(list) {
+  return Math.round(list.reduce((a, c) => a + c.age, 0) / list.length)
+}
+
 
 
 

@@ -1236,6 +1236,10 @@ function toTime(seconds) {
   return `${hours} hour(s) and ${minutes} minute(s)`
 }
 
+function vowel2index(str) {
+  return str.split('').map((e, i) => 'aeiou'.includes(e.toLowerCase()) ? i + 1 : e).join('')
+}
+
 
 
 

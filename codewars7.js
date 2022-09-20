@@ -1269,6 +1269,10 @@ var splitInParts = function(s, partLength){
   return arr.join(' ')
 }
 
+function solution(value){
+  return `Value is ${value.toString().padStart(5, '0')}`
+}
+
 
 
 

@@ -1273,6 +1273,10 @@ function solution(value){
   return `Value is ${value.toString().padStart(5, '0')}`
 }
 
+function generateIntegers(m, n) {
+  return [...new Array(n - m + 1).keys()].map(e => e += m)
+}
+
 
 
 

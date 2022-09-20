@@ -1277,6 +1277,10 @@ function generateIntegers(m, n) {
   return [...new Array(n - m + 1).keys()].map(e => e += m)
 }
 
+function solve(a,b){
+  return (a + b).split('').filter(e => !(a.includes(e) && b.includes(e))).join('')
+};
+
 
 
 

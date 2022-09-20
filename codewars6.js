@@ -1961,6 +1961,18 @@ function expandedForm(num) {
   return number.join(' + ')
 }
 
+function insideOut(x){
+  return x.split(' ').map(e => {
+    if (e.length <= 3) return e
+    else if (e.length % 2) {
+      return e.slice(0, Math.floor(e.length / 2)).split('').reverse().join('') 
+        + e[Math.floor(e.length / 2)] 
+        + e.slice(Math.ceil(e.length / 2)).split('').reverse().join('')
+    } else return e.slice(0, e.length / 2).split('').reverse().join('')
+        + e.slice(e.length / 2).split('').reverse().join('')
+  }).join(' ')
+}
+
 
 
 

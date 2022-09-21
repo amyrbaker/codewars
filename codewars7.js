@@ -1285,6 +1285,17 @@ function lostSheep(friday,saturday,total){
   return total - friday.concat(saturday).reduce((a, c) => a + c, 0)
 }
 
+function minimumSteps(numbers, value){
+  numbers = numbers.sort((a, b) => a - b)
+  let steps = 0
+  let sum = numbers.shift()
+  while (sum < value) {
+    steps++
+    sum += numbers.shift()
+  }
+  return steps
+}
+
 
 
 

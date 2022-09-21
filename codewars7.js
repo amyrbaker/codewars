@@ -1281,6 +1281,10 @@ function solve(a,b){
   return (a + b).split('').filter(e => !(a.includes(e) && b.includes(e))).join('')
 };
 
+function lostSheep(friday,saturday,total){
+  return total - friday.concat(saturday).reduce((a, c) => a + c, 0)
+}
+
 
 
 

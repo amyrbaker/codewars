@@ -1973,6 +1973,19 @@ function insideOut(x){
   }).join(' ')
 }
 
+function compareVersions (version1, version2) {
+  console.log(version1, version2)
+  let one = version1.split('.')
+  let two = version2.split('.')
+  let length = Math.max(one.length, two.length)
+  for (let i = 0; i < length; i++) {
+    if (one[i] === undefined) one[i] = 0
+    if (+one[i] < +two[i]) return false
+    if (+one[i] > +two[i]) return true
+  }
+  return true
+}
+
 
 
 

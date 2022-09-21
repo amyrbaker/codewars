@@ -1313,6 +1313,16 @@ function consecutive(arr, a, b) {
   return Math.abs(arr.indexOf(a) - arr.indexOf(b)) === 1
 }
 
+function compare(s1, s2) {
+  return score(s1) === score(s2)
+}
+
+function score(str) {
+  if (!str) return 0
+  else if (!str.split('').every(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e.toLowerCase()))) return 0
+  else return str.toUpperCase().split('').map(e => e.charCodeAt(0)).reduce((a, c) => a + c, 0)
+}
+
 
 
 

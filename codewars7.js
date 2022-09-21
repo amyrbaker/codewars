@@ -1296,6 +1296,19 @@ function minimumSteps(numbers, value){
   return steps
 }
 
+function sumOfIntegersInString(s){
+  let sum = 0
+  let num = ''
+  for (let i = 0; i < s.length; i++) {
+    if ('0123456789'.includes(s[i])) num += s[i]
+    else if (num.length) {
+      sum += +num
+      num = ''
+    }
+  }
+  return num.length ? sum += + num : sum
+}
+
 
 
 

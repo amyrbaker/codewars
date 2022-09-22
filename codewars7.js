@@ -1323,6 +1323,15 @@ function score(str) {
   else return str.toUpperCase().split('').map(e => e.charCodeAt(0)).reduce((a, c) => a + c, 0)
 }
 
+function maxGap (numbers){
+  numbers = numbers.sort((a, b) => a - b)
+  let max = 0
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] - numbers[i - 1] > max) max = numbers[i] - numbers[i - 1]
+  }
+  return max
+}
+
 
 
 

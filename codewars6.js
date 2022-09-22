@@ -1986,6 +1986,23 @@ function compareVersions (version1, version2) {
   return true
 }
 
+function palindrome(num,s) { 
+  if (typeof num !== 'number' || typeof s !== 'number' || num < 0 || s < 0) return 'Not valid'
+  let arr = []
+  while (arr.length < s) {
+    if (isPal(num)) arr.push(num)
+    num++
+  }
+  return arr
+}
+
+function isPal (num) {
+  num = num.toString()
+  return num.length > 1 && 
+    num.slice(0, Math.floor(num.length / 2)) === 
+      num.slice(Math.ceil(num.length / 2)).split('').reverse().join('')
+}
+
 
 
 

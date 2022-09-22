@@ -1332,6 +1332,17 @@ function maxGap (numbers){
   return max
 }
 
+var paintLetterboxes = function(start, end) {
+  let digits = [...new Array(10).fill(0)]
+  for (let i = start; i <= end; i++) {
+    let num = i.toString()
+    for (let j = 0; j < num.length; j++) {
+      digits[+num[j]]++
+    }
+  }
+  return digits
+}
+
 
 
 

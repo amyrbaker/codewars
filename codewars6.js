@@ -2024,6 +2024,20 @@ function factorial(n) {
   return fact
 }
 
+function lastSurvivors(str) {
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  let arr = str.split('').sort()
+  while(arr.length !== [...new Set(arr)].length) {
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] === arr[i + 1]) {
+        arr = arr.slice(0, i).concat(arr.slice(i + 2))
+          .concat(alph[(alph.indexOf(arr[i]) + 1) % 26]).sort()
+      }
+    }
+  }
+  return arr.join('')
+}
+
 
 
 

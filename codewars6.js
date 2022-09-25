@@ -2038,6 +2038,17 @@ function lastSurvivors(str) {
   return arr.join('')
 }
 
+function solution(a) {
+  let jumps = 0
+  let frog = 0
+  while (frog >= 0 && frog < a.length) {
+    if (a[frog] === 0 || jumps > a.length) return -1
+    frog += a[frog]
+    jumps++
+  }
+  return jumps
+}
+
 
 
 

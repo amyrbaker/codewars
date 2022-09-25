@@ -2003,6 +2003,11 @@ function isPal (num) {
       num.slice(Math.ceil(num.length / 2)).split('').reverse().join('')
 }
 
+function sortAnimal(animal) {
+  return animal === null ? null : 
+    animal.sort((a, b) => a.numberOfLegs - b.numberOfLegs || a.name.localeCompare(b.name))
+}
+
 
 
 

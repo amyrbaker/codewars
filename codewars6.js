@@ -2053,6 +2053,11 @@ function maxSum(arr,range){
   return Math.max(...range.map(e => arr.slice(e[0], e[1] + 1).reduce((a, c) => a + c, 0)))
 }
 
+function isOddHeavy(n){
+  return Math.min(...n.filter(e => e % 2)) > Math.max(...n.filter(e => !(e % 2))) &&
+    n.filter(e => e % 2).length > 0
+}
+
 
 
 

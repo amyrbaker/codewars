@@ -2049,6 +2049,10 @@ function solution(a) {
   return jumps
 }
 
+function maxSum(arr,range){
+  return Math.max(...range.map(e => arr.slice(e[0], e[1] + 1).reduce((a, c) => a + c, 0)))
+}
+
 
 
 

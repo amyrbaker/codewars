@@ -1347,6 +1347,13 @@ Array.prototype.remove_ = function(integer_list, values_list){
   return integer_list.filter(e => !values_list.includes(e))
 }
 
+function longestWord(stringOfWords){
+  return stringOfWords
+    .split(' ')
+    .filter((e, i, a) => e.length === Math.max(...a.map(e => e.length)))
+    .reverse()[0]
+}
+
 
 
 

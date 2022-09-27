@@ -1359,6 +1359,10 @@ function stantonMeasure(arr) {
   return arr.filter(e => e === ones).length
 }
 
+function modifiedSum(a, n) {
+  return a.map(e => e ** n).reduce((a, c) => a + c, 0) - a.reduce((a, c) => a + c, 0)
+}
+
 
 
 

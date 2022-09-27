@@ -1354,6 +1354,11 @@ function longestWord(stringOfWords){
     .reverse()[0]
 }
 
+function stantonMeasure(arr) {
+  let ones = arr.filter(e => e === 1).length
+  return arr.filter(e => e === ones).length
+}
+
 
 
 

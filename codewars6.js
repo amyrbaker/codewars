@@ -2058,6 +2058,16 @@ function isOddHeavy(n){
     n.filter(e => e % 2).length > 0
 }
 
+function tops(msg) {
+  let str = []
+  let x = -1
+  for (let i = 1; i < msg.length; i += (5 + (4 * x))) {
+    str.push(msg[i])
+    x++
+  }
+  return str.reverse().join('')
+}
+
 
 
 

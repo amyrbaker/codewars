@@ -1415,6 +1415,10 @@ function divisibleByThree(str){
   return !(str.split('').reduce((a, c) => a + +c, 0) % 3)
 }
 
+function reverseBits (n) {
+  return parseInt(n.toString(2).split('').reverse().join(''), 2)
+}
+
 
 
 

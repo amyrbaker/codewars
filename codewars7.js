@@ -1435,6 +1435,14 @@ function newAvg(arr, newavg) {
   return Math.ceil(need)
 }
 
+function checkThreeAndTwo(array) {
+  let o = array.reduce((a, c) => {
+    a[c] ? a[c]++ : a[c] = 1
+    return a
+  }, {})
+  return [2, 3].every(e => Object.values(o).includes(e))
+}
+
 
 
 

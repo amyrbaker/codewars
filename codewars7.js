@@ -1428,6 +1428,13 @@ function dbSort(a){
     .concat(a.filter(e => typeof e === 'string').sort())
 }
 
+function newAvg(arr, newavg) {
+  let goal = newavg * (arr.length + 1)
+  let need = goal - arr.reduce((a, c) => a + c, 0)
+  if (need <= 0) throw 'Expected New Average is too low'
+  return Math.ceil(need)
+}
+
 
 
 

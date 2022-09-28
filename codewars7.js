@@ -1419,6 +1419,10 @@ function reverseBits (n) {
   return parseInt(n.toString(2).split('').reverse().join(''), 2)
 }
 
+function fireFight(s){
+  return s.split(' ').map(e => e === 'Fire' ? '~~' : e).join(' ')
+}
+
 
 
 

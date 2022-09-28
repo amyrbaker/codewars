@@ -1403,6 +1403,10 @@ function calculate(str) {
   return nums.reduce((a, c) => a + c, 0) + ''
 }
 
+function average(scores) {
+  return Math.round(scores.reduce((a, c) => a + c, 0) / scores.length)
+}
+
 
 
 

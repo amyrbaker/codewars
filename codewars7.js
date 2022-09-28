@@ -1384,6 +1384,25 @@ function bingo(a) {
   return a.includes(2) && a.includes(9) && a.includes(14) && a.includes(7) && a.includes(15) ? 'WIN' : 'LOSE'
 }
 
+function calculate(str) {
+  let nums = []
+  let num = ''
+  for (let i = 0; i < str.length; i++) {
+    if ('0123456789'.includes(str[i])) num += str[i]
+    else if (str[i] === 'p') {
+      nums.push(+num)
+      num = ''
+      i += 3
+    } else if (str[i] === 'm') {
+      nums.push(+num)
+      num = '-'
+      i += 4
+    }
+  }
+  if (num) nums.push(+num)
+  return nums.reduce((a, c) => a + c, 0) + ''
+}
+
 
 
 

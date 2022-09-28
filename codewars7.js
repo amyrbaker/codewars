@@ -1423,6 +1423,11 @@ function fireFight(s){
   return s.split(' ').map(e => e === 'Fire' ? '~~' : e).join(' ')
 }
 
+function dbSort(a){
+  return a.filter(e => typeof e === 'number').sort((a, b) => a - b)
+    .concat(a.filter(e => typeof e === 'string').sort())
+}
+
 
 
 

@@ -1451,6 +1451,19 @@ function isNice(arr){
   return arr.every(e => arr.includes(e + 1) || arr.includes(e - 1)) && arr.length > 0
 }
 
+function save(sizes, hd) {
+  let files = 0
+  let sum = 0
+  for (let i = 0; i < sizes.length; i++) {
+    if (sum + sizes[i] > hd) return files
+    else {
+      sum += sizes[i]
+      files++
+    }
+  }
+  return files
+}
+
 
 
 

@@ -1472,6 +1472,13 @@ function duplicates(array){
   return Object.values(obj).map(e => Math.floor(e / 2)).reduce((a, c) => a + c, 0)
 }
 
+function getStrings(city){
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  return city.toLowerCase().split('').map((e, i, a) => {
+    if (i === a.indexOf(e) && alph.includes(e)) return `${e}:${'*'.repeat(a.filter(l => l === e).length)}`
+  }).filter(e => e !== undefined).join(',')
+}
+
 
 
 

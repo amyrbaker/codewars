@@ -1499,6 +1499,11 @@ function makeString(s){
   return s.split(' ').map(e => e[0]).join('')
 }
 
+function tripleX(str){
+  let firstX = str.indexOf('x')
+  return firstX !== -1 && str.slice(firstX + 1, firstX + 3) === 'xx'
+}
+
 
 
 

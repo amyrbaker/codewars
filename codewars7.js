@@ -1484,6 +1484,17 @@ function product (string) {
   return arr.filter(e => e === '?').length * arr.filter(e => e === '!').length
 }
 
+function findMissingNumber(sequence){
+  if (sequence.length < 1) return 0
+  let arr = sequence.split(' ').map(e => +e)
+  if (arr.includes(NaN)) return 1
+  arr = arr.sort((a, b) => a - b)
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== i + 1) return i + 1
+  }
+  return 0
+}
+
 
 
 

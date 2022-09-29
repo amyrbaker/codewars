@@ -1447,6 +1447,10 @@ String.prototype.vowel = function() {
   return 'aeiou'.includes(this.toLowerCase()) && this.length === 1
 };
 
+function isNice(arr){
+  return arr.every(e => arr.includes(e + 1) || arr.includes(e - 1)) && arr.length > 0
+}
+
 
 
 

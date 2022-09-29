@@ -1464,6 +1464,14 @@ function save(sizes, hd) {
   return files
 }
 
+function duplicates(array){
+  let obj = array.reduce((a, c) => {
+    a[c] ? a[c]++ : a[c] = 1
+    return a
+  }, {})
+  return Object.values(obj).map(e => Math.floor(e / 2)).reduce((a, c) => a + c, 0)
+}
+
 
 
 

@@ -1495,6 +1495,10 @@ function findMissingNumber(sequence){
   return 0
 }
 
+function makeString(s){
+  return s.split(' ').map(e => e[0]).join('')
+}
+
 
 
 

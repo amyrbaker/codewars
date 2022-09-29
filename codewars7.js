@@ -1443,6 +1443,10 @@ function checkThreeAndTwo(array) {
   return [2, 3].every(e => Object.values(o).includes(e))
 }
 
+String.prototype.vowel = function() {
+  return 'aeiou'.includes(this.toLowerCase()) && this.length === 1
+};
+
 
 
 

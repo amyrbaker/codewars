@@ -1479,6 +1479,11 @@ function getStrings(city){
   }).filter(e => e !== undefined).join(',')
 }
 
+function product (string) {
+  let arr = string.split('')
+  return arr.filter(e => e === '?').length * arr.filter(e => e === '!').length
+}
+
 
 
 

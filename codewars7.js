@@ -1504,6 +1504,12 @@ function tripleX(str){
   return firstX !== -1 && str.slice(firstX + 1, firstX + 3) === 'xx'
 }
 
+function palindrome(num) { 
+  return typeof num === 'number' && num >= 0 ?
+    num.toString() === num.toString().split('').reverse().join('') :
+    'Not valid'
+} 
+
 
 
 

@@ -1560,6 +1560,10 @@ function scale(strng, k, n) {
   return newArr.join('\n')
 }
 
+function getMissingElement(superImportantArray){
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].reduce((a, c) => a + c, 0) - superImportantArray.reduce((a, c) => a + c, 0)
+}
+
 
 
 

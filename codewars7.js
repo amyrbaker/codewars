@@ -1519,6 +1519,10 @@ function arithmeticSequenceElements(a, d, n) {
   return arr.join(', ')
 }
 
+function getMinMax(arr){
+  return [Math.min(...arr), Math.max(...arr)]
+};
+
 
 
 

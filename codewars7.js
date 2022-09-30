@@ -1547,6 +1547,19 @@ const findAll = (array, n) => {
   return arr
 }
 
+function scale(strng, k, n) {
+  if (strng === '') return ''
+  let arr = strng.split('\n')
+    .map(e => e.split('').map(l => l.repeat(k)).join(''))
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 1; j <= n; j++) {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr.join('\n')
+}
+
 
 
 

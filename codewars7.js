@@ -1529,6 +1529,14 @@ function initializeNames(name){
   return arr.join(' ')
 }
 
+function insertDash(num) {
+  return num
+    .toString()
+    .split('')
+    .map((e, i, a) => e % 2 && i !== a.length - 1 && a[i + 1] % 2 ? e + '-' : e)
+    .join('')
+}
+
 
 
 

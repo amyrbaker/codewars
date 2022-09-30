@@ -1510,6 +1510,15 @@ function palindrome(num) {
     'Not valid'
 } 
 
+function arithmeticSequenceElements(a, d, n) {
+	let arr = []
+  while (arr.length < n) {
+    if (arr.length === 0) arr.push(a)
+    else arr.push(arr[arr.length - 1] + d)
+  }
+  return arr.join(', ')
+}
+
 
 
 

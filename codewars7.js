@@ -1523,6 +1523,12 @@ function getMinMax(arr){
   return [Math.min(...arr), Math.max(...arr)]
 };
 
+function initializeNames(name){
+  let arr = name.split(' ')
+  if (arr.length > 2) arr = arr.map((e, i) => i === 0 || i === arr.length - 1 ? e : `${e[0]}.`)
+  return arr.join(' ')
+}
+
 
 
 

@@ -1537,6 +1537,10 @@ function insertDash(num) {
     .join('')
 }
 
+function evenLast(numbers) {
+  return numbers[numbers.length - 1] * numbers.filter((e, i) => !(i % 2)).reduce((a, c) => a + c, 0) || 0
+}
+
 
 
 

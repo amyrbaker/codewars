@@ -1589,6 +1589,10 @@ const whosOnline = (friends) => {
   return friends
 }
 
+function flyBy(lamps, drone){
+  return lamps.split('').map((e, i) => i < drone.length ? 'o' : e).join('')
+}
+
 
 
 

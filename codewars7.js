@@ -1576,6 +1576,10 @@ String.prototype.isLetter = function() {
   return /[A-Z]/.test(this.toUpperCase()) && this.length === 1
 }
 
+Array.prototype.numberOfOccurrences = function(arg) {
+  return this.filter(e => e === arg).length
+}
+
 
 
 

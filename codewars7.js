@@ -1580,6 +1580,15 @@ Array.prototype.numberOfOccurrences = function(arg) {
   return this.filter(e => e === arg).length
 }
 
+const whosOnline = (friends) => {
+  friends = friends.reduce((a, c) => {
+      if (c.status === 'online' && c.lastActivity > 10) c.status = 'away'
+      a[c.status] ? a[c.status].push(c.username) : a[c.status] = [c.username]
+      return a
+    }, {})
+  return friends
+}
+
 
 
 

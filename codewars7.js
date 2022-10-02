@@ -1620,6 +1620,11 @@ function swap (string) {
   return string.split('').map(e => 'aeiou'.includes(e.toLowerCase()) ? e.toUpperCase() : e).join('')
 }
 
+function findScreenHeight(width, ratio) {
+  let height = width * +ratio.split(':')[1] / +ratio.split(':')[0]
+  return `${width}x${height}`
+}
+
 
 
 

@@ -1616,6 +1616,10 @@ function nicknameGenerator(name){
     name.slice(0, 4)
 }
 
+function swap (string) {
+  return string.split('').map(e => 'aeiou'.includes(e.toLowerCase()) ? e.toUpperCase() : e).join('')
+}
+
 
 
 

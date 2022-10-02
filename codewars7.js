@@ -1572,6 +1572,10 @@ function nextHappyYear(year){
   }
 }
 
+String.prototype.isLetter = function() {
+  return /[A-Z]/.test(this.toUpperCase()) && this.length === 1
+}
+
 
 
 

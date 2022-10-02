@@ -1598,6 +1598,11 @@ function bandNameGenerator(str) {
     : `The ${str[0].toUpperCase() + str.slice(1)}`
 }
 
+function isLucky(n) {
+  return n.toString().split('').reduce((a, c) => a + +c, 0) === 0 || 
+    n.toString().split('').reduce((a, c) => a + +c, 0) % 9 === 0
+}
+
 
 
 

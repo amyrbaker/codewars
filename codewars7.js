@@ -1603,6 +1603,13 @@ function isLucky(n) {
     n.toString().split('').reduce((a, c) => a + +c, 0) % 9 === 0
 }
 
+function twoDecimalPlaces(number) {
+  return +number.toString()
+    .split('.')
+    .map((e, i, a) => i === a.length - 1 ? e.slice(0, 2) : e)
+    .join('.')
+}
+
 
 
 

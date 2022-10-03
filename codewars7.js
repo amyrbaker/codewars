@@ -1625,6 +1625,14 @@ function findScreenHeight(width, ratio) {
   return `${width}x${height}`
 }
 
+function elevatorDistance(array) {
+  let floors = 0
+  for (let i = 1; i < array.length; i++) {
+    floors += Math.abs(array[i] - array[i - 1])
+  }
+  return floors
+}
+
 
 
 

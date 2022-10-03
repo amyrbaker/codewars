@@ -1687,6 +1687,10 @@ function evenOrOdd(str) {
   else return 'Even and Odd are the same'
 }
 
+function one(arr, fun){
+  return arr.map(e => fun(e)).filter(e => e === true).length === 1
+}
+
 
 
 

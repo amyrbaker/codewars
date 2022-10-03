@@ -1675,6 +1675,10 @@ function solve(arr){
   return a
 };
 
+function args_count(...args) {
+  return [...args].length
+}
+
 
 
 

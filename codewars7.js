@@ -1659,6 +1659,22 @@ function extraPerfect(n){
   return [...new Array(n + 1).keys()].filter(e => e % 2)
 }
 
+function solve(arr){
+  let a = []
+  let len = arr.length
+  arr = arr.sort((a, b) => b - a)
+  while (a.length < len) {
+    if (a.length % 2 === 0) {
+      a.push(arr[0])
+      arr.shift()
+    } else {
+      a.push(arr[arr.length - 1])
+      arr.pop()
+    }
+  }
+  return a
+};
+
 
 
 

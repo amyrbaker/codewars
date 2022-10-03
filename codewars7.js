@@ -1637,6 +1637,13 @@ function findAdmin(list, lang) {
   return list.filter(e => e.language === lang && e.githubAdmin === 'yes')
 }
 
+function getAges(sum,difference){
+  let one = (sum - difference) / 2
+  let two = (difference + sum) / 2
+  if (sum < 0 || difference < 0 || one < 0 || two < 0) return null
+  return [one, two].sort((a, b) => b - a)
+};
+
 
 
 

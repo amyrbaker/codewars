@@ -1679,6 +1679,14 @@ function args_count(...args) {
   return [...args].length
 }
 
+function evenOrOdd(str) {
+  let evens = str.split('').filter(e => !(e % 2)).reduce((a, c) => a + +c, 0)
+  let odds = str.split('').filter(e => e % 2).reduce((a, c) => a + +c, 0)
+  if (evens > odds) return 'Even is greater than Odd'
+  else if (odds > evens) return 'Odd is greater than Even'
+  else return 'Even and Odd are the same'
+}
+
 
 
 

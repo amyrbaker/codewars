@@ -1650,6 +1650,11 @@ function countLettersAndDigits(input) {
     .length
 }
 
+function mostFrequentItemCount(collection) {
+  return collection.length === 0 ? 0 : 
+    Math.max(...Object.values(collection.reduce((a, c) => {return a[c] ? a[c]++ : a[c] = 1, a}, {})))
+}
+
 
 
 

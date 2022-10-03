@@ -1644,6 +1644,12 @@ function getAges(sum,difference){
   return [one, two].sort((a, b) => b - a)
 };
 
+function countLettersAndDigits(input) {
+  return input.split('')
+    .filter(e => 'abcdefghijklmnopqrstuvwxyz1234567890'.includes(e.toLowerCase()))
+    .length
+}
+
 
 
 

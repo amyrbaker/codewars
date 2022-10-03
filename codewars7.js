@@ -1655,6 +1655,10 @@ function mostFrequentItemCount(collection) {
     Math.max(...Object.values(collection.reduce((a, c) => {return a[c] ? a[c]++ : a[c] = 1, a}, {})))
 }
 
+function extraPerfect(n){
+  return [...new Array(n + 1).keys()].filter(e => e % 2)
+}
+
 
 
 

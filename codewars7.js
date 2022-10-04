@@ -1691,6 +1691,11 @@ function one(arr, fun){
   return arr.map(e => fun(e)).filter(e => e === true).length === 1
 }
 
+function lastDigit(n, d) {
+  if (d > n.toString().length) return n.toString().split('').map(e => +e)
+  else return n.toString().split('').slice(n.toString().length - d).map(e => +e)
+}
+
 
 
 

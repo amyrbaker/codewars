@@ -1703,6 +1703,12 @@ function orderFood(list) {
   }, {})
 }
 
+function gordon(a){
+  return a.toUpperCase().split('').map(e => {
+    return e === 'A' ? '@' : 'EIOU'.includes(e) ? '*' : e
+  }).join('').split(' ').map(e => `${e}!!!!`).join(' ')
+}
+
 
 
 

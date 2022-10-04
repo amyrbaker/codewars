@@ -1709,6 +1709,13 @@ function gordon(a){
   }).join('').split(' ').map(e => `${e}!!!!`).join(' ')
 }
 
+function killer(suspectInfo, dead) {
+  for (let p in suspectInfo) {
+    let arr = suspectInfo[p].filter(e => dead.includes(e))
+    if (arr.length === dead.length) return p
+  }
+}
+
 
 
 

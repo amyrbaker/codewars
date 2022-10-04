@@ -1696,6 +1696,13 @@ function lastDigit(n, d) {
   else return n.toString().split('').slice(n.toString().length - d).map(e => +e)
 }
 
+function orderFood(list) {
+  return list.reduce((a, c) => {
+    a[c.meal] ? a[c.meal]++ : a[c.meal] = 1
+    return a
+  }, {})
+}
+
 
 
 

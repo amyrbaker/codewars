@@ -1756,6 +1756,14 @@ function mergeArrays(a, b) {
   return arr
 }
 
+function splitTheBill(x) {
+  let avg = Object.values(x).reduce((a, c) => a + c, 0) / Object.keys(x).length
+  for (let p in x) {
+    x[p] = Math.round((x[p] - avg) * 100) / 100
+  }
+  return x
+}
+
 
 
 

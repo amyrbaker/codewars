@@ -1779,6 +1779,15 @@ function dotCalculator (equation) {
   return '.'.repeat(total)
 }
 
+function well(x){
+  let arr = []
+  for (let i = 0; i < x.length; i++) {
+    arr = arr.concat(x[i])
+  }
+  let count = arr.filter((e => typeof e === 'string' && e.toLowerCase() === 'good')).length
+  return count === 0 ? 'Fail!' : count > 2 ? 'I smell a series!' : 'Publish!'
+}
+
 
 
 

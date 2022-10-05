@@ -1831,6 +1831,11 @@ function filterEvenLengthWords(words) {
   return words.filter(e => e.length % 2 === 0)
 }
 
+function freqSeq(str, sep) {
+  let arr = str.split('')
+  return arr.map(e => arr.filter(x => x === e).length).join(sep)
+}
+
 
 
 

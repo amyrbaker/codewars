@@ -1730,6 +1730,11 @@ function moveTen(s){
   return s.split('').map(e => alph[(alph.indexOf(e) + 10) % 26]).join('')
 }
 
+function uniqueSum(lst){
+  return lst.length ? Object.keys(lst.reduce((a, c) => (a[c] ? a[c]++ : a[c] = 1, a), {}))
+    .reduce((a, c) => a + +c, 0) : null
+}
+
 
 
 

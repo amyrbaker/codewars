@@ -1827,6 +1827,10 @@ function solution(string,limit){
   return limit < string.length ? `${string.slice(0, limit)}...` : string
 }
 
+function filterEvenLengthWords(words) {
+  return words.filter(e => e.length % 2 === 0)
+}
+
 
 
 

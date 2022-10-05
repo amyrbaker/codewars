@@ -1721,6 +1721,10 @@ function shorter_reverse_longer(a,b){
   else return `${a}${b.split('').reverse().join('')}${a}`
 }
 
+function product(values) {
+  return values && values.length ? values.reduce((a, c) => a * c, 1) : null
+}
+
 
 
 

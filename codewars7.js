@@ -1764,6 +1764,21 @@ function splitTheBill(x) {
   return x
 }
 
+function dotCalculator (equation) {
+  let first = 0
+  let second = 0
+  let sign = ''
+  for (let i = 0; i < equation.length; i++) {
+    if (equation[i] === '.' && sign === '') first++
+    else if (equation[i] === '.') second++
+    else if ('+-*/'.includes(equation[i])) sign += equation[i]
+  }
+  let total = sign === '+' ? first + second : 
+              sign === '-' ? first - second : 
+              sign === '*' ? first * second : first / second
+  return '.'.repeat(total)
+}
+
 
 
 

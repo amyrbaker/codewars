@@ -1823,6 +1823,10 @@ function broken(x){
   return x.split('').map(e => e === '1' ? '0' : '1').join('')
 }
 
+function solution(string,limit){
+  return limit < string.length ? `${string.slice(0, limit)}...` : string
+}
+
 
 
 

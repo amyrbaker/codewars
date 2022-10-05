@@ -1725,6 +1725,11 @@ function product(values) {
   return values && values.length ? values.reduce((a, c) => a * c, 1) : null
 }
 
+function moveTen(s){
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+  return s.split('').map(e => alph[(alph.indexOf(e) + 10) % 26]).join('')
+}
+
 
 
 

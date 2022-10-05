@@ -1735,6 +1735,10 @@ function uniqueSum(lst){
     .reduce((a, c) => a + +c, 0) : null
 }
 
+function liftoff(instructions){
+  return `${instructions.sort((a, b) => b - a).join(' ')} liftoff!`
+}
+
 
 
 

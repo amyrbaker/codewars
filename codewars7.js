@@ -1788,6 +1788,15 @@ function well(x){
   return count === 0 ? 'Fail!' : count > 2 ? 'I smell a series!' : 'Publish!'
 }
 
+function change(string){
+  let alph = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  for (let i = 0; i < alph.length; i++) {
+    if (string.toLowerCase().includes(alph[i])) alph[i] = 1
+    else alph[i] = 0
+  }
+  return alph.join('')
+}
+
 
 
 

@@ -1797,6 +1797,28 @@ function change(string){
   return alph.join('')
 }
 
+function sumOfABeach(beach) {
+  let count = 0
+  let str = beach.toLowerCase()
+  while (str.indexOf('sand') !== -1) {
+    count++
+    str = str.slice(0, str.indexOf('sand')) + str.slice(str.indexOf('sand') + 4)
+  }
+  while (str.indexOf('water') !== -1) {
+    count++
+    str = str.slice(0, str.indexOf('water')) + str.slice(str.indexOf('water') + 5)
+  }
+  while (str.indexOf('fish') !== -1) {
+    count++
+    str = str.slice(0, str.indexOf('fish')) + str.slice(str.indexOf('fish') + 4)
+  }
+  while (str.indexOf('sun') !== -1) {
+    count++
+    str = str.slice(0, str.indexOf('sun')) + str.slice(str.indexOf('sun') + 3)
+  }
+  return count
+}
+
 
 
 

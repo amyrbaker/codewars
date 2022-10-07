@@ -1836,6 +1836,22 @@ function freqSeq(str, sep) {
   return arr.map(e => arr.filter(x => x === e).length).join(sep)
 }
 
+function timeCorrect(timestring) {
+  if (!timestring) return timestring
+  if (!(timestring.indexOf(':') === 2 && timestring.lastIndexOf(':') === 5 && timestring.length === 8 && timestring.split('').filter(e => '0123456789'.includes(e)).length === 6)) return null
+  let time = timestring.split(':')
+  if (time[2] >= 60) {
+    time[1] = +time[1] + Math.floor(time[2] / 60)
+    time[2] = time[2] % 60
+  }
+  if (time[1] >= 60) {
+    time[0] = +time[0] + Math.floor(time[1] / 60)
+    time[1] = time[1] % 60
+  }
+  if (time[0] >= 24) time[0] %= 24
+  return time.map(e => e.toString().padStart(2, '0')).join(':')
+}
+
 
 
 

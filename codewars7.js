@@ -1880,7 +1880,12 @@ function scrollingText(text){
   return arr.map(e => e.toUpperCase())
 }
 
+function betweenExtremes(numbers) {
+  //   return Math.max(...numbers) - Math.min(...numbers)
+    return numbers.sort((a, b) => a - b)[numbers.length - 1] - numbers.sort((a, b) => a - b)[0]
+  }
 
+  
 
 
 

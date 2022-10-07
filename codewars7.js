@@ -1864,6 +1864,14 @@ function searchNames( logins ){
   return logins.filter(e => e[0][e[0].length - 1] === '_')
 }
 
+function isVeryEvenNumber(n) {
+  let num = n.toString()
+  while (num.length > 1) {
+    num = num.split('').reduce((a, c) => a + +c, 0).toString()
+  }
+  return !(+num % 2)
+}
+
 
 
 

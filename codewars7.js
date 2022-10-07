@@ -1872,6 +1872,14 @@ function isVeryEvenNumber(n) {
   return !(+num % 2)
 }
 
+function scrollingText(text){
+  let arr = []
+  for (let i = 0; i < text.length; i++) {
+    arr.push(text.slice(i) + text.slice(0, i))
+  }
+  return arr.map(e => e.toUpperCase())
+}
+
 
 
 

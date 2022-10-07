@@ -1860,6 +1860,10 @@ const catchSignChange = arr => {
   return count
 };
 
+function searchNames( logins ){
+  return logins.filter(e => e[0][e[0].length - 1] === '_')
+}
+
 
 
 

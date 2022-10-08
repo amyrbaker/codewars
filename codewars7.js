@@ -1921,6 +1921,12 @@ function remove (string) {
   }).join(' ')
 }
 
+function isDivisible(...args){
+  let first = [...args][0]
+  let rest = [...args].slice(1)
+  return rest.every(e => first % e === 0)
+}
+
 
 
 

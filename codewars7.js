@@ -1906,6 +1906,14 @@ function pattern(n){
     return arr.join('\n')
 }
 
+function ArithmeticSequenceSum(a, r, n) {
+  let sum = 0
+  for (let i = 0; i < n; i++) {
+    sum += a + r * i
+  }
+  return sum
+}
+
 
 
 

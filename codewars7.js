@@ -1970,6 +1970,17 @@ function mean(lst){
           lst.filter(e => !'0123456789'.includes(e)).join('')]
 }
 
+function makeValley(arr) {
+  let left = []
+  let right = []
+  arr = arr.sort((a, b) => b - a)
+  for (let i = 0; i < arr.length; i++) {
+    if (!(i % 2)) left.push(arr[i])
+    else right.unshift(arr[i])
+  }
+  return left.concat(right)
+}
+
 
 
 

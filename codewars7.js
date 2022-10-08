@@ -1951,6 +1951,10 @@ function multiples(s1,s2,s3){
   return arr
 }
 
+function howManyTimes(annualPrice, individualPrice) {
+  return Math.ceil(annualPrice / individualPrice)
+}
+
 
 
 

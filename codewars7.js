@@ -1898,7 +1898,15 @@ function betweenExtremes(numbers) {
     return word.split('egg').join('')
   }
 
-  
+function pattern(n){
+    let arr = []
+    for (let i = 1; i <= n; i++) {
+      arr.push(`1${'*'.repeat(i - 1)}${i > 1 ? i : ''}`)
+    }
+    return arr.join('\n')
+}
+
+
 
 
 

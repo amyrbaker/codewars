@@ -1965,6 +1965,11 @@ function fizzBuzzCuckooClock(time) {
   else return 'tick'
 }
 
+function mean(lst){
+  return [lst.filter(e => '0123456789'.includes(e)).reduce((a, c) => a + +c, 0) / 10, 
+          lst.filter(e => !'0123456789'.includes(e)).join('')]
+}
+
 
 
 

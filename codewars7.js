@@ -1914,6 +1914,13 @@ function ArithmeticSequenceSum(a, r, n) {
   return sum
 }
 
+function remove (string) {
+  return string.split(' ').map(e => {
+    while (e[e.length - 1] === '!') e = e.slice(0, e.length - 1)
+    return e
+  }).join(' ')
+}
+
 
 
 

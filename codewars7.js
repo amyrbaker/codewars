@@ -1894,6 +1894,10 @@ function betweenExtremes(numbers) {
     return true
   }
 
+  function unscrambleEggs(word){
+    return word.split('egg').join('')
+  }
+
   
 
 

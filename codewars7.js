@@ -1885,6 +1885,15 @@ function betweenExtremes(numbers) {
     return numbers.sort((a, b) => a - b)[numbers.length - 1] - numbers.sort((a, b) => a - b)[0]
   }
 
+  function solve(s){
+    let alph = 'abcdefghijklmnopqrstuvwxyz'
+    let arr = s.split('').map(e => alph.indexOf(e)).sort((a, b) => a - b)
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] + 1 !== arr[i + 1]) return false
+    }
+    return true
+  }
+
   
 
 

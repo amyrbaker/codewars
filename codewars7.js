@@ -1981,6 +1981,14 @@ function makeValley(arr) {
   return left.concat(right)
 }
 
+function makePassword(phrase) {
+  return phrase.split(' ')
+    .map(e => e[0].toLowerCase() === 'i' ? 1 : 
+         e[0].toLowerCase() === 'o' ? 0 : 
+         e[0].toLowerCase() === 's' ? 5 : e[0])
+    .join('')
+}
+
 
 
 

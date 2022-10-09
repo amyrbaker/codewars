@@ -2001,6 +2001,16 @@ function capital(capitals){
   return capitals.map(e => `The capital of ${e.state || e.country} is ${e.capital}`)
 }
 
+function listToArray(list) {
+  let arr = []
+  while (list.next) {
+    arr.push(list.value)
+    list = list.next
+  }
+  arr.push(list.value)
+  return arr
+}
+
 
 
 

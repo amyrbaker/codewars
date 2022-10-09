@@ -1997,6 +1997,10 @@ function nthChar(words){
   return ('adak '.repeat(Math.floor(n / 2)) + 'anane'.repeat(n % 2)).trim()
 }
 
+function capital(capitals){
+  return capitals.map(e => `The capital of ${e.state || e.country} is ${e.capital}`)
+}
+
 
 
 

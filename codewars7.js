@@ -2024,6 +2024,17 @@ var vampire_test = function(a, b){
 
 const arrCheck = value => value.every(e => Array.isArray(e))
 
+function remove (string) {
+  let ind
+  for (let i = string.length - 1; i >= 0; i--) {
+    if (string[i] !== '!') {
+      ind = i + 1
+      break
+    }
+  }
+  return string.slice(0, ind).split('').filter(e => e !== '!').join('') + string.slice(ind)
+}
+
 
 
 

@@ -2041,6 +2041,10 @@ function rakeGarden(garden) {
     .join(' ')
 }
 
+function spongeMeme(sentence) {
+  return sentence.split('').map((e, i) => i % 2 ? e.toLowerCase() : e.toUpperCase()).join('')
+}
+
 
 
 

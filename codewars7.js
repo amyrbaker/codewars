@@ -2035,6 +2035,12 @@ function remove (string) {
   return string.slice(0, ind).split('').filter(e => e !== '!').join('') + string.slice(ind)
 }
 
+function rakeGarden(garden) {
+  return garden.split(' ')
+    .map(e => (e === 'gravel' || e === 'rock') ? e : 'gravel')
+    .join(' ')
+}
+
 
 
 

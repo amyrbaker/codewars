@@ -2022,6 +2022,8 @@ var vampire_test = function(a, b){
   return true
 }
 
+const arrCheck = value => value.every(e => Array.isArray(e))
+
 
 
 

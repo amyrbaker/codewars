@@ -2011,6 +2011,17 @@ function listToArray(list) {
   return arr
 }
 
+var vampire_test = function(a, b){
+  let prod = (a * b).toString().split('')
+  let digits = a.toString().split('').concat(b.toString().split(''))
+  for (let i = 0; i < digits.length; i++) {
+    let ind = prod.indexOf(digits[i])
+    if (ind === -1) return false
+    prod = prod.slice(0, ind).concat(prod.slice(ind + 1))
+  }
+  return true
+}
+
 
 
 

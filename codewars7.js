@@ -1993,6 +1993,10 @@ function nthChar(words){
   return words.map((e, i) => e[i]).join('')
  }
 
+ function countArara(n) {
+  return ('adak '.repeat(Math.floor(n / 2)) + 'anane'.repeat(n % 2)).trim()
+}
+
 
 
 

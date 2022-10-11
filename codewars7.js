@@ -2056,6 +2056,16 @@ function duplicates(arr) {
   return a
 }
 
+function pendulum(values) {
+  let arr = []
+  values = values.sort((a, b) => a - b)
+  for (let i = 0; i < values.length; i++) {
+    if(i % 2) arr.push(values[i])
+    else arr.unshift(values[i])
+  }
+  return arr
+}
+
 
 
 

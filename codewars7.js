@@ -2045,6 +2045,17 @@ function spongeMeme(sentence) {
   return sentence.split('').map((e, i) => i % 2 ? e.toLowerCase() : e.toUpperCase()).join('')
 }
 
+function duplicates(arr) {
+  let a = []
+  let dups = arr.filter(e => arr.indexOf(e) !== arr.lastIndexOf(e))
+  let obj = {}
+  for (let i = 0; i < dups.length; i++) {
+    if (!obj[dups[i]]) obj[dups[i]] = 1
+    else if (obj[dups[i]] === 1) {a.push(dups[i]), obj[dups[i]]++}
+  }
+  return a
+}
+
 
 
 

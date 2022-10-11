@@ -2066,6 +2066,10 @@ function pendulum(values) {
   return arr
 }
 
+function solve(arr){
+  return arr.filter((e, i) => e > Math.max(...arr.slice(i + 1)))
+};
+
 
 
 

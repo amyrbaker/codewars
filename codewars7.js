@@ -2070,6 +2070,17 @@ function solve(arr){
   return arr.filter((e, i) => e > Math.max(...arr.slice(i + 1)))
 };
 
+function dominator(arr) {
+  let obj = arr.reduce((a, c) => {
+    a[c] ? a[c]++ : a[c] = 1
+    return a
+  }, {})
+  for (let x in obj) {
+    if (obj[x] > arr.length / 2) return +x
+  }
+  return -1
+}
+
 
 
 

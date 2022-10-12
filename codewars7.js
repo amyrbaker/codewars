@@ -2085,6 +2085,11 @@ function noRepeat(str) {
   return str.split('').filter(e => str.indexOf(e) === str.lastIndexOf(e))[0]
 }
 
+function numberJoy(n) {
+  let s = n.toString().split('').reduce((a, c) => a + +c, 0)
+  return n === s * s.toString().split('').reverse().join('')
+}
+
 
 
 

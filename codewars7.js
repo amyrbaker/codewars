@@ -2090,6 +2090,10 @@ function numberJoy(n) {
   return n === s * s.toString().split('').reverse().join('')
 }
 
+function smallEnough(a, limit){
+  return a.every(e => e <= limit)
+}
+
 
 
 

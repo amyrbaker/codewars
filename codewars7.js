@@ -2116,6 +2116,14 @@ var calculate = function calculate(a, o, b) {
   return null 
  }
 
+ function solve(s,g){
+  for (let i = 1; i <= s; i++) {
+    let a = i, b = s - i
+    if (a % g === 0 && b % g === 0) return [a, b].sort((a, b) => a - b)
+  }
+  return -1
+}
+
 
 
 

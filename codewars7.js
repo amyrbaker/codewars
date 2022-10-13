@@ -2124,6 +2124,11 @@ var calculate = function calculate(a, o, b) {
   return -1
 }
 
+function tailSwap(arr) {
+  arr = arr.map(e => e.split(':'))
+  return [arr[0][0] + ':' + arr[1][1], arr[1][0] + ':' + arr[0][1]]
+}
+
 
 
 

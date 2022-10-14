@@ -2129,6 +2129,10 @@ function tailSwap(arr) {
   return [arr[0][0] + ':' + arr[1][1], arr[1][0] + ':' + arr[0][1]]
 }
 
+function counterEffect(hitCount) {
+  return hitCount.split('').map(e => [...new Array(+e + 1).keys()])
+}
+
 
 
 

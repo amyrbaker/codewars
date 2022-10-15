@@ -2145,6 +2145,11 @@ function evenChars(string) {
   return string.split('').filter((e, i) => i % 2)
 }
 
+var circleArea = function(radius) {
+  if (typeof radius !== 'number' || radius <= 0) return false
+  return +(Math.PI * radius * radius).toFixed(2)
+};
+
 
 
 

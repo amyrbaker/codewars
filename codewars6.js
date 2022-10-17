@@ -2107,6 +2107,26 @@ function uncollapse(digits){
   return str.join(' ')
 }
 
+Array.prototype.even = function(){
+  return this.filter(e => typeof e === 'number' && !(e % 2))
+}
+
+Array.prototype.odd = function(){
+  return this.filter(e => typeof e === 'number' && e % 2)
+}
+
+Array.prototype.under = function(x){
+  return this.filter(e => typeof e === 'number' && e < x)
+}
+
+Array.prototype.over = function(x){
+  return this.filter(e => typeof e === 'number' && e > x)
+}
+
+Array.prototype.inRange = function(min,max){
+  return this.filter(e => typeof e === 'number' && e >= min && e <= max)
+}
+
 
 
 

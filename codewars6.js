@@ -2082,6 +2082,17 @@ const removeDuplicateIds = (obj) => {
   return obj
 };
 
+function getWinner(listOfBallots) {
+  let obj = listOfBallots.reduce((a, c) => {
+    a[c] ? a[c]++ : a[c] = 1
+    return a
+  }, {})
+  for (let cand in obj) {
+    if (obj[cand] > listOfBallots.length / 2) return cand
+  }
+  return null
+}
+
 
 
 

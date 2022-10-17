@@ -2131,6 +2131,19 @@ function onlyDuplicates(str) {
   return str.split('').filter(e => str.indexOf(e) !== str.lastIndexOf(e)).join('')
 }
 
+function findUnique(numbers) {
+  //  return numbers.filter(e => numbers.indexOf(e) === numbers.lastIndexOf(e))[0]
+    let obj = numbers.reduce((a, c) => {
+      a[c] ? a[c]++ : a[c] = 1
+      return a
+    }, {})
+    for (let key in obj) {
+      if (obj[key] === 1) return +key
+    }
+}
+
+
+
 
 
 

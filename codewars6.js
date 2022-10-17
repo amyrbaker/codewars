@@ -2127,6 +2127,10 @@ Array.prototype.inRange = function(min,max){
   return this.filter(e => typeof e === 'number' && e >= min && e <= max)
 }
 
+function onlyDuplicates(str) {
+  return str.split('').filter(e => str.indexOf(e) !== str.lastIndexOf(e)).join('')
+}
+
 
 
 

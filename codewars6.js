@@ -2093,6 +2093,20 @@ function getWinner(listOfBallots) {
   return null
 }
 
+function uncollapse(digits){
+  let arr = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+  let str = []
+  let word = ''
+  for (let i = 0; i < digits.length; i++) {
+    word += digits[i]
+    if (arr.includes(word)) {
+      str.push(word)
+      word = ''
+    }
+  }
+  return str.join(' ')
+}
+
 
 
 

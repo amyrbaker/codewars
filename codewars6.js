@@ -2151,6 +2151,18 @@ function redarr(arr) {
   return obj
 }
 
+function sumDigNthTerm(initval, patternl, nthterm) {
+  let num = initval
+  let count = 1
+  let index = 0
+  while (count < nthterm) {
+    num += patternl[index % patternl.length]
+    index++
+    count++
+  }
+  return num.toString().split('').reduce((a, c) => a + +c, 0)
+}
+
 
 
 

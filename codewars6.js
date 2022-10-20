@@ -2163,6 +2163,13 @@ function sumDigNthTerm(initval, patternl, nthterm) {
   return num.toString().split('').reduce((a, c) => a + +c, 0)
 }
 
+function encryptor (key, message) {
+  let alph = 'abcdefghijklmnopqrstuvwxyz'
+	return message.split('').map(e => !alph.includes(e.toLowerCase()) ? e : 
+                alph.includes(e) ? alph[(alph.indexOf(e) + 26 + (key % 26)) % 26] :
+                alph[(alph.indexOf(e.toLowerCase()) + 26 + (key % 26)) % 26].toUpperCase()).join('')
+}
+
 
 
 

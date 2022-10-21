@@ -2178,6 +2178,28 @@ function hasSubpattern(string){
   return false
 }
 
+function code(strng) {
+  return strng.split('').map(e => {
+    let bin = parseInt(e).toString(2)
+    let k = bin.length
+    return '0'.repeat(k - 1) + '1' + bin
+  }).join('')
+}
+function decode(str) {
+  let arr = ['10', '11', '0110', '0111', '001100', '001101', '001110', '001111', '00011000', '00011001']
+  let s = ''
+  while (str.length) {
+    for (let i = 2; i <= 8; i += 2) {
+      if (arr.includes(str.slice(0, i))) {
+        s += arr.indexOf(str.slice(0, i)).toString()
+        str = str.slice(i)
+        i -= 2
+      }
+    }
+  }
+  return s
+}
+
 
 
 

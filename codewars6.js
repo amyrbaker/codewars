@@ -2170,6 +2170,14 @@ function encryptor (key, message) {
                 alph[(alph.indexOf(e.toLowerCase()) + 26 + (key % 26)) % 26].toUpperCase()).join('')
 }
 
+function hasSubpattern(string){
+  for (let i = 1; i < string.length; i++) {
+    let patt = string.slice(0, i)
+    if (string === patt.repeat(string.length / patt.length)) return true
+  }
+  return false
+}
+
 
 
 

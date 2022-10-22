@@ -2200,6 +2200,28 @@ function decode(str) {
   return s
 }
 
+function peacefulYard(yard, minDistance) {
+  let r, l, m, count = 0
+  for (let y = 0; y < yard.length; y++) {
+    for (let x = 0; x < yard[0].length; x++) {
+      if (yard[y][x] === 'L') {l = [y, x], count++}
+      else if (yard[y][x] === 'R'){ r = [y, x], count++}
+      else if (yard[y][x] === 'M') {m = [y, x], count++}
+    }
+  }
+  if (count <= 1 || 
+      (r && l && m && distance(r, l) >= minDistance && distance(r, m) >= minDistance && distance(l, m) >= minDistance) ||
+      (r && l && !m && distance(r, l) >= minDistance) ||
+      (r && m && !l && distance(r, m) >= minDistance) ||
+      (l && m && !r && distance(l, m) >= minDistance)) return true
+  return false
+}
+
+function distance(one, two) {
+  return Math.sqrt((one[0] - two[0]) ** 2 + (one[1] - two[1]) ** 2)
+}
+
+
 
 
 

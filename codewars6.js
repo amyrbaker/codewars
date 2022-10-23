@@ -2222,6 +2222,11 @@ function distance(one, two) {
 }
 
 
+function whitespaceNumber(n) {
+  let binary = Math.abs(n).toString(2).split('')
+  return (n < 0 ? '\t' : ' ') + (n === 0 ? '' : binary.map(e => e === '0' ? ' ' : '\t').join('')) + '\n'
+}
+
 
 
 

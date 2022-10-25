@@ -2227,6 +2227,15 @@ function whitespaceNumber(n) {
   return (n < 0 ? '\t' : ' ') + (n === 0 ? '' : binary.map(e => e === '0' ? ' ' : '\t').join('')) + '\n'
 }
 
+String.prototype.isAudio= function(){
+  return ['mp3', 'flac', 'alac', 'aac'].includes(this.split('.')[1]) && 
+    this.split('.')[0].split('').every(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e.toLowerCase()))
+};
+String.prototype.isImage= function(){
+  return ['jpg', 'jpeg', 'png', 'bmp', 'gif'].includes(this.split('.')[1]) && 
+    this.split('.')[0].split('').every(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e.toLowerCase()))
+};
+
 
 
 

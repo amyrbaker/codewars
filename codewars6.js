@@ -2236,6 +2236,16 @@ String.prototype.isImage= function(){
     this.split('.')[0].split('').every(e => 'abcdefghijklmnopqrstuvwxyz'.includes(e.toLowerCase()))
 };
 
+function bitsWar(numbers) {
+  let odds = numbers.filter(e => e % 2)
+              .map(e => e.toString(2).split('').filter(e => e === '1').length * (e < 0 ? -1 : 1))
+              .reduce((a, c) => a + c, 0)
+  let evens = numbers.filter(e => e % 2 === 0)
+              .map(e => e.toString(2).split('').filter(e => e === '1').length * (e < 0 ? -1 : 1))
+              .reduce((a, c) => a + c, 0)
+  return odds > evens ? 'odds win' : odds < evens ? 'evens win' : 'tie'
+}
+
 
 
 

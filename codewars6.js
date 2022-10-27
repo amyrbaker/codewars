@@ -2246,6 +2246,20 @@ function bitsWar(numbers) {
   return odds > evens ? 'odds win' : odds < evens ? 'evens win' : 'tie'
 }
 
+function towerBuilder(nFloors, nBlockSz) {
+  let block = '*'.repeat(nBlockSz[0])
+  let lineLength = (nFloors - 1) * 2 * nBlockSz[0] + nBlockSz[0]
+  let arrLength = nFloors * nBlockSz[1]
+  let arr = []
+  while (arr.length < arrLength) {
+    for (let i = 1; i <= nBlockSz[1]; i++) {
+      arr.push(block.padStart((block.length + lineLength) / 2, ' ').padEnd(lineLength, ' '))
+    }
+    block += '*'.repeat(nBlockSz[0] * 2)
+  }
+  return arr
+}
+
 
 
 

@@ -2260,6 +2260,16 @@ function towerBuilder(nFloors, nBlockSz) {
   return arr
 }
 
+function Mormons(startingNumber, reach, target) {
+  let missions = 0
+  let mormons = startingNumber
+  while (mormons < target) {
+    missions++
+    mormons = mormons + mormons * reach
+  }
+  return missions
+}
+
 
 
 

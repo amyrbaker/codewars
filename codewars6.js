@@ -2270,6 +2270,17 @@ function Mormons(startingNumber, reach, target) {
   return missions
 }
 
+function pointsNumber(radius){
+  let count = 0
+  for (let x = radius * -1; x <= radius; x++) {
+    for (let y = radius * -1; y <= radius; y++) {
+      let distance = Math.sqrt(x ** 2 + y ** 2)
+      if (distance <= radius) count++
+    }
+  }
+  return count
+}
+
 
 
 

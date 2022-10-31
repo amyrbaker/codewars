@@ -2281,6 +2281,14 @@ function pointsNumber(radius){
   return count
 }
 
+const frame = (text, char) => {
+  let lineLength = Math.max(...text.map(e => e.length)) + 4
+  text = text.map(e => char + ' ' + e + ' '.repeat(lineLength - 3 - e.length) + char)
+  text.unshift(char.repeat(lineLength))
+  text.push(char.repeat(lineLength))
+  return text.join('\n')
+};
+
 
 
 

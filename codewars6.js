@@ -2310,6 +2310,22 @@ function countRepeats(str) {
   return count
 }
 
+function sortArray(array) {
+  let odds = array.filter(e => e % 2).sort((a, b) => a - b)
+  let evens = array.filter(e => !(e % 2)).sort((a, b) => b - a)
+  let arr = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2) {
+      arr.push(odds[0])
+      odds.shift()
+    } else {
+      arr.push(evens[0])
+      evens.shift()
+    }
+  }
+  return arr
+}
+
 
 
 

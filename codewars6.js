@@ -2289,6 +2289,19 @@ const frame = (text, char) => {
   return text.join('\n')
 };
 
+function isTwinPrime(n){
+  if (!isPrime(n) || n <= 2) return false
+  else if (isPrime(n + 2) || isPrime(n - 2)) return true
+  return false
+}
+
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (!(n % i)) return false
+  }
+  return true
+}
+
 
 
 

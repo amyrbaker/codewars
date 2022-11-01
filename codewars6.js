@@ -2326,6 +2326,20 @@ function sortArray(array) {
   return arr
 }
 
+function zeroPlentiful(arr){
+  let array = []
+  let str = ''
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) str += arr[i]
+    else if (str.length){
+      array.push(str)
+      str = ''
+    }
+  }
+  if (str.length) array.push(str)
+  return array.every(e => e.length >= 4) ? array.length : 0
+}
+
 
 
 
